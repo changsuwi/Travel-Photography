@@ -1,65 +1,87 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Info windows</title>
     <style>
-      /* Always set the map height explicitly to define the size of the div
+    /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
+
+    #map {
         height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
+    }
+    /* Optional: Makes the sample page fill the window. */
+
+    html,
+    body {
         height: 100%;
         margin: 0;
         padding: 0;
-      }
+    }
     </style>
-  </head>
-  <body>
-    <form action="google_map_api_test_submit" method="get" accept-charset="utf-8">
-      <div id="map"></div>
-    </form>
-    
+</head>
+
+<body>
+    <div id="map"></div>
     <script>
+    // This example displays a marker at the center of Australia.
+    // When the user clicks the marker, an info window opens.
 
-      // This example displays a marker at the center of Australia.
-      // When the user clicks the marker, an info window opens.
+    function getjson(url) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.statu
+                  s === 200) {
+                    // Here the callback gets implemented
+                    var item = JSON.parse(xhr.responseText);
+                    return item
+                } else {
 
-      function initMap() {
-        var uluru = {lat: 25.0894062, lng: 121.8475243};
+                }
+            }
+        };
+
+        xhr.open("GET", url, true);
+        xhr.send();
+    }
+
+    function initMap() {
+        var uluru = { lat: 25.0894062, lng: 121.8475243 };
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 14,
-          center: uluru
+            zoom: 14,
+            center: uluru
         });
+        jsondata = get_json("ajax");
+        console.log(jsondata);
 
-        var contentString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
-            '<div id="bodyContent">'+
-            '<img src="img/IMG_0735-2.jpg" width="300" height="200" >'+
-            '</div>'+
+        var contentString = '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
+            '<div id="bodyContent">' +
+            '<img src="img/IMG_0735-2.jpg" width="300" height="200" >' +
+            '</div>' +
             '</div>';
 
         var infowindow = new google.maps.InfoWindow({
-          content: contentString
+            content: contentString
         });
 
         var marker = new google.maps.Marker({
-          position: uluru,
-          map: map,
-          title: 'Uluru (Ayers Rock)'
+            position: uluru,
+            map: map,
+            title: 'Uluru (Ayers Rock)'
         });
         marker.addListener('click', function() {
-          infowindow.open(map, marker);
+            infowindow.open(map, marker);
         });
-      }
+    }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeVo8TE2AGQ24zvvwF8otKrCQCtory7rA&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeVo8TE2AGQ24zvvwF8otKrCQCtory7rA&callback=initMap">
     </script>
-  </body>
+</body>
+
 </html>
