@@ -28,16 +28,15 @@
     <script>
     // This example displays a marker at the center of Australia.
     // When the user clicks the marker, an info window opens.
-
-    function getjson(url) {
+    var item ;
+    function get_json(url,callback) {
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.statu
-                  s === 200) {
+                if (xhr.status === 200) {
                     // Here the callback gets implemented
-                    var item = JSON.parse(xhr.responseText);
-                    return item
+                    item = JSON.parse(xhr.responseText);
+                    callback(item);
                 } else {
 
                 }
@@ -54,8 +53,20 @@
             zoom: 14,
             center: uluru
         });
-        jsondata = get_json("ajax");
-        console.log(jsondata);
+        get_json("ajax_data",function(data){ 
+          var placeid = data.placeid;
+          var name = data.name;
+          var hot = data.hot;
+          var lat = data.lat;
+          var lng = data.lng;
+          var point = new google.maps.LatLng(lat,lng);
+          var marker = new google.maps.Marker({
+            map: map,
+            position: point,
+            title: name
+          });
+          console.log(data.placeid);
+        });
 
         var contentString = '<div id="content">' +
             '<div id="siteNotice">' +
