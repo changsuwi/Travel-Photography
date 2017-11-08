@@ -19,16 +19,19 @@
     </style>
   </head>
   <body>
-    <div id="map"></div>
+    <form action="google_map_api_test_submit" method="get" accept-charset="utf-8">
+      <div id="map"></div>
+    </form>
+    
     <script>
 
       // This example displays a marker at the center of Australia.
       // When the user clicks the marker, an info window opens.
 
       function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
+        var uluru = {lat: 25.0894062, lng: 121.8475243};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
+          zoom: 14,
           center: uluru
         });
 
