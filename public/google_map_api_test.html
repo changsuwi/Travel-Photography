@@ -28,14 +28,13 @@
     <script>
     // This example displays a marker at the center of Australia.
     // When the user clicks the marker, an info window opens.
-    var item ;
     function get_json(url,callback) {
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
                     // Here the callback gets implemented
-                    item = JSON.parse(xhr.responseText);
+                    var item = JSON.parse(xhr.responseText);
                     callback(item);
                 } else {
 
