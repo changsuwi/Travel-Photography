@@ -28,7 +28,7 @@
     <script>
     // This example displays a marker at the center of Australia.
     // When the user clicks the marker, an info window opens.
-    function get_json(url,callback) {
+    function get_json(url, callback) {
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -47,47 +47,55 @@
     }
 
     function initMap() {
-        var uluru = { lat: 25.0894062, lng: 121.8475243 };
+        var icon_image = 'http://maps.google.com/mapfiles/ms/micons/camera.png';
+        var center = { lat: 25.0894062, lng: 121.8475243 };
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 14,
-            center: uluru
+            center: center,
         });
-        get_json("ajax_data",function(data){ 
-          var placeid = data.placeid;
-          var name = data.name;
-          var hot = data.hot;
-          var lat = data.lat;
-          var lng = data.lng;
-          var point = new google.maps.LatLng(lat,lng);
-          var marker = new google.maps.Marker({
-            map: map,
-            position: point,
-            title: name
-          });
-          console.log(data.placeid);
-        });
-
-        var contentString = '<div id="content">' +
-            '<div id="siteNotice">' +
-            '</div>' +
-            '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
-            '<div id="bodyContent">' +
-            '<img src="img/IMG_0735-2.jpg" width="300" height="200" >' +
-            '</div>' +
-            '</div>';
-
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString
-        });
-
         var marker = new google.maps.Marker({
-            position: uluru,
             map: map,
-            title: 'Uluru (Ayers Rock)'
+            position: center,
         });
-        marker.addListener('click', function() {
-            infowindow.open(map, marker);
+        get_json("ajax_data", function(data) {
+            for(var k in data){
+                var placeid = data[k].placeid;
+                var name = data[k].name;
+                var hot = data[k].hot;
+                var lat = data[k].lat;
+                var lng = data[k].lng;
+                var description = data[k].description;
+                var point = new google.maps.LatLng(lat, lng);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: point,
+                    title: name,
+                    icon: icon_image
+                });
+                console.log(data[k].placeid);
+                var contentString = '<div id="content">' +
+                    '<div id="siteNotice">' +
+                    '</div>' +
+                    '<h1>' + name + '</h1>' +
+                    '<p>' + description + '</p>' +
+                    '</div>';
+
+                marker['infowindow'] = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
+                google.maps.event.addListener(marker, 'mouseover', function() {
+                    this['infowindow'].open(map, this);
+                });
+
+                google.maps.event.addListener(marker, 'mouseout', function() {
+                    this['infowindow'].close();
+                });
+            }
+
+            
         });
+
     }
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeVo8TE2AGQ24zvvwF8otKrCQCtory7rA&callback=initMap">

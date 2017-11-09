@@ -1,21 +1,23 @@
 const express = require('express')
 const app = express()
-const port =  41781// 請改成其他你喜歡的數字
-var data = {
-	"placeid" : "ChIJs-vv2xlVXTQR87cVUnPn-Es",
-	"hot" : 5.0,
-	"category" : 1.0,
-	"lat" : 25.108914,
-	"lng" : 121.845868,
-	"name" : "九份開成殿管理委員會",
-	"description" : "九份夕陽 夜景 攝影點"
+const port = 41781 // 請改成其他你喜歡的數字
 
-}
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://wp2017_groupi:z076rgzw@luffy.ee.ncku.edu.tw:27017/wp2017_groupi";
+
 app.get("/ajax_data", function(req, res) {
-  console.log(data.hot)
-  res.json(data)
-})
-app.listen(port,() => {
+    MongoClient.connect(url, function(err, db) {
+	    if (err) throw err;
+	    console.log("Database created!");
+	    db.collection("Location").find({}).toArray(function(err, result) {
+	        if (err) throw err;
+	        console.log(result);
+	        res.json(result);
+	        db.close();
+	    })
+	})
+}) 
+app.listen(port, () => {
     console.log(`Listening on port ${port}`)
-    app.use(express.static(__dirname +'/public'))
-})
+    app.use(express.static(__dirname + '/public'))
+});
