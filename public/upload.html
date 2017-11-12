@@ -2,21 +2,193 @@
 <html>
 <head>
 	<title>upload</title>
+	<meta charset="utf-8"/>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="assets/ionicons-2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<style>
+		.img {
+	    max-width: 450px; 
+	    max-height: 450px;
+	    margin: 5px;
+		}
+	</style>
 </head>
 <body>
-<form class="form1">
-    <input type='file' class="upl" name="upl[]" multiple>
-    <div class="preview">
-    </div>
-</form>
+		<section class="head">
+		<nav class="navbar navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<header class="header">
+						<div class="inner">
+							<a href="#menu" class="nav-bars">
+								<img src="assets/images/nav-icon.png" class="img-responsive" alt="Collapsable Navbar">
+							</a>
+							<a href="index.html" class="logo">
+								INVENTI<span><img src="assets/images/logo.png"></span>N
+							</a>
+							<a href="upload.html" id="upload">
+								<img src="assets/images/icons/upload.png">
+							</a>
+						</div>
+					</header>
+					
+					<!-- Menu -->
 
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="maps.html">Maps</a></li>
+							<li><a href="news.html">News</a></li>
+							<li><a href="myphotos.html">My Photos</a></li>
+							<li><a href="upload.html">Upload</a></li>
+							<li><a href="login.html">Log in</a></li>
+							<li><a href="aboutus.html">About Us</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		</nav>
+	</section>
 
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<!--github沒這些資料-->
-	<!--<script src="assets/js/owl.carousel.min.js"></script>
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>-->
+	<section class="testimonial">
+		<div class="container-fluid">
+			<div class="grid">
+				<div class="row">
+					<div class="col-md-12">
+					<form class="photospreview">
+			    		<input type='file' class="upl" name="upl[]" multiple>
+			    		<div class="preview">
+			    		</div>
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+		<section class="contact-form">
+			<div class="container">
+			<!-- Form -->
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Description</h1>
+						<form class="form-name-email">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" class="form-control" name="name" id="name" placeholder="Topic"/><!-- 照片主旨 -->
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="text" class="form-control" name="time" id="time" placeholder="2017/xx/xx,00:00" /><!-- 用戶名?? -->
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<form>
+										<select class="form-control">
+											<option selected="selected">Select Location</option>
+											<option>台北市</option>
+											<option>新北市</option>
+											<option>桃園市</option>
+											<option>台中市</option>
+											<option>台南市</option>
+											<option>高雄市</option>
+											<option>基隆市</option>
+											<option>新竹市</option>
+											<option>嘉義市</option>
+											<option>新竹縣</option>
+											<option>苗栗縣</option>
+											<option>彰化縣</option>
+											<option>南投縣</option>
+											<option>雲林縣</option>
+											<option>嘉義縣</option>
+											<option>屏東縣</option>
+											<option>宜蘭縣</option>
+											<option>花蓮縣</option>
+											<option>台東縣</option>
+											<option>澎湖縣</option>
+										</select>
+									</form>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+										<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left">
+								    		<label class="radio-inline">
+											  	<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 即時影像
+											</label>
+										</div>
+							<!-- 			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+								    		<label class="radio-inline">
+											  	<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Normal
+											</label>
+							   			 </div> -->
+							   			 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+								    		<label class="radio-inline">
+											  	<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option2"> 作品集
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+<!-- 							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+										<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left">
+									  		<label class="checkbox-inline">
+											  	<input type="checkbox" id="inlineCheckbox1" value="option1"> Apple
+											</label>
+										</div>
+										<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+										   <label class="checkbox-inline">
+											  	<input type="checkbox" id="inlineCheckbox2" value="option2"> Mango
+											</label>
+									    </div>
+									</div>
+								</div>
+							</div> -->
+							<div class="row">
+								<div class="col-md-12">
+									<div class="from-group">
+										<textarea class="form-control" rows="10" name="message" id="message" placeholder="Description"></textarea>
+									</div>
+									<p>
+									  <a href="index.html" type="button" class="btn btn-tobais btn-send">SEND ALL</a><!-- 把資料送出去-但是要怎麼把這些不同的資訊存取呢? -->
+									  <a href="#" type="button" class="btn btn-tobais btn-reset">RESET</a>
+									</p>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	<script src="assets/js/jquery-3.1.0.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
 	
-	<script src="js/upload.js"></script>
+	<script src="assets/js/upload.js"></script>
+	<script src="assets/js/script.js"></script>
 </body>
 </html>
