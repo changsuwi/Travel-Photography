@@ -3,7 +3,7 @@ const app = express()
 const port = 41781 // 請改成其他你喜歡的數字
 
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://wp2017_groupi:z076rgzw@luffy.ee.ncku.edu.tw:27017/wp2017_groupi";
+var url = "mongodb://wp2017_groupi:wp2017_groupi@luffy.ee.ncku.edu.tw:27017/wp2017_groupi";
 
 app.get("/ajax_data", function(req, res) {
     MongoClient.connect(url, function(err, db) {
