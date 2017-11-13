@@ -17,7 +17,7 @@ function get_json(url, callback) {
 }
 
 function initMap() {
-    var icon_image = 'http://maps.google.com/mapfiles/ms/micons/camera.png';
+    var icon_image = '../images/icons/camera.png';
     var center = { lat: 25.0894062, lng: 121.8475243 };
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14,
