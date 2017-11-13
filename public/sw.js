@@ -2,9 +2,7 @@
 // service workers is defined by the directory in which the file resides.
 const cacheFile = [
   './',
-  './index.html',
-  './css/round-about.css',
-  './js/map.js'
+  './index.html'
 ]
 
 const cacheKey = 'demo-app-v1'
