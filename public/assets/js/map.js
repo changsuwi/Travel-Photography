@@ -1,3 +1,4 @@
+// get json from server
 function get_json(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
@@ -16,7 +17,9 @@ function get_json(url, callback) {
     xhr.send();
 }
 
+// initial the map
 function initMap() {
+    // set user's center
     var icon_image = './assets/images/icons/camera.png';
     var center = { lat: 25.0894062, lng: 121.8475243 };
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -27,7 +30,12 @@ function initMap() {
         map: map,
         position: center,
     });
+
+    // get data from server
     get_json("ajax_data", function(data) {
+        
+        // decode json
+
         for (var k in data) {
             var placeid = data[k].placeid;
             var name = data[k].name;
@@ -43,16 +51,20 @@ function initMap() {
                 icon: icon_image
             });
             console.log(data[k].placeid);
+
+            // infowindow's html code
             var contentString = '<div id="content">' +
                 '<div id="siteNotice">' +
                 '</div>' +
                 '<h1>' + name + '</h1>' +
                 '<p>' + description + '</p>' +
                 '</div>';
-
+            // set the scene marker
             marker['infowindow'] = new google.maps.InfoWindow({
                 content: contentString
             });
+
+            // set scene infowindow
 
             google.maps.event.addListener(marker, 'mouseover', function() {
                 this['infowindow'].open(map, this);
