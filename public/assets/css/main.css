@@ -986,10 +986,10 @@ a {
 }
 /*首頁三張投影片的位置*/
 .slide1 {
-    background: url(../images/slider1.jpg);  
+    background: url(../images/7.jpg);  
 }
 .slide2 {
-    background: url(../images/slider2.jpg);
+    background: url(../images/8.jpg);
 }
 .slide3 {
     background: url(../images/slider3.jpg);
@@ -1046,22 +1046,24 @@ a {
     transform: translate3d(0,0,0);
 }
 
-@media screen and (max-width: 991px) {
-    .grid-item-width2 {
-        width: auto;
-   	 	height: 0px;
-    }
-}
-
-.grid-item-width2 { 
-	width: auto;
-    height: 321px;
-}
-
 .grid-item {
 	width: auto;
     height: 350px;
 }
+
+@media screen and (max-width: 550px) {
+    .grid-item {
+        width: auto;
+   	 	height: 225px;
+    }
+}
+
+/*.grid-item-width2 { 
+	width: auto;
+    height: 321px;
+}*/
+
+
 
 .home_text {
     position: absolute;
