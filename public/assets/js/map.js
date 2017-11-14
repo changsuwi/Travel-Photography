@@ -20,7 +20,7 @@ function get_json(url, callback) {
 // initial the map
 function initMap() {
     // set user's center
-    var icon_image = '../images/icons/camera.png';
+    var icon_image = './assets/images/icons/camera.png';
     var center = { lat: 25.0894062, lng: 121.8475243 };
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14,
@@ -65,7 +65,7 @@ function initMap() {
             });
 
             // set scene infowindow
-            
+
             google.maps.event.addListener(marker, 'mouseover', function() {
                 this['infowindow'].open(map, this);
             });
