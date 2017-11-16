@@ -1,0 +1,12 @@
+{
+  "name": "Travel Photography",
+  "short_name": "Travel Photography",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [{
+    "src": "./assets/images/icons/icon-144x144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }]
+}
