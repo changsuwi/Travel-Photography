@@ -47,9 +47,9 @@ var storage =   multer.diskStorage({
 });
 var upload = multer({ storage : storage}).single('userPhoto');
 
-app.get('/',function(req,res){
+/*app.get('/',function(req,res){
       res.sendFile(__dirname + "/index.html");
-});
+});*/
 
 app.post('/upload',function(req,res){
     upload(req,res,function(err) {
