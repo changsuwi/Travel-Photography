@@ -98,9 +98,6 @@ var nameSchema = new mongoose.Schema({
 
 var User = mongoose.model("users", nameSchema);
 app.use(express.static(__dirname + '/public'));
-/*app.get("./", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
-});*/
 app.post('/addname', function(req, res) {
    var myData = new User(req.body);
    myData.save()
