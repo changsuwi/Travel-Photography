@@ -8,7 +8,7 @@ var options = {
     key: fs.readFileSync('./ssl/private.key'),
         cert: fs.readFileSync('./ssl/certificate.crt'),
         };
-
+var app =express();
 var multer = require('multer');
 var moment = require('moment');
 var bodyParser = require('body-parser');
@@ -20,7 +20,7 @@ var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;                                                                                                             
 mongoose.connect('mongodb://wp2017_groupi:wp2017_groupi@luffy.ee.ncku.edu.tw:27017/wp2017_groupi',{ useMongoClient: true });
 
-const app = express()
+//const app = express()//我移到前面宣告
 const port = 41781
 
 // mongo 
@@ -109,4 +109,7 @@ app.post('/addname', function(req, res) {
        res.status(400).send("Unable to save to database");
         });
         console.log(req.body);
+});
+app.listen(port, () => {
+    console.log("Server listening on port " + port);
 });
