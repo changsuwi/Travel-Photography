@@ -62,7 +62,7 @@ var imageSchema = new  mongoose.Schema({
 var Image = mongoose.model('files', imageSchema);
 var storage =   multer.diskStorage({
   destination: function (req, file, callback) {
-    callback(null, './upload');
+    callback(null, './assets/upload');
   },
   filename: function (req, file, callback) {
   callback(null, file.fieldname + '-' + moment().format('MMMM Do YYYY, h:mm:ss a'));
