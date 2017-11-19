@@ -24,3 +24,433 @@ Error: Cannot find module 'mongodb'
     at tryModuleLoad (module.js:497:12)
     at Function.Module._load (module.js:489:3)
 Listening on port 41781
+Listening on port 41781
+Database created!
+[ { _id: 5a030991caa9a21efc9fd466,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 10,
+    category: 1,
+    lat: 25.0894062,
+    lng: 121.8475243,
+    name: '不厭亭',
+    description: '' },
+  { _id: 5a030c93caa9a21efc9fd46d,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 5,
+    category: 1,
+    lat: 25.108914,
+    lng: 121.845868,
+    name: '九份開成殿管理委員會',
+    description: '九份夕陽 夜景 攝影點' },
+  { _id: 5a03eb8659bfed03a41e06df,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 3,
+    category: 1,
+    lat: 25.109995,
+    lng: 121.866381,
+    name: '茶壺山',
+    description: '基隆山 夕陽' },
+  { _id: 5a03ec0e59bfed03a41e06e0,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 8,
+    category: 2,
+    lat: 25.108404,
+    lng: 121.8430243,
+    name: '海悅樓觀景茶坊',
+    description: '神隱少女拍攝點' } ]
+Listening on port 41781
+Database created!
+[ { _id: 5a030991caa9a21efc9fd466,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 10,
+    category: 1,
+    lat: 25.0894062,
+    lng: 121.8475243,
+    name: '不厭亭',
+    description: '' },
+  { _id: 5a030c93caa9a21efc9fd46d,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 5,
+    category: 1,
+    lat: 25.108914,
+    lng: 121.845868,
+    name: '九份開成殿管理委員會',
+    description: '九份夕陽 夜景 攝影點' },
+  { _id: 5a03eb8659bfed03a41e06df,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 3,
+    category: 1,
+    lat: 25.109995,
+    lng: 121.866381,
+    name: '茶壺山',
+    description: '基隆山 夕陽' },
+  { _id: 5a03ec0e59bfed03a41e06e0,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 8,
+    category: 2,
+    lat: 25.108404,
+    lng: 121.8430243,
+    name: '海悅樓觀景茶坊',
+    description: '神隱少女拍攝點' } ]
+Database created!
+[ { _id: 5a030991caa9a21efc9fd466,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 10,
+    category: 1,
+    lat: 25.0894062,
+    lng: 121.8475243,
+    name: '不厭亭',
+    description: '' },
+  { _id: 5a030c93caa9a21efc9fd46d,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 5,
+    category: 1,
+    lat: 25.108914,
+    lng: 121.845868,
+    name: '九份開成殿管理委員會',
+    description: '九份夕陽 夜景 攝影點' },
+  { _id: 5a03eb8659bfed03a41e06df,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 3,
+    category: 1,
+    lat: 25.109995,
+    lng: 121.866381,
+    name: '茶壺山',
+    description: '基隆山 夕陽' },
+  { _id: 5a03ec0e59bfed03a41e06e0,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 8,
+    category: 2,
+    lat: 25.108404,
+    lng: 121.8430243,
+    name: '海悅樓觀景茶坊',
+    description: '神隱少女拍攝點' } ]
+Listening on port 41781
+Listening on port 41781
+Listening on port 41781
+Database created!
+[ { _id: 5a030991caa9a21efc9fd466,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 10,
+    category: 1,
+    lat: 25.0894062,
+    lng: 121.8475243,
+    name: '不厭亭',
+    description: '' },
+  { _id: 5a030c93caa9a21efc9fd46d,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 5,
+    category: 1,
+    lat: 25.108914,
+    lng: 121.845868,
+    name: '九份開成殿管理委員會',
+    description: '九份夕陽 夜景 攝影點' },
+  { _id: 5a03eb8659bfed03a41e06df,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 3,
+    category: 1,
+    lat: 25.109995,
+    lng: 121.866381,
+    name: '茶壺山',
+    description: '基隆山 夕陽' },
+  { _id: 5a03ec0e59bfed03a41e06e0,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 8,
+    category: 2,
+    lat: 25.108404,
+    lng: 121.8430243,
+    name: '海悅樓觀景茶坊',
+    description: '神隱少女拍攝點' } ]
+Listening on port 41781
+Database created!
+[ { _id: 5a030991caa9a21efc9fd466,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 10,
+    category: 1,
+    lat: 25.0894062,
+    lng: 121.8475243,
+    name: '不厭亭',
+    description: '' },
+  { _id: 5a030c93caa9a21efc9fd46d,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 5,
+    category: 1,
+    lat: 25.108914,
+    lng: 121.845868,
+    name: '九份開成殿管理委員會',
+    description: '九份夕陽 夜景 攝影點' },
+  { _id: 5a03eb8659bfed03a41e06df,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 3,
+    category: 1,
+    lat: 25.109995,
+    lng: 121.866381,
+    name: '茶壺山',
+    description: '基隆山 夕陽' },
+  { _id: 5a03ec0e59bfed03a41e06e0,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 8,
+    category: 2,
+    lat: 25.108404,
+    lng: 121.8430243,
+    name: '海悅樓觀景茶坊',
+    description: '神隱少女拍攝點' } ]
+Listening on port 41781
+Database created!
+[ { _id: 5a030991caa9a21efc9fd466,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 10,
+    category: 1,
+    lat: 25.0894062,
+    lng: 121.8475243,
+    name: '不厭亭',
+    description: '' },
+  { _id: 5a030c93caa9a21efc9fd46d,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 5,
+    category: 1,
+    lat: 25.108914,
+    lng: 121.845868,
+    name: '九份開成殿管理委員會',
+    description: '九份夕陽 夜景 攝影點' },
+  { _id: 5a03eb8659bfed03a41e06df,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 3,
+    category: 1,
+    lat: 25.109995,
+    lng: 121.866381,
+    name: '茶壺山',
+    description: '基隆山 夕陽' },
+  { _id: 5a03ec0e59bfed03a41e06e0,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 8,
+    category: 2,
+    lat: 25.108404,
+    lng: 121.8430243,
+    name: '海悅樓觀景茶坊',
+    description: '神隱少女拍攝點' } ]
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE :::41781
+    at Object._errnoException (util.js:1024:11)
+    at _exceptionWithHostPort (util.js:1046:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at Server.listen (net.js:1476:7)
+    at Object.<anonymous> (/home/wp2017/user/vic010744/Travel-Photography/server.js:34:47)
+    at Module._compile (module.js:635:30)
+    at Object.Module._extensions..js (module.js:646:10)
+    at Module.load (module.js:554:32)
+    at tryModuleLoad (module.js:497:12)
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE :::41781
+    at Object._errnoException (util.js:1024:11)
+    at _exceptionWithHostPort (util.js:1046:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at Server.listen (net.js:1476:7)
+    at Object.<anonymous> (/home/wp2017/user/vic010744/Travel-Photography/server.js:34:47)
+    at Module._compile (module.js:635:30)
+    at Object.Module._extensions..js (module.js:646:10)
+    at Module.load (module.js:554:32)
+    at tryModuleLoad (module.js:497:12)
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE :::41781
+    at Object._errnoException (util.js:1024:11)
+    at _exceptionWithHostPort (util.js:1046:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at Server.listen (net.js:1476:7)
+    at Object.<anonymous> (/home/wp2017/user/vic010744/Travel-Photography/server.js:34:47)
+    at Module._compile (module.js:635:30)
+    at Object.Module._extensions..js (module.js:646:10)
+    at Module.load (module.js:554:32)
+    at tryModuleLoad (module.js:497:12)
+Database created!
+[ { _id: 5a030991caa9a21efc9fd466,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 10,
+    category: 1,
+    lat: 25.0894062,
+    lng: 121.8475243,
+    name: '不厭亭',
+    description: '' },
+  { _id: 5a030c93caa9a21efc9fd46d,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 5,
+    category: 1,
+    lat: 25.108914,
+    lng: 121.845868,
+    name: '九份開成殿管理委員會',
+    description: '九份夕陽 夜景 攝影點' },
+  { _id: 5a03eb8659bfed03a41e06df,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 3,
+    category: 1,
+    lat: 25.109995,
+    lng: 121.866381,
+    name: '茶壺山',
+    description: '基隆山 夕陽' },
+  { _id: 5a03ec0e59bfed03a41e06e0,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 8,
+    category: 2,
+    lat: 25.108404,
+    lng: 121.8430243,
+    name: '海悅樓觀景茶坊',
+    description: '神隱少女拍攝點' } ]
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE :::41781
+    at Object._errnoException (util.js:1024:11)
+    at _exceptionWithHostPort (util.js:1046:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at Server.listen (net.js:1476:7)
+    at Object.<anonymous> (/home/wp2017/user/vic010744/Travel-Photography/server.js:34:47)
+    at Module._compile (module.js:635:30)
+    at Object.Module._extensions..js (module.js:646:10)
+    at Module.load (module.js:554:32)
+    at tryModuleLoad (module.js:497:12)
+Database created!
+[ { _id: 5a030991caa9a21efc9fd466,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 10,
+    category: 1,
+    lat: 25.0894062,
+    lng: 121.8475243,
+    name: '不厭亭',
+    description: '' },
+  { _id: 5a030c93caa9a21efc9fd46d,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 5,
+    category: 1,
+    lat: 25.108914,
+    lng: 121.845868,
+    name: '九份開成殿管理委員會',
+    description: '九份夕陽 夜景 攝影點' },
+  { _id: 5a03eb8659bfed03a41e06df,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 3,
+    category: 1,
+    lat: 25.109995,
+    lng: 121.866381,
+    name: '茶壺山',
+    description: '基隆山 夕陽' },
+  { _id: 5a03ec0e59bfed03a41e06e0,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 8,
+    category: 2,
+    lat: 25.108404,
+    lng: 121.8430243,
+    name: '海悅樓觀景茶坊',
+    description: '神隱少女拍攝點' } ]
+Database created!
+[ { _id: 5a030991caa9a21efc9fd466,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 10,
+    category: 1,
+    lat: 25.0894062,
+    lng: 121.8475243,
+    name: '不厭亭',
+    description: '' },
+  { _id: 5a030c93caa9a21efc9fd46d,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 5,
+    category: 1,
+    lat: 25.108914,
+    lng: 121.845868,
+    name: '九份開成殿管理委員會',
+    description: '九份夕陽 夜景 攝影點' },
+  { _id: 5a03eb8659bfed03a41e06df,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 3,
+    category: 1,
+    lat: 25.109995,
+    lng: 121.866381,
+    name: '茶壺山',
+    description: '基隆山 夕陽' },
+  { _id: 5a03ec0e59bfed03a41e06e0,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 8,
+    category: 2,
+    lat: 25.108404,
+    lng: 121.8430243,
+    name: '海悅樓觀景茶坊',
+    description: '神隱少女拍攝點' } ]
+Database created!
+[ { _id: 5a030991caa9a21efc9fd466,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 10,
+    category: 1,
+    lat: 25.0894062,
+    lng: 121.8475243,
+    name: '不厭亭',
+    description: '' },
+  { _id: 5a030c93caa9a21efc9fd46d,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 5,
+    category: 1,
+    lat: 25.108914,
+    lng: 121.845868,
+    name: '九份開成殿管理委員會',
+    description: '九份夕陽 夜景 攝影點' },
+  { _id: 5a03eb8659bfed03a41e06df,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 3,
+    category: 1,
+    lat: 25.109995,
+    lng: 121.866381,
+    name: '茶壺山',
+    description: '基隆山 夕陽' },
+  { _id: 5a03ec0e59bfed03a41e06e0,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 8,
+    category: 2,
+    lat: 25.108404,
+    lng: 121.8430243,
+    name: '海悅樓觀景茶坊',
+    description: '神隱少女拍攝點' } ]
+Database created!
+[ { _id: 5a030991caa9a21efc9fd466,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 10,
+    category: 1,
+    lat: 25.0894062,
+    lng: 121.8475243,
+    name: '不厭亭',
+    description: '' },
+  { _id: 5a030c93caa9a21efc9fd46d,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 5,
+    category: 1,
+    lat: 25.108914,
+    lng: 121.845868,
+    name: '九份開成殿管理委員會',
+    description: '九份夕陽 夜景 攝影點' },
+  { _id: 5a03eb8659bfed03a41e06df,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 3,
+    category: 1,
+    lat: 25.109995,
+    lng: 121.866381,
+    name: '茶壺山',
+    description: '基隆山 夕陽' },
+  { _id: 5a03ec0e59bfed03a41e06e0,
+    placeid: 'ChIJs-vv2xlVXTQR87cVUnPn-Es',
+    hot: 8,
+    category: 2,
+    lat: 25.108404,
+    lng: 121.8430243,
+    name: '海悅樓觀景茶坊',
+    description: '神隱少女拍攝點' } ]

@@ -41,12 +41,6 @@ app.get("/ajax_data", function(req, res) {
 	})
 }) 
 
-// create ssh server
-var server = https.createServer(options, app).listen(port, function(){
-    console.log(`Listening on port ${port}`)
-    app.use(express.static(__dirname + '/public'))
-});
-
 //save img path in mongodb(collections:files)
 //include originalname, destination, filename, path
 var imageSchema = new  mongoose.Schema({
@@ -62,10 +56,10 @@ var imageSchema = new  mongoose.Schema({
 var Image = mongoose.model('files', imageSchema);
 var storage =   multer.diskStorage({
   destination: function (req, file, callback) {
-    callback(null, './assets/upload');
+    callback(null, './public/assets/upload');
   },
   filename: function (req, file, callback) {
-  callback(null, file.fieldname + '-' + moment().format('MMMM Do YYYY, h:mm:ss a'));
+  callback(null, file.fieldname + '-' + moment().format('MMMM_Do_YYYY_h:mm:ss_a')+'.jpg');
   }
 });
 
@@ -78,7 +72,7 @@ app.post('/upload',function(req,res,next){
    if(err) {
       return res.end("Error uploading file.");
            }
-      res.end("File is uploaded");
+      res.end(req.file.path);
       console.log(req.file);
     });
 
@@ -110,6 +104,10 @@ app.post('/addname', function(req, res) {
         });
         console.log(req.body);
 });
-app.listen(port, () => {
-    console.log("Server listening on port " + port);
+// create ssh server
+var server = https.createServer(options, app).listen(port, function(){
+    console.log(`Listening on port ${port}`)
+    app.use(express.static(__dirname + '/public'))
 });
+
+
