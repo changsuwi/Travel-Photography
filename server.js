@@ -62,18 +62,19 @@ var storage =   multer.diskStorage({
   callback(null, file.fieldname + '-' + moment().format('MMMM_Do_YYYY_h:mm:ss_a')+'.jpg');
   }
 });
-
+var file;//全域變數
 var upload = multer({ storage : storage}).single('userPhoto');
 app.post('/upload',function(req,res,next){
    upload(req,res,function(err) {
    var myimg = new Image(req.file);
    myimg.save();
-
-   if(err) {
+   file = req.file;
+   res.sendfile("./public/upload_to_mongo_test.html"); //填想跳轉的頁面
+   /*if(err) {
       return res.end("Error uploading file.");
-           }
-      res.end(req.file.path);
-      console.log(req.file);
+           }*/
+      //res.end(req.file.path);
+      //console.log(req.file);
     });
 
 });
@@ -95,13 +96,16 @@ var User = mongoose.model("users", nameSchema);
 app.post('/addname', function(req, res) {
    var myData = new User(req.body);
    myData.save()
-     .then(item => {
+   // console.log(file);
+   // var img = new User(file);
+   // img.save()
+     /*.then(item => {
       res.send("Name saved to database");
                    })
 
       .catch(err => {
        res.status(400).send("Unable to save to database");
-        });
+        });*/
         console.log(req.body);
 });
 // create ssh server
