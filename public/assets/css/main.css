@@ -1107,6 +1107,14 @@ a {
   margin: 0px auto;
 }
 
+.black-popup {
+  position: relative;
+  background-color: #202228;
+  padding: 0px;
+  width: auto;
+  margin: 0px auto;
+} /*upload彈出視窗底色*/
+
 .mfp-content .white-popup .col-md-4 {
 	padding-right: 25px;
 	padding-left: 25px;
