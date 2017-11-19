@@ -14,7 +14,7 @@ var moment = require('moment');
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
-
+app.use(express.static(__dirname + '/public'));
 //mongoose
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;                                                                                                             
@@ -91,7 +91,7 @@ var nameSchema = new mongoose.Schema({
 });
 
 var User = mongoose.model("users", nameSchema);
-app.use(express.static(__dirname + '/public'));
+//app.use(express.static(__dirname + '/public'));
 app.post('/addname', function(req, res) {
    var myData = new User(req.body);
    myData.save()
