@@ -18,6 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
 <body>
+
 		<section class="head">
 		<nav class="navbar navbar-fixed-top">
 		<div class="container-fluid">
@@ -57,9 +58,9 @@
 		</nav>
 	</section>
 
+	
 <form action="/upload" enctype="multipart/form-data" method="post">
-
-	<section class="testimonial">
+	<div class="testimonial">
 		<div class="container-fluid">
 			<div class="grid">
 				<div class="row">
@@ -77,7 +78,7 @@
 							</div>
 							<div class="preview"><!-- 預覽圖開在這 -->
 			    			</div>
-							<a href="#dc" class="inline-popup btn btn-send">Confirm</a><!-- 傳送圖片 -->
+							<!-- <a href="#dc" class="inline-popup btn btn-send">Confirm</a> --><!-- 傳送圖片 -->
 						</div>
 					<!-- <form action="/upload" class="photospreview">
 			    		<input type='file' class="upl" name="upl[]" multiple>
@@ -88,14 +89,16 @@
 				</div>
 			</div>
 		</div>
-	</section>
-		
+	</div>
+	
 	<!-- <p id="demo">點擊按鈕來獲取座標</p>
 	<div id="mapholder"></div>
 	<button onclick="getLocation()" class="btn-send">get your position</button> --><!-- 這東西不能包進form -->
 
-	<div id="dc" class="black-popup mfp-hide">
-		<section class="contact-form">
+	<div id="dc" class="black-popup">
+		
+		<div class="contact-form">
+			
 			<div class="container">
 			<!-- Form -->
 				<div class="row">
@@ -162,9 +165,10 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+
 	</div>
-</form>
+	</form>
 
 
 	<section class="footer">
