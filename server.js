@@ -76,23 +76,20 @@ var storage =   multer.diskStorage({
 var upload = multer({ storage : storage}).single('userPhoto');
 app.post('/upload',function (req,res){
    upload(req,res,function(err) {
-   var img = new files(req.file);
-   var data = new files(req.body) ;//|| req.body.lastname;
-   //img.save();
-   //data.save();
-files.create({  
-      img : img,
-      data: data 
-
-               }, function (err) {
-     if (err) return handleError(err);
+     path = req.file.path
+     console.log(path)
+     firstName = req.body.firstName
+     lastName = req.body.lastName
+     MongoClient.connect(url, function(err, db) {
+	     if (err) throw err;
+	     db.collection("files").insertOne({
+         "path": path,
+         "firstname": firstName,
+         "lastname": lastName
+       })
      })
-
-	   
-   res.sendfile("./public/upload_to_mongo_test.html"); //填想跳轉的頁面 
-     
-    });
-
+     res.sendFile(__dirname + "/public/upload_to_mongo_test.html"); //填想跳轉的頁面  
+   });
 });
 
 
