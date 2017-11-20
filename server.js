@@ -48,6 +48,7 @@ var storage =   multer.diskStorage({
 var upload = multer({ storage : storage}).single('userPhoto');
 app.post('/upload',function (req,res){
    upload(req,res,function(err) {
+       console.log(req.body)
        path = '/' + req.file.path
        console.log(path)
        firstName = req.body.firstName
