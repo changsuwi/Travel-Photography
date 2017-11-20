@@ -42,6 +42,8 @@ app.get("/ajax_data", function(req, res) {
 }) 
 
 var imageSchema = new  mongoose.Schema({
+  img:String,
+  data:String,
   firstName:String,
   lastName:String,
 //fieldname:String ,
@@ -76,8 +78,17 @@ app.post('/upload',function (req,res){
    upload(req,res,function(err) {
    var img = new files(req.file);
    var data = new files(req.body) ;//|| req.body.lastname;
-   img.save();
-   data.save();
+   //img.save();
+   //data.save();
+files.create({  
+      img : img,
+      data: data 
+
+               }, function (err) {
+     if (err) return handleError(err);
+     })
+
+	   
    res.sendfile("./public/upload_to_mongo_test.html"); //填想跳轉的頁面 
      
     });
