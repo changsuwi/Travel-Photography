@@ -51,22 +51,21 @@ app.post('/upload',function (req,res){
        console.log(req.body)
        path = '/' + req.file.path
        console.log(path)
-       firstName = req.body.firstName
-       lastName = req.body.lastName
+       user = req.body.user
        topic = req.body.topic                                                   
        time = req.body.time
+
        options = req.body.options
+       if(options == '作品集') db_collect = 'Your_Story'
+       else db_collect = 'Live'
 	   
        MongoClient.connect(url, function(err, db) {
            if (err) throw err;
-	         db.collection("files").insertOne({
+	         db.collection(db_collect).insertOne({
            "path": path,
-           "firstname": firstName,
-           "lastname": lastName,
+           "user": user,
            "topic":topic,
            "time":time
-	 
-			 
            })
        })
        res.sendFile(__dirname + path); //填想跳轉的頁面  
