@@ -41,9 +41,54 @@ app.get("/ajax_data", function(req, res) {
 	})
 }) 
 
+var imageSchema = new  mongoose.Schema({
+  firstName:String,
+  lastName:String,
+//fieldname:String ,
+  originalname:String ,
+//encoding:String ,
+//mimetype:String ,
+  destination:String ,
+  filename: String,
+  path:String ,
+//size: String,
+//topic:String,
+//time:String,
+//options:String,  
+//1.即時2.作品
+//comments:String
+//User 經緯度
+	 });
+
+var files = mongoose.model('files', imageSchema);
+//module.exports = mongoose.model('files', imageSchema);
+var multer  =   require('multer');
+var storage =   multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, './public/assets/upload');
+  },
+  filename: function (req, file, callback) {
+    callback(null, file.fieldname + '-' + moment().format('MMMM Do YYYY, h:mm:ss a'));
+  }
+});
+var upload = multer({ storage : storage}).single('userPhoto');
+app.post('/upload',function (req,res){
+   upload(req,res,function(err) {
+   var img = new files(req.file);
+   var data = new files(req.body) ;//|| req.body.lastname;
+   img.save();
+   data.save();
+   res.sendfile("./public/upload_to_mongo_test.html"); //填想跳轉的頁面 
+     
+    });
+
+});
+
+
+
 //save img path in mongodb(collections:files)
 //include originalname, destination, filename, path
-var imageSchema = new  mongoose.Schema({
+/*var imageSchema = new  mongoose.Schema({
 //  fieldname:String ,
   originalname:String ,
  // encoding:String ,
@@ -70,17 +115,17 @@ app.post('/upload',function(req,res,next){
    myimg.save();
    file = req.file;
    res.sendfile("./public/upload_to_mongo_test.html"); //填想跳轉的頁面
-   /*if(err) {
-      return res.end("Error uploading file.");
-           }*/
+   //if(err) {
+      //return res.end("Error uploading file.");
+     //      }
       //res.end(req.file.path);
       //console.log(req.file);
-    });
+    //});
 
-});
+});*/
 
 // save user information in mongodb (collections:users)
-var nameSchema = new mongoose.Schema({                                                                                                         
+/*var nameSchema = new mongoose.Schema({                                                                                                         
     topic:String,
     time:String,
 //  options:String,  //1.即時2.作品
@@ -105,9 +150,9 @@ app.post('/addname', function(req, res) {
 
       .catch(err => {
        res.status(400).send("Unable to save to database");
-        });*/
-        console.log(req.body);
-});
+        });
+        //console.log(req.body);
+});*/
 // create ssh server
 var server = https.createServer(options, app).listen(port, function(){
     console.log(`Listening on port ${port}`)
