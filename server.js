@@ -68,7 +68,7 @@ var storage =   multer.diskStorage({
     callback(null, './public/assets/upload');
   },
   filename: function (req, file, callback) {
-    callback(null, file.fieldname + '-' + moment().format('MMMM Do YYYY, h:mm:ss a'));
+    callback(null, file.originalname + '-' + moment().format('MMMM Do YYYY, h:mm:ss a'));
   }
 });
 var upload = multer({ storage : storage}).single('userPhoto');
