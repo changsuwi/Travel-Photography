@@ -62,7 +62,6 @@ app.post('/upload',function (req,res){
            "path": path,
            "firstname": firstName,
            "lastname": lastName,
-	   "lastname": lastName,
            "topic":topic,
            "time":time
 	 
