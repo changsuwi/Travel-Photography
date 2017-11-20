@@ -1,25 +1,21 @@
-<html>                                                                                                                                         
+<html>
   <head>
     <title> Node and MongoDB</title>
   </head>
 
   <body>
     <h1> Node and MongoDB</h1>
-    <form method="post"  action="/addname">
- <!--     <form method="post" action="/upload"> --!>
+                                                                                         
+ <form method="post"enctype="multipart/form-data" action="/upload">
        <label>Enter Your Name</label><br>
        <input type="text" name="firstName" placeholder="Enter first name..." required>
        <input type="text" name="lastName" placeholder="Enter last name..." required>
 
+     <br>
+       <input type="file" name="userPhoto" >
+     <br>
        <input type="submit" value="Upload " name="submit">
-     </form>
 
- <form method="post"enctype="multipart/form-data" action="/upload">
-     <br>
-     <input type="file" name="userPhoto" >
-     <br>
-      <input type="submit" value="Upload " name="submit">
-
-    </form>
-  </body>
+  </form>
+  `</body>
 </html>
