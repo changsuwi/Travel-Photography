@@ -5,6 +5,19 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Map</title>
+    <meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="assets/ionicons-2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <style>
     /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -24,10 +37,51 @@
 </head>
 
 <body>
+	<section class="head">
+		<nav class="navbar navbar-inverse navbar-fixed-top"><!-- 讓上面的選單條會一直出現在畫面上-->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<header class="header">
+						<div class="inner">
+							<a href="#menu" class="nav-bars">
+								<img src="assets/images/nav-icon.png" class="img-responsive" alt="Collapsable Navbar">
+							</a>
+							<a href="index.html" class="logo">
+								INVENTI<span><img src="assets/images/logo.png"></span>N
+							</a>
+						</div>
+					</header>
+					
+					<!-- Menu -->
+
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="maps.html">Maps</a></li>
+							<li><a href="news.html">News</a></li>
+							<li><a href="myphotos.html">My Photos</a></li>
+							<li><a href="upload.html">Upload</a></li>
+							<li><a href="login.html">Log in</a></li>
+							<li><a href="aboutus.html">About Us</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		</nav>
+	</section>
     <div id="map"></div>
     <script src="assets/js/map.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeVo8TE2AGQ24zvvwF8otKrCQCtory7rA&callback=initMap">
     </script>
+    <script src="assets/js/jquery-3.1.0.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	
+	<script src="assets/js/script.js"></script>
 </body>
 
 </html>
