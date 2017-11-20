@@ -36,6 +36,22 @@ app.get("/ajax_data", function(req, res) {
 	})
 }) 
 
+app.get("/search_autocomplete", function(req, res) {
+    console.log(req.query.query)
+    query = req.query.query
+    MongoClient.connect(url, function(err, db) {
+      if (err) throw err;
+      console.log("Database created!");
+      db.collection("Location").find({'name': {'$regex': query}}).toArray(function(err, result) {
+          if (err) throw err;
+          console.log(result);
+          res.json(result);
+          db.close();
+      })
+  })
+}) 
+
+
 var multer  =   require('multer');
 var storage =   multer.diskStorage({
     destination: function (req, file, callback) {

@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="assets/css/magnific-popup.css">
 
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+
 </head>
 <body>
 
@@ -117,7 +119,12 @@
 									</div>
 								</div>
 							</div>
-							
+							<div class="row">
+                                <div class="col-md-12">
+                                    <input type="text" class="typeahead form-control" " name="location" id="location">
+                                    <!-- 地點 -->
+                                </div>
+                            </div>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="row">
@@ -188,13 +195,38 @@
 		</div>
 	</nav>
 	</section>
+	<!-- autocomplete的javascript我先暫時寫在這邊 -->
 
 	<script src="assets/js/jquery-3.1.0.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/owl.carousel.min.js"></script>
 	<script src="assets/js/jquery.magnific-popup.min.js"></script>
-
+	<script src="assets/js/bootstrap3-typeahead.min.js"></script>
 	<script src="assets/js/upload.js"></script>
 	<script src="assets/js/script.js"></script>
+	<!-- autocomplete的javascript我先暫時寫在這邊 -->
+    <script type="text/javascript">
+    $(function() {
+        $('#location').typeahead({
+            //source: [
+            //  {name: "abecrobie"},
+            //  {name: "balloon"},
+            //  {name: "bella"}
+            //]
+            source: function(query, process) {
+                return $.get(
+                    './search_autocomplete', { query: query },
+                    function(data) {
+                        console.log(data);
+                        //data = $.parseJSON(data);
+                        console.log(data);
+                        // the fucking function "process" below just won't work
+                        return process(data);
+                    },
+                )
+            }
+        });
+    });
+    </script>
 </body>
 </html>
