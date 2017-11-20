@@ -52,12 +52,21 @@ app.post('/upload',function (req,res){
        console.log(path)
        firstName = req.body.firstName
        lastName = req.body.lastName
+       topic = req.body.topic                                                   
+       time = req.body.time
+       options = req.body.options
+	   
        MongoClient.connect(url, function(err, db) {
            if (err) throw err;
 	         db.collection("files").insertOne({
            "path": path,
            "firstname": firstName,
-           "lastname": lastName
+           "lastname": lastName,
+	   "lastname": lastName,
+           "topic":topic,
+           "time":time
+	 
+			 
            })
        })
        res.sendFile(__dirname + path); //填想跳轉的頁面  
