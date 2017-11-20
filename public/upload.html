@@ -57,26 +57,28 @@
 		</nav>
 	</section>
 
+<form action="/upload" enctype="multipart/form-data" method="post">
+
 	<section class="testimonial">
 		<div class="container-fluid">
 			<div class="grid">
 				<div class="row">
-					<div class="col-md-6">
+					<!-- <div class="col-md-6">
 						<p id="demo"></p>
 						<div id="mapholder"></div>
 						<button onclick="getLocation()" class="btn-send">get your position</button>
-					</div>
-					<div class="col-md-6">
-						<form action="/upload" enctype="multipart/form-data" method="post" class="photospreview">
-							<div class="col-md-4">
+					</div> -->
+					<div class="col-md-12">
+						<div class="photospreview">
+							<div class="col-md-5">
 							</div>
-							<div class="col-md-8">
+							<div class="col-md-7">
 							<input type="file" class="upl" name="userPhoto" accept="image/*"><!-- 接收圖片 -->
 							</div>
 							<div class="preview"><!-- 預覽圖開在這 -->
 			    			</div>
-							<input href="#dc" type="submit" class="inline-popup btn btn-send" value="Confirm"><!-- 傳送圖片 -->
-						</form>
+							<a href="#dc" class="inline-popup btn btn-send">Confirm</a><!-- 傳送圖片 -->
+						</div>
 					<!-- <form action="/upload" class="photospreview">
 			    		<input type='file' class="upl" name="upl[]" multiple>
 			    		<div class="preview">
@@ -99,7 +101,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h1>Description</h1>
-						<form action="/addname" method="post" class="form-name-email">
+						<div class="form-name-email">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
@@ -110,34 +112,6 @@
 									<div class="form-group">
 										<input type="datetime-local" class="form-control" name="time" id="time"><!-- 時間 -->
 									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-										<select class="form-control">
-											<option selected="selected">Select Location</option>
-											<option>台北市</option>
-											<option>新北市</option>
-											<option>桃園市</option>
-											<option>台中市</option>
-											<option>台南市</option>
-											<option>高雄市</option>
-											<option>基隆市</option>
-											<option>新竹市</option>
-											<option>嘉義市</option>
-											<option>新竹縣</option>
-											<option>苗栗縣</option>
-											<option>彰化縣</option>
-											<option>南投縣</option>
-											<option>雲林縣</option>
-											<option>嘉義縣</option>
-											<option>屏東縣</option>
-											<option>宜蘭縣</option>
-											<option>花蓮縣</option>
-											<option>台東縣</option>
-											<option>澎湖縣</option>
-										</select>
-									
 								</div>
 							</div>
 							
@@ -184,13 +158,13 @@
 									</p>
 								</div>
 							</div>
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 	</div>
-
+</form>
 
 
 	<section class="footer">
