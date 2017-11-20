@@ -70,13 +70,13 @@ var storage =   multer.diskStorage({
     callback(null, './public/assets/upload');
   },
   filename: function (req, file, callback) {
-    callback(null, file.originalname + '-' + moment().format('MMMM Do YYYY, h:mm:ss a'));
+    callback(null, moment().format('MMMM_Do_YYYY_h:mm:ss_a') + '.jpg');
   }
 });
 var upload = multer({ storage : storage}).single('userPhoto');
 app.post('/upload',function (req,res){
    upload(req,res,function(err) {
-     path = req.file.path
+     path = '/' + req.file.path
      console.log(path)
      firstName = req.body.firstName
      lastName = req.body.lastName
@@ -88,7 +88,7 @@ app.post('/upload',function (req,res){
          "lastname": lastName
        })
      })
-     res.sendFile(__dirname + "/public/upload_to_mongo_test.html"); //填想跳轉的頁面  
+     res.sendFile(__dirname + path); //填想跳轉的頁面  
    });
 });
 
