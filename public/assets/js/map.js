@@ -53,11 +53,11 @@ function initMap() {
             console.log(data[k].placeid);
 
             // infowindow's html code
-            var contentString = '<div id="content">' +
-                '<div id="siteNotice">' +
+            var contentString = '<div>' +
+                '<div>' +
                 '</div>' +
-                '<h1>' + name + '</h1>' +
-                '<p>' + description + '</p>' +
+                '<h1 style="color:black;">' + name + '</h1>' +
+                '<p style="color:black;">' + description + '</p>' +
                 '</div>';
             // set the scene marker
             marker['infowindow'] = new google.maps.InfoWindow({
