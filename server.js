@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(express.static(__dirname + '/public'));
 //const app = express()//我移到前面宣告
-const port = 41781
+const port = 4178
 
 // mongo 
 var MongoClient = require('mongodb').MongoClient;
@@ -97,7 +97,7 @@ app.post('/upload',function (req,res){
        user = req.body.user
        topic = req.body.topic                                                   
        time = req.body.time
-
+       comments = req.body.comments
        options = req.body.options
        if(options == '作品集') db_collect = 'Your_Story'
        else db_collect = 'Live'
@@ -108,7 +108,9 @@ app.post('/upload',function (req,res){
            "path": path,
            "user": user,
            "topic":topic,
-           "time":time
+           "time":time,
+           "comments":comments,
+           "options":options
            })
        })
        res.sendFile(__dirname + path); //填想跳轉的頁面  
