@@ -36,6 +36,33 @@ app.get("/ajax_data", function(req, res) {
 	})
 }) 
 
+//回傳live＆your_story//判斷前端的呼應
+/*app.get("/ajax_data", function(req, res) {
+    MongoClient.connect(url, function(err, db) {
+	    if (err) throw err;
+	    console.log("Database created!");
+	    db.collection("Live").find({}).toArray(function(err, result) {
+	        if (err) throw err;
+	        console.log(result);
+	        res.json(result);
+	        db.close();
+	    })
+	})
+}) 
+app.get("/ajax_data", function(req, res) {
+    MongoClient.connect(url, function(err, db) {
+	    if (err) throw err;
+	    console.log("Database created!");
+	    db.collection("Your_Story").find({}).toArray(function(err, result) {
+	        if (err) throw err;
+	        console.log(result);
+	        res.json(result);
+	        db.close();
+	    })
+	})
+}) 
+
+*/
 app.get("/search_autocomplete", function(req, res) {
     console.log(req.query.query)
     query = req.query.query
