@@ -32,7 +32,7 @@ function initMap() {
     });
 
     // get data from server
-    get_json("ajax_data", function(data) {
+    get_json("map_initial", function(data) {
         
         // decode json
 
@@ -43,6 +43,9 @@ function initMap() {
             var lat = data[k].lat;
             var lng = data[k].lng;
             var description = data[k].description;
+            var live_path = data[k].live;
+            var your_story_path = data[k].your_story;
+
             var point = new google.maps.LatLng(lat, lng);
             var marker = new google.maps.Marker({
                 map: map,
@@ -58,6 +61,8 @@ function initMap() {
                 '</div>' +
                 '<h1 style="color:black;">' + name + '</h1>' +
                 '<p style="color:black;">' + description + '</p>' +
+                '<img src =' + live_path + 'class="img-responsive">' +
+                '<img src =' + your_story_path + 'class="img-responsive">' +
                 '</div>';
             // set the scene marker
             marker['infowindow'] = new google.maps.InfoWindow({

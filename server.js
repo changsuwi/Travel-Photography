@@ -16,14 +16,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(express.static(__dirname + '/public'));
 //const app = express()//我移到前面宣告
-const port = 4178
+const port = 41781
 
 // mongo 
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://wp2017_groupi:wp2017_groupi@luffy.ee.ncku.edu.tw:27017/wp2017_groupi";
 
 // when map.js request ajax from maps.html
-app.get("/ajax_data", function(req, res) {
+app.get("/map_initial", function(req, res) {
     MongoClient.connect(url, function(err, db) {
 	    if (err) throw err;
 	    console.log("Database created!");
