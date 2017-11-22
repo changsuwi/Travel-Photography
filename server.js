@@ -120,7 +120,7 @@ app.post('/upload',function (req,res){
             var myquery = {"name": location };
             var newvalue;
             if(db_collect == 'Live') newvalues = {$set: {live : path }};
-            else newvalue = {$set: {your_story : path}};
+            else newvalues = {$set: {your_story : path}};
             db.collection("Location").updateOne(myquery, newvalues, function(err, res) {
               if (err) throw err;
               console.log(location + " " + db_collect);
