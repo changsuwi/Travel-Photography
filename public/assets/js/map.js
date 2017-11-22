@@ -61,7 +61,7 @@ function initMap() {
                 '</div>' +
                 '<h1 style="color:black;">' + name + '</h1>' +
                 '<p style="color:black;">' + description + '</p>' +
-                '<img src =' + live_path + 'class="img-responsive">' +
+                '<img class="img-responsive" src =' + live_path +'>'  +
                 '<img src =' + your_story_path + 'class="img-responsive">' +
                 '</div>';
             // set the scene marker

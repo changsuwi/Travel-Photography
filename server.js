@@ -92,13 +92,15 @@ var upload = multer({ storage : storage}).single('userPhoto');
 app.post('/upload',function (req,res){
    upload(req,res,function(err) {
        console.log(req.body)
-       path = '/' + req.file.path
+       path = req.file.path.slice(6)
        console.log(path)
        user = req.body.user
        topic = req.body.topic                                                   
        time = req.body.time
        comments = req.body.comments
        options = req.body.options
+       location = req.body.location
+       console.log(location)
        if(options == '作品集') db_collect = 'Your_Story'
        else db_collect = 'Live'
 	   
@@ -110,8 +112,21 @@ app.post('/upload',function (req,res){
            "topic":topic,
            "time":time,
            "comments":comments,
-           "options":options
+           "options":options,
+           "location": location
            })
+           if( location != "" ){
+            
+            var myquery = {"name": location };
+            var newvalue;
+            if(db_collect == 'Live') newvalues = {$set: {live : path }};
+            else newvalue = {$set: {your_story : path}};
+            db.collection("Location").updateOne(myquery, newvalues, function(err, res) {
+              if (err) throw err;
+              console.log(location + " " + db_collect);
+              db.close();
+            });
+           }
        })
        res.sendFile(__dirname + path); //填想跳轉的頁面  
    });
