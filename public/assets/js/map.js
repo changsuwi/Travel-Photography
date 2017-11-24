@@ -57,14 +57,16 @@ function initMap() {
             console.log(data[k].placeid);
 
             // infowindow's html code
-            var contentString = '<div>' +
-                '<div>' +
-                '</div>' +
-                '<h1 style="color:black;">' + name + '</h1>' +
-                '<p style="color:black;">' + description + '</p>' +
-                '<img class="img-responsive" src =' + live_path +'>'  +
-                '<img src =' + your_story_path + 'class="img-responsive">' +
-                '</div>';
+            var contentString = '<h1 style="color:black; text-align:center;">' + name + '</h1>' +
+ +                '<p style="color:black; text-align:center;">' + description + '</p>' +
+ +                '<div class="row">' +
+ +                '<div class="col-sm-6">' +
+ +                '<h2 style="color:black; text-align:center;"> 即時影像 </h2>' +
+ +                '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + live_path + '>' + '</div>' +
+ +                '<div class="col-sm-6">' +
+ +                '<h2 style="color:black; text-align:center;"> 相關作品 </h2>' +
+ +                '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
+                  '</div>'
             // set the scene marker
             marker['infowindow'] = new google.maps.InfoWindow({
                 content: contentString
