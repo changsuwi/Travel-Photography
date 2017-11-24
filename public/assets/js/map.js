@@ -34,8 +34,11 @@ function initMap() {
     // get data from server
     get_json("map_initial", function(data) {
 
-        // decode json
 
+        // initial only one infowindow to marker
+
+        var infoWindow = new google.maps.InfoWindow();
+        // decode json
         for (var k in data) {
             var placeid = data[k].placeid;
             var name = data[k].name;
@@ -69,19 +72,16 @@ function initMap() {
                 '</div>' +
                 '</div>';
             // set the scene marker
-            marker['infowindow'] = new google.maps.InfoWindow({
-                content: contentString
+            
+
+
+            // set event listener and scene infowindow
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infoWindow.setContent(contentString);
+                infoWindow.open(map, this);
             });
 
-            // set scene infowindow
-
-            google.maps.event.addListener(marker, 'mouseover', function() {
-                this['infowindow'].open(map, this);
-            });
-
-            google.maps.event.addListener(marker, 'mouseout', function() {
-                this['infowindow'].close();
-            });
         }
 
 
