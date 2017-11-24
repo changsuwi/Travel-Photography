@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+  <!-- the script below will load the Facebook JavaScript SDK -->
+  <!-- it should be placed after the <body> tag -->
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId    : '138219450232304',
+        cookie : true,
+        xfbml : true,
+        version : 'v2.11'
+      });
+
+      FB.AppEvents.logPageView();
+
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  
+  </script>
+  <script>
+    // my functions
+    function funcLogin() {
+      FB.getLoginStatus(function(response) {
+        if(response.status === 'connected') {
+          console.log('connected');
+        } else if (response.status === 'not_authorized') {
+          // the user is logged into facebook,
+          // but has not authenticated your app
+          console.log('user is logged into facebook, but not the website.');
+        } else {
+          // the user isn't logged into facebook
+          console.log('not logged in facebook');
+        }
+      });
+    }
+  </script>
+
+
+  <!-- this script will load the SDK(好像跟上面有重複) -->
+  <div id="fb-root"></div>
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.11&appId=138219450232304';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  
+  <button onclick="funcLogin()">show status</button><br>
+  按這個鈕可以在console看到目前的狀態<br>
+  狀態1: 已登入facebook跟目前網站<br>
+  狀態2: 已登入facebook但尚未登入目前網站<br>
+  狀態3: 尚未登入facebook<br>
+  
+  <br>
+  <br>
+  <!-- put this div wherever you want the plugin to appear on your page -->
+  <div class="fb-login-button" 
+    data-max-rows="1" 
+    data-size="large" 
+    data-button-type="login_with" 
+    data-show-faces="false" 
+    data-auto-logout-link="true" 
+    data-use-continue-as="false"
+  ></div>
+
+</body>
+</html>
