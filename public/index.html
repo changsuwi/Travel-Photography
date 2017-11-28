@@ -22,6 +22,31 @@
 
 </head>
 <body>
+
+	<!-- the script below should be placed just after the body tag -->
+  <!-- 每個頁面基本上都需要include以下的程式碼 -->
+  <!-- 來載入Facebook javascript SDK -->
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId             : '138219450232304',
+        autoLOgAppEvents  : true,
+        xfbml             : true,
+        version           : 'v2.11'
+      });
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/zh_TW/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+
+
 	<section class="head">
 		<nav class="navbar navbar-fixed-top"><!-- 讓上面的選單條會一直出現在畫面上-->
 		<div class="container-fluid">
@@ -438,6 +463,12 @@
 								<img src="assets/images/add.png">AdCholces
 							</a>
 						</li> -->
+
+            <!-- test-->
+            <button onclick="func()">get status</button>
+            <div id="login_status">hi</div>
+            <!-- end of test-->
+
 					</ul>
 				</div>
 				<div class="col-md-6">
@@ -448,6 +479,27 @@
 			</div>
 		</div>
 	</section>
+
+  <!--test-->
+  <script>
+    
+    //document.getElementById('login_status').addEventListener('load', func);
+
+    function func() {
+      FB.getLoginStatus(function(response) {
+        console.log(response);
+        if (response.status === 'connected') { 
+          FB.api('/me', function(response) {
+            document.getElementById('login_status').innerHTML = "logged in as " + response.name;
+            console.log('logged in as ' + response.name);
+          });
+        } else {
+          document.getElementById('login_status').innerHTML = "not logged in";
+        }
+      });
+    }
+
+  </script>
 
 
 	<script src="assets/js/jquery-3.1.0.min.js"></script>
