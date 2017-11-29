@@ -42,9 +42,10 @@ function initMap() {
       handleLocationError(false, infoWindow, map.getCenter());
     }
 
+    var show_infowindow
     // get data from server
     get_json("map_initial", function(data) {
-
+        
         // decode json
 
         for (var k in data) {
@@ -67,18 +68,16 @@ function initMap() {
             console.log(data[k].placeid);
 
             // infowindow's html code
-            var contentString = '<div>' +
-                '<h1 style="color:black; text-align:center;">' + name + '</h1>' +
-                '<p style="color:black; text-align:center;">' + description + '</p>' +
-                '<div class="row">' +
-                '<div class="col-sm-6">' +
-                '<h2 style="color:black; text-align:center;"> 即時影像 </h2>' +
-                '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + live_path + '>' + '</div>' +
-                '<div class="col-sm-6">' +
-                '<h2 style="color:black; text-align:center;"> 相關作品 </h2>' +
-                '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
-                '</div>' +
-                '</div>';
+            var contentString = '<h1 style="color:black; text-align:center;">' + name + '</h1>' +
+                 '<p style="color:black; text-align:center;">' + description + '</p>' +
+                 '<div class="row">' +
+                 '<div class="col-sm-6">' +
+                 '<h2 style="color:black; text-align:center;"> 即時影像 </h2>' +
+                 '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + live_path + '>' + '</div>' +
+                 '<div class="col-sm-6">' +
+                 '<h2 style="color:black; text-align:center;"> 相關作品 </h2>' +
+                 '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
+                 '</div>'
             // set the scene marker
             marker['infowindow'] = new google.maps.InfoWindow({
                 content: contentString
@@ -86,13 +85,18 @@ function initMap() {
 
             // set scene infowindow
 
-            google.maps.event.addListener(marker, 'mouseover', function() {
+            google.maps.event.addListener(marker, 'click', function() {
+                if(typeof show_infowindow != 'undefined'){
+                    console.log(typeof show_infowindow)
+                    show_infowindow.close();                 
+                }
                 this['infowindow'].open(map, this);
+                show_infowindow = this['infowindow'];
             });
 
-            google.maps.event.addListener(marker, 'mouseout', function() {
+            /*google.maps.event.addListener(marker, 'mouseout', function() {
                 this['infowindow'].close();
-            });
+            });*/
         }
 
 
