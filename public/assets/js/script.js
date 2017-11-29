@@ -124,14 +124,54 @@ $('.inline-popup').magnificPopup({
   type:'inline',
   midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
   gallery:{
-    enabled:true
+  enabled:true
   }
 });
 
-
+$("#show").click(function(){
+        $("#dc").show();
+    });
 /*$('.grid').masonry({
   // options
   itemSelector: '.grid-item',
   columnWidth: 200
 });
 */
+
+//照片元素
+$(window).load(function(){
+var $this=$('.img-responsive').exifLoad(function(){
+var make=$this.exif("Make");
+var model=$this.exif("Model");
+var t=$this.exif("ExposureTime");
+var f=$this.exif("FNumber");
+var length=$this.exif("FocalLength");
+var iso=$this.exif("ISOSpeedRatings");
+var ev=$this.exif("ExposureBias");
+var soft=$this.exif("Software");
+var date=$this.exif("DateTime");
+var dpi=$this.exif("XResolution");
+var sa=$this.exif("Saturation");
+var sha=$this.exif("Sharpness");
+var wb=$this.exif("WhiteBalance");
+
+if(t<1){
+t="1/"+Math.round(1/t);
+}else{
+t=t+"秒";
+}
+var evnum = new Number(ev);
+ev=evnum.toFixed(1);
+
+var showExit= "相機："+make+" "+"型號："+model+"<br>"+
+　"快門："+t+" ("+$this.exif("ExposureTime")+"sec)"+"光圈：F"+f+"<br>"+
+　"ISO："+iso+" "+"焦段："+length+"mm<br>"+
+　"曝光補償："+ev+" "+"白平衡："+wb+"<br>"+
+  "飽和度："+sa+" "+"銳利度："+sha+"<br>"+
+　"軟體："+soft+" "+"解析度："+dpi+"DPI<br>"+ 
+  "日期："+date;
+
+$(".exif-data").html(showExit.replace(new RegExp(String.fromCharCode(0), "g"), ''));
+// alert("完整Exif資料：\r\n \r\n"+$this.exifPretty());
+});
+});
