@@ -35,7 +35,6 @@
         version           : 'v2.11'
       });
     };
-
     (function(d, s, id){
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {return;}
@@ -45,8 +44,6 @@
     }(document, 'script', 'facebook-jssdk'));
   </script>
 
-
-
 	<section class="head">
 		<nav class="navbar navbar-fixed-top"><!-- 讓上面的選單條會一直出現在畫面上-->
 		<div class="container-fluid">
@@ -55,7 +52,7 @@
 					<header class="header">
 						<div class="inner">
 							<a href="#menu" class="nav-bars">
-								<img src="assets/images/nav-icon.png" class="img-responsive" alt="Collapsable Navbar">
+								<img src='assets/images/nav-icon.png' class="img-responsive" alt="Collapsable Navbar">
 							</a>
 							<a href="index.html" class="logo">
 								INVENTI<span><img src="assets/images/logo.png"></span>N
@@ -144,7 +141,7 @@
 										<p id="topic1">RESEARCH & SOURCING</p>
 									</div>
 									<a href="#1" class="inline-popup"><!-- 點案後跳出 -->
-										<img src="assets/images/1.jpg" class="img-responsive" alt="Responsive image">
+										<img src='assets/images/1.jpg' class='img-responsive' alt="Responsive image">
 									</a>
 								</div>
 							</div>
@@ -154,15 +151,22 @@
 						  	<div class="container-fluid">
 								<div class="row">
 									<div class="pop-up-color">
-										<div class="col-md-7 p-l-0 p-r-0">
-											<img src="assets/images/1.jpg" class="img-responsive" alt="Responsive image">
-										</div>
-										<div class="col-md-5">
-											<div>
-												<h4 class="popup-head">RESEARCH & SOURCING</h4>
+										<div class=ImageExif>
+											<div class="col-md-7 p-l-0 p-r-0">
+												<img src="assets/images/1.jpg" exit='ture' class="img-responsive" alt="Responsive image">
 											</div>
-											<div>
-												<p class="popup-parapraph"><a>Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											<div class="col-md-5">
+												<div>
+													<h4 id="topic1_1" class="popup-head">RESEARCH & SOURCING</h4>
+												</div>
+												<div>
+													<h5 id="location" class='popup-head'>Taiwan
+														<div class="exif-data"></div>
+													</h5>
+												</div>
+												<div>
+													<p id="comments" class="popup-parapraph"><a id="user">Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -187,15 +191,22 @@
 						  	<div class="container-fluid">
 								<div class="row">
 									<div class="pop-up-color">
-										<div class="col-md-7 p-l-0 p-r-0">
-											<img src="assets/images/2.jpg" class="img-responsive" alt="Responsive image">
-										</div>
-										<div class="col-md-5">
-											<div>
-												<h4 class="popup-head">NCKU</h4>
+										<div class=ImageExif>
+											<div class="col-md-7 p-l-0 p-r-0">
+												<img src="assets/images/2.jpg" class="img-responsive" alt="Responsive image">
 											</div>
-											<div>
-												<p class="popup-parapraph"><a>Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											<div class="col-md-5">
+												<div>
+													<h4 class="popup-head">NCKU</h4>
+												</div>
+												<div>
+													<h5 id="location" class='popup-head'>Taiwan
+														<div class="exif-data"></div>
+													</h5>
+												</div>
+												<div>
+													<p class="popup-parapraph"><a>Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -224,15 +235,22 @@
 						  	<div class="container-fluid">
 								<div class="row">
 									<div class="pop-up-color">
-										<div class="col-md-7 p-l-0 p-r-0">
-											<img src="assets/images/3.jpg" class="img-responsive" alt="Responsive image">
-										</div>
-										<div class="col-md-5">
-											<div>
-												<h4 class="popup-head">TRAVEL & GUIDE</h4>
+										<div class=ImageExif>
+											<div class="col-md-7 p-l-0 p-r-0">
+												<img src="assets/images/3.jpg" class="img-responsive" alt="Responsive image">
 											</div>
-											<div>
-												<p class="popup-parapraph"><a>Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											<div class="col-md-5">
+												<div>
+													<h4 class="popup-head">TRAVEL & GUIDE</h4>
+												</div>
+												<div>
+													<h5 id="location" class='popup-head'>Taiwan
+														<div class="exif-data"></div>
+													</h5>
+												</div>
+												<div>
+													<p class="popup-parapraph"><a>Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -253,19 +271,26 @@
 							</div>
 						</div>
 
-						<div id="4" class="white-popup mfp-hide">
+						<div id="42" class="white-popup mfp-hide">
 						  	<div class="container-fluid">
 								<div class="row">
 									<div class="pop-up-color">
-										<div class="col-md-7 p-l-0 p-r-0">
-											<img src="assets/images/4.jpg" class="img-responsive" alt="Responsive image">
-										</div>
-										<div class="col-md-5">
-											<div>
-												<h4 class="popup-head">OBSERVATION</h4>
+										<div class=ImageExif>
+											<div class="col-md-7 p-l-0 p-r-0">
+												<img src="assets/images/4.jpg" class="img-responsive" alt="Responsive image">
 											</div>
-											<div>
-												<p class="popup-parapraph"><a>Sabrina Chu</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											<div class="col-md-5">
+												<div>
+													<h4 class="popup-head">OBSERVATION</h4>
+												</div>
+												<div>
+													<h5 id="location" class='popup-head'>Taiwan
+														<div class="exif-data"></div>
+													</h5>
+												</div>
+												<div>
+													<p class="popup-parapraph"><a>Sabrina Chu</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -294,15 +319,22 @@
 						  	<div class="container-fluid">
 								<div class="row">
 									<div class="pop-up-color">
-										<div class="col-md-7 p-l-0 p-r-0">
-											<img src="assets/images/5.jpg" class="img-responsive" alt="Responsive image">
-										</div>
-										<div class="col-md-5">
-											<div>
-												<h4 class="popup-head">IT SOLUTION</h4>
+										<div class=ImageExif>
+											<div class="col-md-7 p-l-0 p-r-0">
+												<img src="assets/images/5.jpg" class="img-responsive" alt="Responsive image">
 											</div>
-											<div>
-												<p class="popup-parapraph"><a>Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											<div class="col-md-5">
+												<div>
+													<h4 class="popup-head">IT SOLUTION</h4>
+												</div>
+												<div>
+													<h5 id="location" class='popup-head'>Taiwan
+														<div class="exif-data"></div>
+													</h5>
+												</div>
+												<div>
+													<p class="popup-parapraph"><a>Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -327,15 +359,22 @@
 						  	<div class="container-fluid">
 								<div class="row">
 									<div class="pop-up-color">
-										<div class="col-md-7 p-l-0 p-r-0">
-											<img src="assets/images/6.jpg" class="img-responsive" alt="Responsive image">
-										</div>
-										<div class="col-md-5">
-											<div>
-												<h4 class="popup-head">SEA OF CLOUDS</h4>
+										<div class=ImageExif>
+											<div class="col-md-7 p-l-0 p-r-0">
+												<img src="assets/images/6.jpg" class="img-responsive" alt="Responsive image">
 											</div>
-											<div>
-												<p class="popup-parapraph"><a>Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											<div class="col-md-5">
+												<div>
+													<h4 class="popup-head">SEA OF CLOUDS</h4>
+												</div>
+												<div>
+													<h5 id="location" class='popup-head'>Taiwan
+														<div class="exif-data"></div>
+													</h5>
+												</div>
+												<div>
+													<p class="popup-parapraph"><a>Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -353,17 +392,17 @@
 	<section class="testimonial">
 		<div class="container">
 			<div class="owl-carousel owl-theme" id="testimonial">
-			    <div class="carousel-item">
+			   <!--  <div class="carousel-item">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
-							<IFrame Src="aboutus.html" Name="float" Width="100%" Height="250" Align="center" Scrolling="yes"></IFrame><!-- 懸浮視窗測試 -->
-					    	<!-- <div class="text-center">
+							<IFrame Src="aboutus.html" Name="float" Width="100%" Height="250" Align="center" Scrolling="yes"></IFrame>
+					    	<div class="text-center">
 					    		<p>“ I've been using Medium Rare templates for a couple of years now - they're always highly polished and backed up by amazing support.”</p>
 					    		<p>— Sam Prichard, Interface Designer</p>
-					    	</div> -->
+					    	</div>
 					    </div>
 					</div>
-			    </div>
+			    </div> -->
 			    <div class="carousel-item">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
@@ -463,12 +502,6 @@
 								<img src="assets/images/add.png">AdCholces
 							</a>
 						</li> -->
-
-            <!-- test-->
-            <button onclick="func()">get status</button>
-            <div id="login_status">hi</div>
-            <!-- end of test-->
-
 					</ul>
 				</div>
 				<div class="col-md-6">
@@ -480,11 +513,9 @@
 		</div>
 	</section>
 
-  <!--test-->
-  <script>
+	<script>
     
     //document.getElementById('login_status').addEventListener('load', func);
-
     function func() {
       FB.getLoginStatus(function(response) {
         console.log(response);
@@ -498,14 +529,13 @@
         }
       });
     }
-
-  </script>
-
+ 	</script>
 
 	<script src="assets/js/jquery-3.1.0.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/owl.carousel.min.js"></script>
 	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script src='assets/js/exif.js'></script>
 	
 	<script src="assets/js/script.js"></script>
 
