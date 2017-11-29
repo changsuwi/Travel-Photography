@@ -23,7 +23,7 @@ function initMap() {
     var icon_image = './assets/images/icons/camera.png';
     var center = { lat: 25.0894062, lng: 121.8475243 };
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 14,
+        zoom: 12,
         center: center,
     });
     // Try HTML5 geolocation.
