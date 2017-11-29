@@ -20,8 +20,9 @@ function get_json(url, callback) {
 
 var icon_image = './assets/images/icons/camera.png';
 var center = { lat: 25.0894062, lng: 121.8475243 };
+var show_infowindow;
 
-function plot_marker(map, marker, data, show_infowindow){
+function plot_marker(map, marker, data){
     var placeid = data.placeid;
     var name = data.name;
     var hot = data.hot;
@@ -81,11 +82,11 @@ function initMap() {
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
+        center = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-        map.setCenter(pos);
+        map.setCenter(center);
       }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
       });
@@ -94,7 +95,6 @@ function initMap() {
       handleLocationError(false, infoWindow, map.getCenter());
     }
 
-    var show_infowindow
     // get data from server
     get_json("map_initial", function(data) {
         
@@ -153,7 +153,7 @@ function initMap() {
     });
 }
 function refresh_map(){
-    var show_infowindow;
+
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
         center: center,
@@ -170,7 +170,7 @@ function refresh_map(){
             for (var k in scene_data) {
                 if(scene_data[k].hot.day >= 1){
                     console.log("innnnn1");
-                    plot_marker(map, marker, scene_data[k], show_infowindow);
+                    plot_marker(map, marker, scene_data[k]);
                 }
                     
             }
@@ -179,7 +179,7 @@ function refresh_map(){
             for (var k in scene_data) {
                 if(scene_data[k].hot.week >= 1){
                     console.log("innnnn2");
-                    plot_marker(map, marker, scene_data[k], show_infowindow);
+                    plot_marker(map, marker, scene_data[k]);
                 }
                     
             }
@@ -188,7 +188,7 @@ function refresh_map(){
             for (var k in scene_data) {
                 if(scene_data[k].hot.month >= 1){
                     console.log("innnnn3");
-                    plot_marker(map, marker, scene_data[k], show_infowindow);
+                    plot_marker(map, marker, scene_data[k]);
                 }
                     
             }
@@ -198,18 +198,14 @@ function refresh_map(){
             for (var k in scene_data) {
                 if(scene_data[k].hot.year >= 1){
                     console.log("innnnn4");
-                    plot_marker(map, marker, scene_data[k], show_infowindow);
+                    plot_marker(map, marker, scene_data[k]);
                 }
                     
             }
             break;
         case "5":
             for (var k in scene_data) {
-                if(scene_data[k].hot.total >= 1){
-                    console.log("innnnn2");
-                    plot_marker(map, marker, scene_data[k], show_infowindow);
-                }
-                    
+                plot_marker(map, marker, scene_data[k]);
             }
             break;
     }
