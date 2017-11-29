@@ -1268,6 +1268,7 @@ section.testimonial_myphoto h2, h3{
 }
 
 .exif-data{
+	font-size: 0.83em;
 	font-color: #333;
 	font-family: 'Rubik-Light', sans-serif;
 }
