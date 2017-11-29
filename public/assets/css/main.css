@@ -802,6 +802,7 @@ body.is-menu-visible #menu {
     background-color: #1e2026;
 }
 
+
 .owl-carousel .owl-nav .owl-next {
     position: absolute;
     left: 0;
@@ -1156,8 +1157,13 @@ a {
 }
 
 h4.popup-head {
-    color: #333;
-}
+    color: #000;
+}/*標題用*/
+
+h5.popup-head{
+	color: #000;
+}/*地點用*/
+
 p.popup-parapraph {
 	color: #333;
 }
@@ -1192,4 +1198,77 @@ section.footer ul li a {
 
 /*---------------------- Footer Section End -------------*/
 
-/*-----------------------upload start--------------------*/
+/*-----------------------myphotos start--------------------*/
+.backgroundimage {
+	/*background-image: url(../images/3.jpg) !important;*/
+	-webkit-size: cover !important;
+	size: 100% !important;
+	position: fixed !important;
+    /*color: #fff;*/
+    text-align: center;
+    background-color: transparent;
+    /*height: 600px;*/
+    
+}
+
+.img-full{
+	max-width: 100%;
+    height:auto;
+    display: block;
+}
+
+.myphotos{
+	position: relative;
+  	background-color: #fff;
+  	padding: 0px;
+  	width: auto;
+	max-width: 100%;
+  	margin: 0px auto;
+  	top:43em;
+}
+
+.testimonial_myphoto {
+    color: #fff;
+    text-align: center;
+    padding: 5px 0px;
+    background-color: #fff;
+}
+
+section.testimonial_myphoto h2, h3{
+	color: #5b5b5b;
+	font-family: 'Rubik-Light', sans-serif;
+}
+
+/*@media only screen and (max-width: 768px){
+	section.testimonial_myphotos h2, h3{
+		position: absolute;
+		font-size: 12px;
+		color: #5b5b5b;
+		font-family: 'Rubik-Light', sans-serif;
+	}
+}*/
+
+.myphotos img {
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 3px;
+    box-shadow: 0 10px 30px -13px #000;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.navbar-deflaut{
+	background-color: #bebebe;
+}
+
+.topbar{
+ width:100%;
+ height:auto;
+ position:relative;
+ top:45em;
+}
+
+.exif-data{
+	font-color: #333;
+	font-family: 'Rubik-Light', sans-serif;
+}
+/*-----------------------myphotos end--------------------*/
