@@ -16,8 +16,9 @@
 	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="assets/ionicons-2.0.1/css/ionicons.min.css">
 	<link rel="stylesheet" href="assets/css/magnific-popup.css">
-	
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
     <style>
     /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -26,7 +27,13 @@
         height: 100%;
     }
     /* Optional: Makes the sample page fill the window. */
+    #slidebar{
+    	z-index: 5;
+    	position: absolute;
+    	color: black;
+    	top: 50%;
 
+    }
     html,
     body {
         height: 100%;
@@ -72,7 +79,22 @@
 		</div>
 		</nav>
 	</section>
+	
     <div id="map"></div>
+	<div id="slidebar">
+		
+		<input id="time_slide" type="text"
+          data-provide="slider"
+          data-slider-ticks="[1, 2, 3, 4, 5]"
+          data-slider-ticks-labels='["day", "week", "month", "year", "total"]'
+          data-slider-min="1"
+          data-slider-max="5"
+          data-slider-step="1"
+          data-slider-value="5"
+          data-slider-tooltip="hide"
+          data-slider-orientation="vertical"
+          onchange="refresh_map()"/>
+    </div>
     <script src="assets/js/map.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeVo8TE2AGQ24zvvwF8otKrCQCtory7rA&callback=initMap">
     </script>
@@ -80,7 +102,7 @@
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/owl.carousel.min.js"></script>
 	<script src="assets/js/jquery.magnific-popup.min.js"></script>
-	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
 	<script src="assets/js/script.js"></script>
 </body>
 
