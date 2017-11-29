@@ -27,6 +27,8 @@
     }(document, 'script', 'facebook-jssdk'));
   
   </script>
+
+
   <script>
     // my functions
     function funcLogin() {
@@ -43,19 +45,6 @@
         }
       });
     }
-  </script>
-
-
-  <!-- this script will load the SDK(好像跟上面有重複) -->
-  <div id="fb-root"></div>
-  <script>
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.11&appId=138219450232304';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
   </script>
   
   <button onclick="funcLogin()">show status</button><br>
