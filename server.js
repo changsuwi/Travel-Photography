@@ -120,8 +120,8 @@ app.post('/upload',function (req,res){
             
             var myquery = {"name": location };
             var newvalue;
-            if(db_collect == 'Live') newvalues = {$set: {live : path ,hot :{day : req.body.hot.day + 1,week : req.body.hot.week + 1, month : req.body.hot.month + 1,year : req.body.hot.year + 1, total : req.body.hot.total + 1}}};
-            else newvalues = {$set: {your_story : path ,hot :{day : req.body.hot.day + 1,week : req.body.hot.week + 1, month : req.body.hot.month + 1,year : req.body.hot.year + 1, total : req.body.hot.total + 1}}};
+            if(db_collect == 'Live') newvalues = {$set: {live : path },$inc: {hot :{day : +1,week : +1, month : +1,year : +1, total : +1}}};
+            else newvalues = {$set: {your_story : path },$inc: {hot :{day : +1,week : +1, month : +1,year : +1, total : +1}}};
             db.collection("Location").updateOne(myquery, newvalues, function(err, res) {
               if (err) throw err;
               console.log(location + " " + db_collect);
