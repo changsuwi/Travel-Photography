@@ -20,6 +20,24 @@
 
 </head>
 <body>
+	 <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId             : '138219450232304',
+        autoLOgAppEvents  : true,
+        xfbml             : true,
+        version           : 'v2.11'
+      });
+    };
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/zh_TW/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <!-- FB API -->
 
 		<section class="head">
 		<nav class="navbar navbar-fixed-top">
@@ -127,7 +145,8 @@
                             </div>
                             <div class="row">
                             	<div class="col-md-12">
-                            	<input type="text" class="form-control" name="user" id="user" placeholder="user id">
+                            		<div id="userid">
+                            		</div>
                             	</div>
                             </div>
 							<div class="row">
@@ -146,22 +165,7 @@
 									</div>
 								</div>
 							</div>
-<!-- 							<div class="row">
-								<div class="col-md-12">
-									<div class="row">
-										<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left">
-									  		<label class="checkbox-inline">
-											  	<input type="checkbox" id="inlineCheckbox1" value="option1"> Apple
-											</label>
-										</div>
-										<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
-										   <label class="checkbox-inline">
-											  	<input type="checkbox" id="inlineCheckbox2" value="option2"> Mango
-											</label>
-									    </div>
-									</div>
-								</div>
-							</div> -->
+
 							<div class="row">
 								<div class="col-md-12">
 									<div class="from-group">

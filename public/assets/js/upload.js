@@ -127,3 +127,10 @@ function showError(error)
     }
   }
 
+$(document).ready(function() {
+    FB.api('/me',{fields: 'id'}, function(response) {
+    var facebookid = response;
+    console.log(response);
+    document.getElementById("userid").innerHTML = "<input type='hidden' class='form-control' name='user' value='" + facebookid + "'>"  
+    });
+});
