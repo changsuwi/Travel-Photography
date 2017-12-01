@@ -1,217 +1,211 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-	<title>upload</title>
-	<meta charset="utf-8"/>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/owl.carousel.css">
-	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="assets/ionicons-2.0.1/css/ionicons.min.css">
-	<link rel="stylesheet" href="assets/css/magnific-popup.css">
-
-	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
-
-
+    <title>upload</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/ionicons-2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
+
 <body>
     <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            appId             : '138219450232304',
-            autoLOgAppEvents  : true,
-            xfbml             : true,
-            version           : 'v2.11'
-          });
-          $(document).trigger('fbload');
-        };
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/zh_TW/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '138219450232304',
+            autoLOgAppEvents: true,
+            xfbml: true,
+            version: 'v2.11'
+        });
+        $(document).trigger('fbload');
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/zh_TW/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
     </script>
-  <!-- FB API -->
-
-
-
-		<section class="head">
-		<nav class="navbar navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12">
-					<header class="header">
-						<div class="inner">
-							<a href="#menu" class="nav-bars">
+    <!-- FB API -->
+    <section class="head">
+        <nav class="navbar navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <header class="header">
+                            <div class="inner">
+                                <a href="#menu" class="nav-bars">
 								<img src="assets/images/nav-icon.png" class="img-responsive" alt="Collapsable Navbar">
 							</a>
-							<a href="index.html" class="logo">
+                                <a href="index.html" class="logo">
 								INVENTI<span><img src="assets/images/logo.png"></span>N
 							</a>
-							<a href="upload.html" id="upload">
+                                <a href="upload.html" id="upload">
 								<img src="assets/images/icons/upload.png">
 							</a>
-						</div>
-					</header>
-					
-					<!-- Menu -->
-
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="maps.html">Maps</a></li>
-							<li><a href="news.html">News</a></li>
-							<li><a href="myphotos.html">My Photos</a></li>
-							<li><a href="upload.html">Upload</a></li>
-							<li><a href="login.html">Log in</a></li>
-							<li><a href="aboutus.html">About Us</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</div>
-		</nav>
-	</section>
-
-	
-<form action="/upload" enctype="multipart/form-data" method="post">
-	<div class="testimonial">
-		<div class="container-fluid">
-			<div class="grid">
-				<div class="row">
-					<!-- <div class="col-md-6">
+                            </div>
+                        </header>
+                        <!-- Menu -->
+                        <nav id="menu">
+                            <h2>Menu</h2>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="maps.html">Maps</a></li>
+                                <li><a href="news.html">News</a></li>
+                                <li><a href="myphotos.html">My Photos</a></li>
+                                <li><a href="upload.html">Upload</a></li>
+                                <li><a href="login.html">Log in</a></li>
+                                <li><a href="aboutus.html">About Us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <form action="/upload" enctype="multipart/form-data" method="post">
+        <div class="testimonial">
+            <div class="container-fluid">
+                <div class="grid">
+                    <div class="row">
+                        <!-- <div class="col-md-6">
 						<p id="demo"></p>
 						<div id="mapholder"></div>
 						<button onclick="getLocation()" class="btn-send">get your position</button>
 					</div> -->
-					<div class="col-md-12">
-						<div class="photospreview">
-							<div class="col-md-5">
-							</div>
-							<div class="col-md-7">
-							<input type="file" class="upl" name="userPhoto" accept="image/*"><!-- 接收圖片 -->
-							</div>
-							<div class="preview"><!-- 預覽圖開在這 -->
-			    			</div>
-							<!-- <a href="#dc" class="inline-popup btn btn-send">Confirm</a> --><!-- 傳送圖片 -->
-						</div>
-					<!-- <form action="/upload" class="photospreview">
+                        <div class="col-md-12">
+                            <div class="photospreview">
+                                <div class="col-md-5">
+                                </div>
+                                <div class="col-md-7">
+                                    <input type="file" class="upl" name="userPhoto" accept="image/*">
+                                    <!-- 接收圖片 -->
+                                </div>
+                                <div class="preview">
+                                    <!-- 預覽圖開在這 -->
+                                </div>
+                                <!-- <a href="#dc" class="inline-popup btn btn-send">Confirm</a> -->
+                                <!-- 傳送圖片 -->
+                            </div>
+                            <!-- <form action="/upload" class="photospreview">
 			    		<input type='file' class="upl" name="upl[]" multiple>
 			    		<div class="preview">
 			    		</div>
 					</form> 多照片預覽-->
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<!-- <p id="demo">點擊按鈕來獲取座標</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <p id="demo">點擊按鈕來獲取座標</p>
 	<div id="mapholder"></div>
-	<button onclick="getLocation()" class="btn-send">get your position</button> --><!-- 這東西不能包進form -->
-
-	<div id="dc" class="black-popup">
-		
-		<div class="contact-form">
-			
-			<div class="container">
-			<!-- Form -->
-				<div class="row">
-					<div class="col-md-12">
-						<h1>Description</h1>
-						<div class="form-name-email">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<input type="text" class="form-control" name="topic" id="name" placeholder="Topic"/><!-- 照片主旨 -->								
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<input type="datetime-local" class="form-control" name="time" id="time"><!-- 時間 -->
-									</div>
-								</div>
-							</div>
-							<div class="row">
-                                <div class="col-md-12">
-                                    <input type="text" class="typeahead form-control"  name="location" id="location" placeholder="Location">
-                                    <!-- 地點 -->
+	<button onclick="getLocation()" class="btn-send">get your position</button> -->
+        <!-- 這東西不能包進form -->
+        <div id="dc" class="black-popup">
+            <div class="contact-form">
+                <div class="container">
+                    <!-- Form -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>Description</h1>
+                            <div class="form-name-email">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="topic" id="name" placeholder="Topic" />
+                                            <!-- 照片主旨 -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="datetime-local" class="form-control" name="time" id="time">
+                                            <!-- 時間 -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" class="typeahead form-control" name="location" id="location" placeholder="Location">
+                                        <!-- 地點 -->
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="userid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left">
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="options" id="inlineRadio1" value="即時影像"> 即時影像
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="options" id="inlineRadio1" value="作品集"> 作品集
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="from-group">
+                                            <textarea class="form-control" rows="10" name="comments" id="comments" placeholder="Description"></textarea>
+                                        </div>
+                                        <p>
+                                            <input type="submit" class="btn btn-tobais btn-send" value="SEND ALL">
+                                            <!-- 改成 input type="submit" -->
+                                            <input type="reset" class="btn btn-tobais btn-reset" value="RESET">
+                                            <!-- 改成 input type="reset" -->
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                            	<div class="col-md-12">
-                            		<div id="userid">
-                            		</div>
-                            	</div>
-                            </div>
-							<div class="row">
-								<div class="col-md-12">
-									<div class="row">
-										<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left">
-								    		<label class="radio-inline">
-											  	<input type="radio" name="options" id="inlineRadio1" value="即時影像"> 即時影像
-											</label>
-										</div>
-							   			 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
-								    		<label class="radio-inline">
-											  	<input type="radio" name="options" id="inlineRadio1" value="作品集"> 作品集
-											</label>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-md-12">
-									<div class="from-group">
-										<textarea class="form-control" rows="10" name="comments" id="comments" placeholder="Description"></textarea>
-									</div>
-									<p>
-									  <input type="submit" class="btn btn-tobais btn-send" value="SEND ALL"><!-- 改成 input type="submit" -->
-									  <input type="reset" class="btn btn-tobais btn-reset" value="RESET"><!-- 改成 input type="reset" -->
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	</form>
-	<section class="footer">
-		<nav class="navbar navbar-fixed-bottom">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<ul class="footer-bottom">
-					</ul>
-				</div>
-				<div class="col-md-6">
-					<p class="copyright-text">Travel & Photography &copy; 2017 
-						 <a href="index.html" target="_blank" title="Travel & Photography">Travel & Photography</a> - Collect from <a href="index.HTML" title="Travel & Photography" target="_blank">Travel & Photography</a>
-					</p>
-				</div>
-			</div>
-		</div>
-	</nav>
-	</section>
-	<script src="assets/js/jquery-3.1.0.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/owl.carousel.min.js"></script>
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>
-	<script src="assets/js/bootstrap3-typeahead.min.js"></script>
-	<script src="assets/js/upload.js"></script>
-	<script src="assets/js/script.js"></script>
-	<!-- autocomplete的javascript我先暫時寫在這邊 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <section class="footer">
+        <nav class="navbar navbar-fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="footer-bottom">
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="copyright-text">Travel & Photography &copy; 2017
+                            <a href="index.html" target="_blank" title="Travel & Photography">Travel & Photography</a> - Collect from <a href="index.HTML" title="Travel & Photography" target="_blank">Travel & Photography</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <script src="assets/js/jquery-3.1.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/bootstrap3-typeahead.min.js"></script>
+    <script src="assets/js/upload.js"></script>
+    <script src="assets/js/script.js"></script>
+    <!-- autocomplete的javascript我先暫時寫在這邊 -->
     <script type="text/javascript">
     $(function() {
         $('#location').typeahead({
@@ -236,13 +230,20 @@
     });
     </script>
     <script>
-  	  $(document).on('fbload',function(){
-    	    FB.api('/me',{fields: 'id'}, function(response) {
-   			      var facebookid = response;
-    		      console.log(response);
-    		      document.getElementById("userid").innerHTML = "<input type='hidden' class='form-control' name='user' value='" + facebookid + "'>"  
-   		    });
-	    });
-   </script>
+    $(document).on('fbload', function() {
+		FB.getLoginStatus(function(response) {
+			if (response.status === 'connected') { 
+
+		        FB.api('/me', { fields: 'id' }, function(response) {
+		            var facebookid = response;
+		            console.log(response);
+		            document.getElementById("userid").innerHTML = "<input type='hidden' class='form-control' name='user' value='" + facebookid + "'>"
+		        });
+		    }
+		}
+
+    });
+    </script>
 </body>
+
 </html>
