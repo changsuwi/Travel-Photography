@@ -236,7 +236,7 @@
     });
     </script>
     <script>
-  	$(document).ready(function(){
+  	$(window).load(function(){
     	FB.api('/me',{fields: 'id'}, function(response) {
    			var facebookid = response;
     		console.log(response);
