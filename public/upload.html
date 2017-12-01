@@ -40,15 +40,7 @@
   </script>
   <!-- FB API -->
 
-  <script type="text/javascript">
-  	$(document).ready(function(){
-    FB.api('/me',{fields: 'id'}, function(response) {
-    var facebookid = response;
-    console.log(response);
-    document.getElementById("userid").innerHTML = "<input type='hidden' class='form-control' name='user' value='" + facebookid + "'>"  
-    });
-	});
-  </script>
+
 
 		<section class="head">
 		<nav class="navbar navbar-fixed-top">
@@ -243,5 +235,14 @@
         });
     });
     </script>
+    <script>
+  	$(document).ready(function(){
+    	FB.api('/me',{fields: 'id'}, function(response) {
+   			var facebookid = response;
+    		console.log(response);
+    		document.getElementById("userid").innerHTML = "<input type='hidden' class='form-control' name='user' value='" + facebookid + "'>"  
+   		});
+	});
+  	</script>
 </body>
 </html>
