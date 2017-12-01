@@ -20,24 +20,24 @@
 
 </head>
 <body>
-	 <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId             : '138219450232304',
-        autoLOgAppEvents  : true,
-        xfbml             : true,
-        version           : 'v2.11'
-      });
-    };
-    (function(d, s, id){
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {return;}
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/zh_TW/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-      console.log("jjjujj");
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId             : '138219450232304',
+            autoLOgAppEvents  : true,
+            xfbml             : true,
+            version           : 'v2.11'
+          });
+          $(document).trigger('fbload');
+        };
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/zh_TW/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
   <!-- FB API -->
 
 
@@ -142,7 +142,7 @@
 							</div>
 							<div class="row">
                                 <div class="col-md-12">
-                                    <input type="text" class="typeahead form-control" " name="location" id="location" placeholder="Location">
+                                    <input type="text" class="typeahead form-control"  name="location" id="location" placeholder="Location">
                                     <!-- 地點 -->
                                 </div>
                             </div>
@@ -236,13 +236,13 @@
     });
     </script>
     <script>
-  	$(window).load(function(){
-    	FB.api('/me',{fields: 'id'}, function(response) {
-   			var facebookid = response;
-    		console.log(response);
-    		document.getElementById("userid").innerHTML = "<input type='hidden' class='form-control' name='user' value='" + facebookid + "'>"  
-   		});
-	});
-  	</script>
+  	  $(document).on('fbload',function(){
+    	    FB.api('/me',{fields: 'id'}, function(response) {
+   			      var facebookid = response;
+    		      console.log(response);
+    		      document.getElementById("userid").innerHTML = "<input type='hidden' class='form-control' name='user' value='" + facebookid + "'>"  
+   		    });
+	    });
+   </script>
 </body>
 </html>

@@ -95,6 +95,7 @@ app.post('/upload',function (req,res){
        path = req.file.path.slice(6)
        console.log(path)
        user = req.body.user
+       console.log(user)
        topic = req.body.topic                                                   
        time = req.body.time
        comments = req.body.comments
