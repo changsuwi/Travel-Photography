@@ -3,7 +3,7 @@ window.fbAsyncInit = function() {
   window.FB.init({
     appId:            '138219450232304',
     autoLogAppEvents: true,
-    xfbml:            false, // if there exist fb plugin in the page, then change to true
+    xfbml:            true, // if there exist fb plugin in the page, then change to true
     version:          'v2.11'
   });
   $(document).trigger('fbload');
