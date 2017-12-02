@@ -1187,7 +1187,7 @@ section.footer ul li a {
 
 .footer {
 	background-color: #1e2026;
-	padding: 30px 0px;
+	padding: 20px 0px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1211,9 +1211,19 @@ section.footer ul li a {
     
 }
 
-.img-full{
+.bgmyphoto {
 	max-width: 100%;
-    height:auto;
+	min-height: 85vh;
+	background-size: cover;
+    background-repeat: repeat;
+    background-image: 
+    position: center center;
+    position: relative;
+}
+
+.img-full{
+	max-width: 100%	;
+	min-height: 85vh;
     display: block;
 }
 
@@ -1264,7 +1274,7 @@ section.testimonial_myphoto h2, h3{
  width:100%;
  height:auto;
  position:relative;
- top:45em;
+ bottom :-45em;
 }
 
 .exif-data{
