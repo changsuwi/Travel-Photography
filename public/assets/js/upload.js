@@ -2,6 +2,26 @@
 
 //======
 
+// Load Facebook Javascript SDK
+/*window.fbAsyncInit = function() {
+  window.FB.init({
+    appId:            '138219450232304',
+    autoLogAppEvents: true,
+    xfbml:            false, // if there exist fb plugin in the page, then change to true
+    version:          'v2.11'
+  });
+  $(document).trigger('fbload');
+};
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) { return; }
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://connect.facebook.net/zh_TW/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));*/
+
+
 $(function (){
     // 建立一個模組叫做 preview，根節點為 .form1
     $(".photospreview").vmodel("--preview", true, function (){
@@ -108,8 +128,7 @@ function showPosition(position)
   var marker=new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
   }
 
-function showError(error)
-  {
+function showError(error) {
   switch(error.code) 
     {
     case error.PERMISSION_DENIED:
@@ -125,12 +144,17 @@ function showError(error)
       x.innerHTML="An unknown error occurred."
       break;
     }
-  }
+}
 
-// $(document).ready(function() {
-//     FB.api('/me',{fields: 'id'}, function(response) {
-//     var facebookid = response;
-//     console.log(response);
-//     document.getElementById("userid").innerHTML = "<input type='hidden' class='form-control' name='user' value='" + facebookid + "'>"  
-//     });
-// });
+// get user id
+$(document).on('fbload',function() {
+  window.FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
+      window.FB.api('/me',{fields: 'id'}, function(response) {
+        var facebookid = response;
+        console.log(response);
+        document.getElementById("userid").innerHTML = "<input type='hidden' class='form-control' name='user' value='" + facebookid + "'>"  
+      });
+    }
+  });
+});

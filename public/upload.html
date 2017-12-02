@@ -17,7 +17,9 @@
 </head>
 
 <body>
-    <script>
+    <!-- the script below loads the fb SDK -->
+    <script src="assets/js/loadFbSDK.js"></script>
+    <!--<script>
     window.fbAsyncInit = function() {
         FB.init({
             appId: '138219450232304',
@@ -35,7 +37,7 @@
         js.src = "https://connect.facebook.net/zh_TW/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-    </script>
+    </script>-->
     <!-- FB API -->
     <section class="head">
         <nav class="navbar navbar-fixed-top">
@@ -229,7 +231,7 @@
         });
     });
     </script>
-    <script>
+    <!--<script>
     $(document).on('fbload', function() {
 		FB.getLoginStatus(function(response) {
 			if (response.status === 'connected') { 
@@ -243,7 +245,7 @@
 		}
 
     });
-    </script>
+    </script>-->
 </body>
 
 </html>
