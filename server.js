@@ -142,9 +142,11 @@ router.get('/myphoto/:userid', function(req, res){
     console.log(req.params.userid)
     MongoClient.connect(url, function(err, db){
         if(err) throw err
-        db.collection('Your_Story').find({'user': req.params.userid}).toArray( function(err, res){
+        db.collection('Your_Story').find({'user': req.params.userid}).toArray( function(err, result){
             if(err) throw err;
-            console.log(res);
+            console.log(result);
+            res.json(result);
+            db.close;
         })
     })
 })

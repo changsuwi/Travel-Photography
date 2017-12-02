@@ -151,8 +151,8 @@ $(document).on('fbload',function() {
   window.FB.getLoginStatus(function(response) {
     if (response.status === 'connected') {
       window.FB.api('/me',{fields: 'id'}, function(response) {
-        var facebookid = response;
-        console.log(response);
+        var facebookid = response.id;
+        console.log(response.id);
         document.getElementById("userid").innerHTML = "<input type='hidden' class='form-control' name='user' value='" + facebookid + "'>"  
       });
     }

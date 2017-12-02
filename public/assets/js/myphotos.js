@@ -16,37 +16,40 @@ function get_json(url, callback) {
     xhr.send();
 }
 
-$(document).ready(function () {
+window.onload = function () {
     $(document).on('fbload',function() {
         window.FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
                 window.FB.api('/me',{fields: 'id'}, function(response) {
-                var userid = response;
-                console.log(response);
+                var userid = response.id;
+                console.log(response.id);
                     get_json("myphoto/" + userid, function(data) {
-                        for(var j=1;j<10;j++){
                             for(var k in data){
-                                var img_tag = "img" + String(j);
-                                var topic_tag = "topic" + String(j);
-                                var comments_tag = "commnts" + String(j);
+                                console.log(k)
+                                console.log(data[k])
+                                var img_tag = "img" + String(k);
+                                var topic_tag = "topic" + String(k);
+                                var comments_tag = "comments" + String(k);
                                 var live = data[k].option1;
                                 var story = data[k].option2;
                                 var img_src = data[k].path;
                                 var topic = data[k].topic;
-                                var comments = data[k].comment;
-                                console.log(data[k].user);
-                                //document.getElementById('livenumber').innerHTML = live.length; 
-                                //document.getElementById('storynumber').innerHTML = story.length; 
-                                document.getElementById(img_tag).innerHTML = "<img src='" + img_src + "exif='ture' class='img-responsive'>";
+                                var comments = data[k].comments;
+                                console.log(img_src + "     " + img_tag);
+                                document.getElementById(img_tag).innerHTML = "<img src='" + img_src + "'exif='ture' class='img-responsive'>";
+                                
+                                //點開後的圖片id為 img0in or img1in or img2in之類的 
+                                document.getElementById(img_tag + 'in').innerHTML = "<img src='" + img_src + "'exif='ture' class='img-responsive'>";
+                                
                                 document.getElementById(topic_tag).innerHTML = topic; 
                                 document.getElementById(comments_tag).innerHTML = comments; 
                             }
-                        }
                     });
                 });
             }
         });
-});   
+    });
+}
 
 // $(document).ready(function() {
   
