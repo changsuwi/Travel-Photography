@@ -60,8 +60,22 @@ function plot_marker(map, marker, data, hot){
          '<div class="col-sm-6">' +
          '<h2 style="color:black; text-align:center;"> 相關作品 </h2>' +
          '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
+         '</div>' +
+         '<a href="/description.html">description</a>' +
+         '<a href="#2" class="inline-popup">details</a>' +
+         '<div id="2" class="white-popup mfp-hide">' +
+            '<div class="container-fluid">' +
+              '<div class="row">' +
+                '<div class="pop-up-color">' +
+                  '<div>' +
+                    '<p class="popup-paragraph">hi i am you</p>' +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
          '</div>'
-    // set the scene marker
+
+             // set the scene marker
     marker['infowindow'] = new google.maps.InfoWindow({
         content: contentString
     });
@@ -182,3 +196,15 @@ function refresh_map(){
             break;
     }
 }
+
+//------ Popup Start -----
+$(document).ready(function() {
+  $('.inline-popup').magnificPopup({
+    type:'inline',
+    midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    gallery:{
+      enabled:true
+    }
+  });
+});
+
