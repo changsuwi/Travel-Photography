@@ -22,8 +22,13 @@ const port = 41781
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://wp2017_groupi:wp2017_groupi@luffy.ee.ncku.edu.tw:27017/wp2017_groupi";
 
+// Express Router
+
+// 建立 Router 物件
+var router = express.Router();
+
 // when map.js request ajax from maps.html
-app.get("/map_initial", function(req, res) {
+router.get("/map_initial", function(req, res) {
     MongoClient.connect(url, function(err, db) {
 	    if (err) throw err;
 	    console.log("Database created!");
@@ -63,7 +68,7 @@ app.get("/ajax_data", function(req, res) {
 }) 
 
 */
-app.get("/search_autocomplete", function(req, res) {
+router.get("/search_autocomplete", function(req, res) {
     console.log(req.query.query)
     query = req.query.query
     MongoClient.connect(url, function(err, db) {
@@ -89,7 +94,7 @@ var storage =   multer.diskStorage({
     }
 });
 var upload = multer({ storage : storage}).single('userPhoto');
-app.post('/upload',function (req,res){
+router.post('/upload',function (req,res){
    upload(req,res,function(err) {
        console.log(req.body)
        path = req.file.path.slice(6)
@@ -120,8 +125,8 @@ app.post('/upload',function (req,res){
             
             var myquery = {"name": location };
             var newvalue;
-            if(db_collect == 'Live') newvalues = {$set: {live : path },$inc: {hot :{day : +1,week : +1, month : +1,year : +1, total : +1}}};
-            else newvalues = {$set: {your_story : path },$inc: {hot :{day : +1,week : +1, month : +1,year : +1, total : +1}}};
+            if(db_collect == 'Live') newvalues = {$set: {live : path },$inc: {"hot.day" : +1,"hot.week" : +1, "hot.month" : +1,"hot.year" : +1,"hot.total" : +1}};
+            else newvalues = {$set: {your_story : path },$inc: {"hot.day" : +1,"hot.week" : +1, "hot.month" : +1,"hot.year" : +1,"hot.total" : +1}};
             db.collection("Location").updateOne(myquery, newvalues, function(err, res) {
               if (err) throw err;
               console.log(location + " " + db_collect);
@@ -133,7 +138,17 @@ app.post('/upload',function (req,res){
    });
 });
 
-
+router.get('/myphoto/:userid', function(req, res){
+    console.log(req.params.userid)
+    MongoClient.connect(url, function(err, db){
+        if(err) throw err
+        db.collection('Your_Story').find({'user': req.params.userid}).toArray( function(err, res){
+            if(err) throw err;
+            console.log(res);
+        })
+    })
+})
+app.use('/', router)
 
 // create ssh server
 var server = https.createServer(options, app).listen(port, function(){
