@@ -1156,6 +1156,10 @@ a {
 	padding: 0px 15px;
 }
 
+h3.popup-head {
+    color: #000;
+}/*地圖頁面的popup視窗之標題*/
+
 h4.popup-head {
     color: #000;
 }/*標題用*/
