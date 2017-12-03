@@ -393,8 +393,8 @@
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
 					    	<div class="text-center">
-					    		<p>"First version of the home page”</p>
-					    		<p>— Jason Chung, Webview Designer</p>
+					    		<p>--USER INSTRUCTION--</p>
+					    		<p>Please log in with your facebook before you upload photos!</p>
 					    	</div>
 					    </div>
 					</div>
@@ -403,8 +403,8 @@
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
 					    	<div class="text-center">
-					    		<p>"First version of the home page, including the float frame.”</p>
-					    		<p>— Jason Chung, Webview Designer</p>
+					    		<p>--USER INSTRUCTION--</p>
+					    		<p>Upload the original photos could let our function working normally.</p>
 					    	</div>
 					    </div>
 					</div>
@@ -419,8 +419,13 @@
 				<div class="social-contact">
 					<div class="col-md-6">
 						<div class="row">
-							<div class="col-md-4">
-								<p class="logo">INVENTI<span><img src="assets/images/logo.png"></span>N</p>
+							<div class="fb-login-button"
+									data-max-rows="1"
+									data-size="large"
+									data-button-type="login_with"
+									data-show-faces="false"
+									data-auto-logout-link="ture"
+									data-use-continue-as="false">
 							</div>
 						</div>
 					</div>
@@ -457,19 +462,9 @@
 	<section class="footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3">
-					<div class="fb-login-button"
-									data-max-rows="1"
-									data-size="large"
-									data-button-type="login_with"
-									data-show-faces="false"
-									data-auto-logout-link="ture"
-									data-use-continue-as="false">
-					</div>
-				</div>
-				<div class="col-md-3">
+				<div class="col-md-6">
 					<ul class="footer-bottom">
-						<button onclick="func()">click</button>
+						<button class="btn-default" onclick="func()">click to confirm your status</button>
 						<div id='login_status'></div>
 					</ul>
 				</div>
