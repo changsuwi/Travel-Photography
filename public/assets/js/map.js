@@ -60,8 +60,30 @@ function plot_marker(map, marker, data, hot){
          '<div class="col-sm-6">' +
          '<h2 style="color:black; text-align:center;"> 相關作品 </h2>' +
          '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
+         '</div>' +
+         //'<a href="/description.html">description</a> ' +
+         '<a href="#location-details" class="inline-popup">details</a>' +
+         '<div id="location-details" class="white-popup mfp-hide">' +
+            '<div class="container-fluid">' +
+              '<div class="row">' +
+                '<div class="pop-up-color">' +
+                  '<div class="col-md-5">' +
+                    '<h3 class="popup-head">' + name + '</h4>' +
+                    '<p class="popup-parapraph">' + description +'</p>' +
+                    '<p class="popup-parapraph">hihihi</p>' +
+                  '</div>' +
+                  '<div class="col-md-7">' +
+                    '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
+              '<div class="row">' +
+                '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + live_path + '>' + '</div>' +
+              '</div>' +
+            '</div>' +
          '</div>'
-    // set the scene marker
+
+             // set the scene marker
     marker['infowindow'] = new google.maps.InfoWindow({
         content: contentString
     });
@@ -76,7 +98,20 @@ function plot_marker(map, marker, data, hot){
         this['infowindow'].open(map, this);
         show_infowindow = this['infowindow'];
     });
+
+    google.maps.event.addListener(marker['infowindow'], 'domready', function() {
+      $('.inline-popup').magnificPopup({
+        type: 'inline',
+        midClick: true
+        //gallery:{
+        //  enabled:true
+        //}
+      });
+    });
+
 }
+
+
 
 // initial the map
 function initMap() {
@@ -182,3 +217,4 @@ function refresh_map(){
             break;
     }
 }
+
