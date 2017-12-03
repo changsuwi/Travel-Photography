@@ -1227,6 +1227,14 @@ section.footer ul li a {
     display: block;
 }
 
+@media only screen and (max-width: 768px){
+	.img-full{
+	max-width: 100%	;
+	min-height: 50vh;
+    display: block;
+	}
+}
+
 .myphotos{
 	position: relative;
   	background-color: #fff;
@@ -1235,6 +1243,18 @@ section.footer ul li a {
 	max-width: 100%;
   	margin: 0px auto;
   	top:43em;
+}
+
+@media only screen and (max-width: 768px){
+	.myphotos{
+	position: relative;
+  	background-color: #fff;
+  	padding: 0px;
+  	width: auto;
+	max-width: 100%;
+  	margin: 0px auto;
+  	top: 25em;
+	}
 }
 
 .testimonial_myphoto {
@@ -1274,7 +1294,23 @@ section.testimonial_myphoto h2, h3{
  width:100%;
  height:auto;
  position:relative;
- bottom :-45em;
+ bottom :-43em;
+}
+
+@media only screen and (max-width: 768px){
+	.topbar{
+	 width:100%;
+	 height:auto;
+	 position:relative;
+	 bottom :-25em;
+	}
+}
+
+.status {
+	font-size: 24px;
+	font-weight: bold;
+	color: #000;
+	text-decoration: none;
 }
 
 .exif-data{
