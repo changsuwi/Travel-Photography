@@ -61,16 +61,23 @@ function plot_marker(map, marker, data, hot){
          '<h2 style="color:black; text-align:center;"> 相關作品 </h2>' +
          '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
          '</div>' +
-         '<a href="/description.html">description</a>' +
-         '<a href="#2" class="inline-popup">details</a>' +
-         '<div id="2" class="white-popup mfp-hide">' +
+         '<a href="/description.html">description</a> ' +
+         '<a href="#location-details" class="inline-popup">details</a>' +
+         '<div id="location-details" class="white-popup mfp-hide">' +
             '<div class="container-fluid">' +
               '<div class="row">' +
                 '<div class="pop-up-color">' +
-                  '<div>' +
-                    '<p class="popup-paragraph">hi i am you</p>' +
+                  '<div class="col-md-5">' +
+                    '<h4 class="popup-head">LOCATION</h4>' +
+                    '<p class="popup-parapraph">ththth</p><br>' +
+                    '<p class="popup-parapraph">hihihi</p><br>' +
+                  '</div>' +
+                  '<div class="col-md-7">' +
+                    'hee' +
                   '</div>' +
                 '</div>' +
+              '</div>' +
+              '<div class="row">' +
               '</div>' +
             '</div>' +
          '</div>'
@@ -90,7 +97,20 @@ function plot_marker(map, marker, data, hot){
         this['infowindow'].open(map, this);
         show_infowindow = this['infowindow'];
     });
+
+    google.maps.event.addListener(marker['infowindow'], 'domready', function() {
+      $('.inline-popup').magnificPopup({
+        type: 'inline',
+        midClick: true
+        //gallery:{
+        //  enabled:true
+        //}
+      });
+    });
+
 }
+
+
 
 // initial the map
 function initMap() {
@@ -196,15 +216,4 @@ function refresh_map(){
             break;
     }
 }
-
-//------ Popup Start -----
-$(document).ready(function() {
-  $('.inline-popup').magnificPopup({
-    type:'inline',
-    midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-    gallery:{
-      enabled:true
-    }
-  });
-});
 
