@@ -22,6 +22,7 @@ window.onload = function () {
             if (response.status === 'connected') {
                 window.FB.api('/me',{fields: 'id'}, function(response) {
                 var userid = response.id;
+                document.getElementById("user").innerHTML = userid; 
                 console.log(response.id);
                     get_json("myphoto/" + userid, function(data) {
                             for(var k in data){
@@ -36,8 +37,7 @@ window.onload = function () {
                                 var topic = data[k].topic;
                                 var comments = data[k].comments;
                                 console.log(img_src + "     " + img_tag);
-                                document.getElementById(img_tag).innerHTML = "<img src='" + img_src + "'exif='ture' class='img-responsive'>";
-                                
+                                document.getElementById('backgroundimg').innerHTML = "<img src='" + img_src + "' class='img-full'>";                                 
                                 //點開後的圖片id為 img0in or img1in or img2in之類的 
                                 document.getElementById(img_tag + 'in').innerHTML = "<img src='" + img_src + "'exif='ture' class='img-responsive'>";
                                 

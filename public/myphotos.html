@@ -35,7 +35,7 @@
 								<img src="assets/images/nav-icon.png" class="img-responsive" alt="Collapsable Navbar">
 							</a>
 							<a href="index.html" class="logo">
-								INVENTI<span><img src="assets/images/logo.png"></span>N
+								PHOT<span><img src="assets/images/logo.png"></span>GRAPHY
 							</a>
 							<a href="upload.html" id="Upload">
 								<img src="assets/images/icons/upload.png">
@@ -64,21 +64,32 @@
 	</section>
 	<!-- 要先登入後才跑出下面的東西，跳出一個登入視窗來紀錄user id -->
 	<div class="backgroundimage">
-			<div id="bgimg" class="bgmyphoto">
+			<div id="backgroundimg" class="bgmyphoto">
 				<img src="assets/images/3.jpg" class="img-full">
 			</div>
 	</div>
-<nav class="topbar">
+
+<nav class="navbar navbar-default topbar">
+  	<div class="container-fluid">
+   		<div class="navbar-header">
+      		<a class="navbar-brand" id="user"></a>
+    	</div>
+    	<ul class="nav navbar-nav">
+      		<li class="active"><a href="#photos">YOUR PHOTOS</a></li>
+    	</ul>
+    	<ul class="nav navbar-nav navbar-right">
+      		<li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+   		</ul>
+  	</div>
+</nav>
+<!-- <nav class="topbar">
 	<section class=testimonial_myphoto>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
 					<header class="header">
 						<div class="inner">
-							<a class="status">
-								HI
-							</a>
-							<a class="status">LIVE</a>
+							<a class="navabr-right" id="number">YOUR PHOTOS</a>
 						</div>
 					</header>
 				</div>
@@ -86,7 +97,7 @@
 		</div>
 	</section>
 </nav>
-
+ -->
 <!-- <div class='topbar'>
 	<section class=testimonial_myphoto>
 		<div class="container-fluid">
@@ -122,12 +133,11 @@
 </div> -->
 
 <section class='myphotos'>
-		<div class="container">
+		<div class="container" id="photos">
 			<div class="row">
 				<div class="col-md-4">
 					<a href="#0" class="inline-popup">
 						<div id="img0">
-							<img src="assets/images/1.jpg" class="img-responsive">
 						</div>
 					</a>
 				</div>
@@ -138,7 +148,6 @@
 										<div class=ImageExif>
 											<div class="col-md-7 p-l-0 p-r-0">
 												<div id="img0in">
-													<img src="assets/images/1.jpg" class="img-responsive">
 												</div>
 											</div>
 											<div class="col-md-5">

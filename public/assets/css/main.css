@@ -1298,7 +1298,7 @@ section.testimonial_myphoto h2, h3{
  width:100%;
  height:auto;
  position:relative;
- bottom :-43em;
+ bottom :-44.5em;
 }
 
 @media only screen and (max-width: 768px){
@@ -1306,12 +1306,12 @@ section.testimonial_myphoto h2, h3{
 	 width:100%;
 	 height:auto;
 	 position:relative;
-	 bottom :-25em;
+	 bottom :-27em;
 	}
 }
 
 .status {
-	font-size: 24px;
+	font-size: 28px;
 	font-weight: bold;
 	color: #000;
 	text-decoration: none;
