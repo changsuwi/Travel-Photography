@@ -166,10 +166,7 @@ ev=evnum.toFixed(1);
 var showExit= "相機："+make+" "+"型號："+model+"<br>"+
 　"快門："+t+" ("+$this.exif("ExposureTime")+"sec)"+"光圈：F"+f+"<br>"+
 　"ISO："+iso+" "+"焦段："+length+"mm<br>"+
-　"曝光補償："+ev+" "+"白平衡："+wb+"<br>"+
-  "飽和度："+sa+" "+"銳利度："+sha+"<br>"+
-　"軟體："+soft+" "+"解析度："+dpi+"DPI<br>"+ 
-  "日期："+date;
+  "飽和度："+sa+" "+ "日期："+date;
 
 $(".exif-data").html(showExit.replace(new RegExp(String.fromCharCode(0), "g"), ''));
 // alert("完整Exif資料：\r\n \r\n"+$this.exifPretty());
