@@ -34,6 +34,10 @@ function plot_marker(map, marker, data, hot){
     var live_path = data.live;
     var your_story_path = data.your_story;
     var size;
+
+    var live_img_load_num = 1;
+    var gallery_img_load_num = 1;
+
     if(hot <1) size = 32;
     else if(hot<3) size = 40;
     else if(hot<10) size = 48;
@@ -56,10 +60,10 @@ function plot_marker(map, marker, data, hot){
          '<div class="row">' +
          '<div class="col-sm-6">' +
          '<h2 style="color:black; text-align:center;"> 即時影像 </h2>' +
-         '<img id="images-live" class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + live_path + '>' + '</div>' +
+         '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + live_path + '>' + '</div>' +
          '<div class="col-sm-6">' +
          '<h2 style="color:black; text-align:center;"> 相關作品 </h2>' +
-         '<img  id="images-gallery" class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
+         '<img  class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
          '</div>' +
          //'<a href="/description.html">description</a> ' +
          '<a href="#location-details" class="inline-popup">details</a>' +
@@ -73,12 +77,12 @@ function plot_marker(map, marker, data, hot){
                     '<p class="popup-parapraph">hihihi</p>' +
                   '</div>' +
                   '<div class="col-md-7">' +
-                    '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
+                    '<img id="images-live" class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
                   '</div>' +
                 '</div>' +
               '</div>' +
               '<div class="row">' +
-                '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + live_path + '>' + '</div>' +
+                '<img id="images-gallery" class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + live_path + '>' + '</div>' +
               '</div>' +
             '</div>' +
          '</div>'
@@ -108,9 +112,44 @@ function plot_marker(map, marker, data, hot){
         //}
       });
 
-      //get_json("myphoto/" + userid, function(data) {
-      //  $('#images-live').attr("src",data.);
-      //});
+      // location_img/location/gallery or live/img number
+      
+      // while the page pops up, loads live images
+      get_json("location_img/" + name + "/live/" + live_img_load_num, function(data) {
+        for (var k in data) {
+          console.log(k);
+          console.log(data[k]);
+          $('#images-live').attr("src",data[k]);
+        }
+      });
+      // while the page pops up, loads gallery images
+      get_json("location_img/" + name + "/gallery/" + gallery_img_load_num, function(data) {
+        for (var k in data) {
+          console.log(k);
+          console.log(data[k]);
+          $('#images-gallery').attr("src",data[k]);
+        }
+      });
+      // when the user clicks the button with id="??", loads live images
+      document.getElementById("??").addEventListener("click", function(){
+        get_json("location_img/" + name + "/live/" + live_img_load_num, function(data) {
+          for (var k in data) {
+            console.log(k);
+            console.log(data[k]);
+            $('#images-live').attr("src",data[k]);
+          }
+        });
+      });
+      // when the user clicks the button with id="??", loads gallery images
+      document.getElementById("??").addEventListener("click", function(){
+        get_json("location_img/" + name + "/live/" + live_img_load_num, function(data) {
+          for (var k in data) {
+            console.log(k);
+            console.log(data[k]);
+            $('#images-live').attr("src",data[k]);
+          }
+        });
+      });
 
     });
 
