@@ -113,9 +113,9 @@ a.btn.btn-tobais.btn-special:hover {
     background-color: #fff;
     color: #333;
 }
-.btn-special {
+.btn-special { 
 	color: #000;
-	padding: 13px 30px;
+	padding: 8px 30px;
 	border-radius: 20px;
 }
 .btn-big {
@@ -1156,7 +1156,7 @@ a {
 
 .popup-subhead {
 	margin-top: 35px;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     margin-left: 15px;
 }
 
