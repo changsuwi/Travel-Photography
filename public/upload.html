@@ -19,26 +19,8 @@
 <body>
     <!-- the script below loads the fb SDK -->
     <script src="assets/js/loadFbSDK.js"></script>
-    <!--<script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId: '138219450232304',
-            autoLOgAppEvents: true,
-            xfbml: true,
-            version: 'v2.11'
-        });
-        $(document).trigger('fbload');
-    };
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) { return; }
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://connect.facebook.net/zh_TW/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    </script>-->
     <!-- FB API -->
+    
     <section class="head">
         <nav class="navbar navbar-fixed-top">
             <div class="container-fluid">
@@ -184,12 +166,13 @@
         </div>
     </form>
     <section class="footer">
-        <nav class="navbar navbar-fixed-bottom">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <ul class="footer-bottom">
-                        </ul>
+                    	<ul class="footer-bottom">
+                    		<button class="btn-default" onclick="func()">click to confirm your status</button>
+							<div id='login_status'></div>
+						</ul>
                     </div>
                     <div class="col-md-6">
                         <p class="copyright-text">Travel & Photography &copy; 2017
@@ -198,7 +181,6 @@
                     </div>
                 </div>
             </div>
-        </nav>
     </section>
     <script src="assets/js/jquery-3.1.0.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -231,6 +213,23 @@
         });
     });
     </script>
+
+    <script>
+    //document.getElementById('login_status').addEventListener('load', func);
+    function func() {
+      FB.getLoginStatus(function(response) {
+        console.log(response);
+        if (response.status === 'connected') { 
+          FB.api('/me', function(response) {
+            document.getElementById('login_status').innerHTML = "logged in as " + response.name;
+            console.log('logged in as ' + response.name);
+          });
+        } else {
+          document.getElementById('login_status').innerHTML = "not logged in";
+        }
+      });
+    }
+ 	</script>
     <!--<script>
     $(document).on('fbload', function() {
 		FB.getLoginStatus(function(response) {

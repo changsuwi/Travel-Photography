@@ -20,9 +20,11 @@ window.onload = function () {
     $(document).on('fbload',function() {
         window.FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
-                window.FB.api('/me',{fields: 'id'}, function(response) {
+                window.FB.api('/me',function(response) {
                 var userid = response.id;
-                document.getElementById("user").innerHTML = userid; 
+                var username = response.name;
+                document.getElementById("user").innerHTML = username;
+                //document.getElementById("user").innerHTML = userid; 
                 console.log(response.id);
                     get_json("myphoto/" + userid, function(data) {
                             for(var k in data){
@@ -39,7 +41,7 @@ window.onload = function () {
                                 console.log(img_src + "     " + img_tag);
                                 document.getElementById('backgroundimg').innerHTML = "<img src='" + img_src + "' class='img-full'>";                                 
                                 //點開後的圖片id為 img0in or img1in or img2in之類的 
-                                document.getElementById(img_tag).innerHTML = "<img src='" + img_src + "'exif='ture' class='img-responsive'>";
+                                document.getElementById(img_tag).innerHTML = "<img src='" + img_src + "' class='img-responsive'>";
                                 document.getElementById(img_tag + 'in').innerHTML = "<img src='" + img_src + "'exif='ture' class='img-responsive'>";
                                 
                                 document.getElementById(topic_tag).innerHTML = topic; 
