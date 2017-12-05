@@ -20,12 +20,10 @@ window.onload = function () {
     $(document).on('fbload',function() {
         window.FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
-                window.FB.api('/me'),{fields: 'name'}, function(response) {
-                    var username = response.name;
-                    document.getElementById("user").innerHTML = username; 
-                }
-                window.FB.api('/me',{fields: 'id'}, function(response) {
+                window.FB.api('/me',function(response) {
                 var userid = response.id;
+                var username = response.name;
+                document.getElementById("user").innerHTML = username;
                 //document.getElementById("user").innerHTML = userid; 
                 console.log(response.id);
                     get_json("myphoto/" + userid, function(data) {
