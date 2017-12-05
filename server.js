@@ -137,7 +137,18 @@ router.post('/upload',function (req,res){
        res.sendFile(__dirname + path); //填想跳轉的頁面  
    });
 });
-
+router.get('/location_img/:name/:collection/:number', function(req, res){
+    console.log(req.params.name + ' ' + req.params.collection)
+    MongoClient.connect(url, function(err, db){
+        if(err) throw err
+        db.collection(req.params.collection).find({'location': req.params.name}).toArray( function(err, result){
+            if(err) throw err;
+            console.log(result);
+            res.json(result);
+            db.close;
+        })
+    })
+})
 router.get('/myphoto/:userid', function(req, res){
     console.log(req.params.userid)
     MongoClient.connect(url, function(err, db){
@@ -151,17 +162,7 @@ router.get('/myphoto/:userid', function(req, res){
     })
 })
 
-router.get('/location_img/:name/:collection/:number', function(req, res){
-    MongoClient.connect(url, function(err, db){
-        if(err) throw err
-        db.collection(req.params.collection).find({'location': req.params.location}).toArray( function(err, result){
-            if(err) throw err;
-            console.log(result);
-            res.json(result);
-            db.close;
-        })
-    })
-})
+
 app.use('/', router)
 
 // create ssh server

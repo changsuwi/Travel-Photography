@@ -77,12 +77,12 @@ function plot_marker(map, marker, data, hot){
                     '<p class="popup-parapraph">hihihi</p>' +
                   '</div>' +
                   '<div class="col-md-7">' +
-                    '<img id="images-live" class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
+                    '<img id="images-live" class="img-responsive" style="width: 200px ; display:block; margin:auto;">' + '</div>' +
                   '</div>' +
                 '</div>' +
               '</div>' +
               '<div class="row">' +
-                '<img id="images-gallery" class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + live_path + '>' + '</div>' +
+                '<img id="images-gallery" class="img-responsive" style="width: 200px ; display:block; margin:auto;">' + '</div>' +
               '</div>' +
             '</div>' +
          '</div>'
@@ -115,23 +115,23 @@ function plot_marker(map, marker, data, hot){
       // location_img/location/gallery or live/img number
       
       // while the page pops up, loads live images
-      get_json("location_img/" + name + "/live/" + live_img_load_num, function(data) {
+      get_json("location_img/" + name + "/Live/" + live_img_load_num, function(data) {
         for (var k in data) {
           console.log(k);
           console.log(data[k]);
-          $('#images-live').attr("src",data[k]);
+          $('#images-live').attr("src",data[k].path);
         }
       });
       // while the page pops up, loads gallery images
-      get_json("location_img/" + name + "/gallery/" + gallery_img_load_num, function(data) {
+      get_json("location_img/" + name + "/Your_Story/" + gallery_img_load_num, function(data) {
         for (var k in data) {
           console.log(k);
           console.log(data[k]);
-          $('#images-gallery').attr("src",data[k]);
+          $('#images-gallery').attr("src",data[k].path);
         }
       });
       // when the user clicks the button with id="??", loads live images
-      document.getElementById("??").addEventListener("click", function(){
+      /*document.getElementById("??").addEventListener("click", function(){
         get_json("location_img/" + name + "/live/" + live_img_load_num, function(data) {
           for (var k in data) {
             console.log(k);
@@ -149,7 +149,7 @@ function plot_marker(map, marker, data, hot){
             $('#images-live').attr("src",data[k]);
           }
         });
-      });
+      });*/
 
     });
 
