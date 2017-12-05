@@ -67,7 +67,50 @@ function plot_marker(map, marker, data, hot){
          '</div>' +
          //'<a href="/description.html">description</a> ' +
          '<a href="#location-details" class="inline-popup">details</a>' +
-         '<div id="location-details" class="white-popup mfp-hide">' +
+
+        '<div id="location-details" class="map-popup mfp-hide">' +
+            '<div class="container-fluid">' +
+                '<div class="pop-up-color" style="background-color:#fff;">' + 
+                    '<div class="row" style="background-color:#fff;">' +
+                        '<br><br>' +
+                    '</div>' +
+                    '<div class="row">' +
+                        '<div class="col-md-6">' +
+                            '<h1 class="popup-head">' + name + '</h1>' +
+                            '<h4 class="popup-subhead">地址: 台南市大學路一號</h4>' +
+                            '<button class="btn-special" onclick="" style="margin-left: 50px;"><lebel>導航囉</lebel></button>' +
+                            '<p class="popup-parapraph">' + description + '</p>' +
+                        '</div>' +
+                        '<div class="col-md-6">' +
+                            '<img src="./live.JPG" class="img-responsive" alt="Responsive image">' +
+                        '</div>' +
+                        
+                        
+                    '</div>' +
+                    '<div class="row">' +
+                        '<div class="col-md-12">' +
+                            '<h3 class="popup-head">即時影像</h3>' +
+                            '<hr class="popup-hr">' +
+                        '</div>' +
+                        '<img id="images-live" class="img-responsive" style="width: 200px ; display:block; margin:auto;">' +
+                    '</div>' +
+                    '<div class="row">' +
+                        '<div class="col-md-12">' +
+                            '<h3 class="popup-head">漂亮相片</h3>' +
+                            '<hr class="popup-hr">' +
+                        '</div>' +
+                        '<img id="images-gallery" class="img-responsive" style="width: 200px ; display:block; margin:auto;">' +
+                    '</div>' +
+                    '<div class="row" style="background-color:#fff;">' +
+                        '<br>' +
+                    '</div>' +
+                '</div>' +
+                
+            '</div>' +
+        '</div>'
+
+
+         /*'<div id="location-details" class="white-popup mfp-hide">' +
             '<div class="container-fluid">' +
               '<div class="row">' +
                 '<div class="pop-up-color">' +
@@ -85,7 +128,7 @@ function plot_marker(map, marker, data, hot){
                 '<img id="images-gallery" class="img-responsive" style="width: 200px ; display:block; margin:auto;">' + '</div>' +
               '</div>' +
             '</div>' +
-         '</div>'
+         '</div>'*/
 
              // set the scene marker
     marker['infowindow'] = new google.maps.InfoWindow({
