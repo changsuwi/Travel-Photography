@@ -1156,7 +1156,17 @@ a {
 	padding: 0px 15px;
 }
 
-h3.popup-head {
+.popup-hr {
+    margin-top: auto;
+    margin-bottom: 40px;
+    margin-left: 15px;
+    margin-right: auto;
+    background-color: #555;
+    height: 0.5px;
+    border: 0;
+}
+
+h1.popup-head {
     color: #000;
 }/*地圖頁面的popup視窗之標題*/
 

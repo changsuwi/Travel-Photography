@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Map</title>
+    <meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="assets/ionicons-2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+    <style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+    #map {
+        height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    #slidebar{
+    	z-index: 5;
+    	position: absolute;
+    	color: black;
+    	top: 50%;
+
+    }
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+
+<body>
+    
+        <div id="location-details" class="white-popup mfp-hide">
+            <div class="container-fluid">
+                <div class="pop-up-color" style="background-color:#fff;"> 
+                    <div class="row" style="background-color:#fff;">
+                        <br><br>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1 class="popup-head">討厭亭</h1>
+                            <p class="popup-parapraph">地址: 台南市大學路一號</p>
+                            <button class="btn-send" onclick="" style="margin-left: 15px;">導航囉</button>
+                            <p class="popup-parapraph">「不厭亭」位於台102線公路上雙溪與九份交界處附近，名稱來自前雙溪區鄉長簡華祥先生，取自李白詩句「相看兩不厭」。</p>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="./live.JPG" class="img-responsive" alt="Responsive image">
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="popup-head">即時影像</h3>
+                            <hr class="popup-hr">
+                        </div>
+                        <img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src ="./live.JPG">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="popup-head">漂亮相片</h3>
+                            <hr class="popup-hr">
+                        </div>
+                        <img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src ="./story.JPG">
+                    </div>
+                    <div class="row" style="background-color:#fff;">
+                        <br><br>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+	<section class="head">
+		<nav class="navbar navbar-inverse navbar-fixed-top"><!-- 讓上面的選單條會一直出現在畫面上-->
+		<div class="container-fluid">
+<a href="#location-details" class="inline-popup">details</a>
+			<div class="row">
+				<div class="col-md-12">
+					<header class="header">
+						<div class="inner">
+							<a href="#menu" class="nav-bars">
+								<img src="assets/images/nav-icon.png" class="img-responsive" alt="Collapsable Navbar">
+							</a>
+							<a href="index.html" class="logo">
+								PHOT<span><img src="assets/images/logo.png"></span>GRAPHY
+							</a>
+						</div>
+					</header>
+					
+					<!-- Menu -->
+
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="maps.html">Maps</a></li>
+							<li><a href="news.html">News</a></li>
+							<li><a href="myphotos.html">My Photos</a></li>
+							<li><a href="upload.html">Upload</a></li>
+							<li><a href="login.html">Log in</a></li>
+							<li><a href="aboutus.html">About Us</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		</nav>
+	</section>
+	
+    <div id="map"></div>
+	<div id="slidebar">
+		
+		<input id="time_slide" type="text"
+          data-provide="slider"
+          data-slider-ticks="[1, 2, 3, 4, 5]"
+          data-slider-ticks-labels='["day", "week", "month", "year", "total"]'
+          data-slider-min="1"
+          data-slider-max="5"
+          data-slider-step="1"
+          data-slider-value="5"
+          data-slider-tooltip="hide"
+          data-slider-orientation="vertical"
+          onchange="refresh_map()"/>
+    </div>
+
+  <script src="assets/js/map.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeVo8TE2AGQ24zvvwF8otKrCQCtory7rA&callback=initMap">
+    </script>
+    <script src="assets/js/jquery-3.1.0.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
+	<script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

@@ -56,10 +56,10 @@ function plot_marker(map, marker, data, hot){
          '<div class="row">' +
          '<div class="col-sm-6">' +
          '<h2 style="color:black; text-align:center;"> 即時影像 </h2>' +
-         '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + live_path + '>' + '</div>' +
+         '<img id="images-live" class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + live_path + '>' + '</div>' +
          '<div class="col-sm-6">' +
          '<h2 style="color:black; text-align:center;"> 相關作品 </h2>' +
-         '<img class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
+         '<img  id="images-gallery" class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
          '</div>' +
          //'<a href="/description.html">description</a> ' +
          '<a href="#location-details" class="inline-popup">details</a>' +
@@ -107,6 +107,11 @@ function plot_marker(map, marker, data, hot){
         //  enabled:true
         //}
       });
+
+      //get_json("myphoto/" + userid, function(data) {
+      //  $('#images-live').attr("src",data.);
+      //});
+
     });
 
 }
