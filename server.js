@@ -150,6 +150,18 @@ router.get('/myphoto/:userid', function(req, res){
         })
     })
 })
+
+router.get('/location_img/:name/:collection/:number', function(req, res){
+    MongoClient.connect(url, function(err, db){
+        if(err) throw err
+        db.collection(req.params.collection).find({'location': req.params.location}).toArray( function(err, result){
+            if(err) throw err;
+            console.log(result);
+            res.json(result);
+            db.close;
+        })
+    })
+})
 app.use('/', router)
 
 // create ssh server
