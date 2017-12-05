@@ -114,8 +114,8 @@ a.btn.btn-tobais.btn-special:hover {
     color: #333;
 }
 .btn-special {
-	color: #fff;
-	padding: 13px 40px;
+	color: #000;
+	padding: 13px 30px;
 	border-radius: 20px;
 }
 .btn-big {
@@ -1108,11 +1108,13 @@ a {
   margin: 0px auto;
 }
 
-.black-popup {
+.map-popup {
+  top: 7vh;
   position: relative;
-  background-color: #202228;
+  background-color: #fff;
   padding: 0px;
   width: auto;
+  max-width: 1075px;
   margin: 0px auto;
 } /*upload彈出視窗底色*/
 
@@ -1152,8 +1154,14 @@ a {
     margin-left: 15px;
 }
 
+.popup-subhead {
+	margin-top: 35px;
+    margin-bottom: 35px;
+    margin-left: 15px;
+}
+
 .popup-parapraph {
-	padding: 0px 15px;
+	padding: 15px 15px;
 }
 
 .popup-hr {
@@ -1173,6 +1181,10 @@ h1.popup-head {
 h4.popup-head {
     color: #000;
 }/*標題用*/
+
+h4.popup-subhead{
+	color: #333;
+} 
 
 h5.popup-head{
 	color: #000;
@@ -1333,3 +1345,11 @@ section.testimonial_myphoto h2, h3{
 	font-family: 'Rubik-Light', sans-serif;
 }
 /*-----------------------myphotos end--------------------*/
+/*mapspopup test*/
+#location-details img {
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 3px;
+    box-shadow: 0 10px 30px -13px #000;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
