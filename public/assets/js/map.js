@@ -18,6 +18,16 @@ function get_json(url, callback) {
     xhr.send();
 }
 
+var count = 2;
+function check_open(map, marker){
+    count--;
+    if(count == 0){
+
+        this['infowindow'].open(map, this);
+        show_infowindow = this['infowindow'];
+
+    }
+}
 // google map global varable
 var scene_data;
 var icon_image = './assets/images/icons/camera.png';
@@ -143,7 +153,15 @@ function plot_marker(map, marker, data, hot){
         content: contentString
     });
 
-    $(".gallery").justifiedGallery({
+    // set scene infowindow
+
+    google.maps.event.addListener(marker, 'click', function() {
+        if(typeof show_infowindow != 'undefined'){
+            console.log(typeof show_infowindow)
+            show_infowindow.close();                 
+        }
+      // load gallery settings
+      $(".gallery").justifiedGallery({
         rowHeight : 200,
         lastRow : 'nojustify',
         margins : 3
@@ -157,7 +175,8 @@ function plot_marker(map, marker, data, hot){
               '<img alt="Title 1" src=' + data[k].path + '>' +
             '</a>'
           );
-        }
+        } 
+        check_open(map, marker);
       });
       // while the page pops up, loads gallery images
       get_json("location_img/" + name + "/Your_Story/" + gallery_img_load_num, function(data) {
@@ -170,22 +189,8 @@ function plot_marker(map, marker, data, hot){
             '</a>'
           );
         }
+        check_open()
       });
-
-    // set scene infowindow
-
-    google.maps.event.addListener(marker, 'click', function() {
-        if(typeof show_infowindow != 'undefined'){
-            console.log(typeof show_infowindow)
-            show_infowindow.close();                 
-        }
-      // load gallery settings
-      
-
-      this['infowindow'].open(map, this);
-      show_infowindow = this['infowindow'];
-
-
     });
 
     google.maps.event.addListener(marker['infowindow'], 'domready', function() {
