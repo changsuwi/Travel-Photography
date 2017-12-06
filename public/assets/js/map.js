@@ -23,9 +23,6 @@ function check_open(map, marker){
     count--;
     if(count == 0){
 
-        this['infowindow'].open(map, this);
-        show_infowindow = this['infowindow'];
-
     }
 }
 // google map global varable
@@ -176,7 +173,6 @@ function plot_marker(map, marker, data, hot){
             '</a>'
           );
         } 
-        check_open(map, marker);
       });
       // while the page pops up, loads gallery images
       get_json("location_img/" + name + "/Your_Story/" + gallery_img_load_num, function(data) {
@@ -189,8 +185,15 @@ function plot_marker(map, marker, data, hot){
             '</a>'
           );
         }
-        check_open()
       });
+
+      setTimeout(function(){
+        this['infowindow'].open(map, this);
+        show_infowindow = this['infowindow'];
+      }, 3000)
+      
+
+
     });
 
     google.maps.event.addListener(marker['infowindow'], 'domready', function() {
