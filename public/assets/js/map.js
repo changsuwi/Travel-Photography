@@ -180,7 +180,7 @@ function plot_marker(map, marker, data, hot){
           console.log(data[k]);
           $('#images-live').append(
             '<a href="path/to/myimage1_original.jpg">' +
-              '<img alt="Title 1" src=' + data[k].path + '/>' +
+              '<img alt="Title 1" src=' + data[k].path + '>' +
             '</a>'
           );
         }
@@ -192,7 +192,7 @@ function plot_marker(map, marker, data, hot){
           console.log(data[k]);
           $('#images-live').append(
             '<a href="path/to/myimage1_original.jpg">' +
-              '<img alt="Title 1" src=' + data[k].path + '/>' +
+              '<img alt="Title 1" src=' + data[k].path + '>' +
             '</a>'
           );
         }
