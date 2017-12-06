@@ -92,6 +92,12 @@ function plot_marker(map, marker, data, hot){
                             '<h3 class="popup-head">即時影像</h3>' +
                             '<hr class="popup-hr">' +
                         '</div>' +
+                        '<div class="col-md-12">' +
+                            '<div id="images-live" class="gallery">' +
+                            '</div>' +
+                        '</div>' +
+
+
                         '<img id="images-live" class="img-responsive" style="width: 200px ; display:block; margin:auto;">' +
                     '</div>' +
                     '<div class="row">' +
@@ -99,7 +105,10 @@ function plot_marker(map, marker, data, hot){
                             '<h3 class="popup-head">漂亮相片</h3>' +
                             '<hr class="popup-hr">' +
                         '</div>' +
-                        '<img id="images-gallery" class="img-responsive" style="width: 200px ; display:block; margin:auto;">' +
+                        '<div class="col-md-12">' +
+                            '<div id="images-gallery" class="gallery">' +
+                            '</div>' +
+                        '</div>' +
                     '</div>' +
                     '<div class="row" style="background-color:#fff;">' +
                         '<br>' +
@@ -155,6 +164,13 @@ function plot_marker(map, marker, data, hot){
         //}
       });
 
+      // load gallery settings
+      $(".gallery").justifiedGallery({
+        rowHeight : 200,
+        lastRow : 'nojustify',
+        margins : 3
+      });
+
       // location_img/location/gallery or live/img number
       
       // while the page pops up, loads live images
@@ -162,7 +178,11 @@ function plot_marker(map, marker, data, hot){
         for (var k in data) {
           console.log(k);
           console.log(data[k]);
-          $('#images-live').attr("src",data[k].path);
+          $('#images-live').append(
+            '<a href="path/to/myimage1_original.jpg">' +
+              '<img alt="Title 1" src=' + data[k].path + '/>' +
+            '</a>'
+          );
         }
       });
       // while the page pops up, loads gallery images
@@ -170,7 +190,11 @@ function plot_marker(map, marker, data, hot){
         for (var k in data) {
           console.log(k);
           console.log(data[k]);
-          $('#images-gallery').attr("src",data[k].path);
+          $('#images-live').append(
+            '<a href="path/to/myimage1_original.jpg">' +
+              '<img alt="Title 1" src=' + data[k].path + '/>' +
+            '</a>'
+          );
         }
       });
       // when the user clicks the button with id="??", loads live images
