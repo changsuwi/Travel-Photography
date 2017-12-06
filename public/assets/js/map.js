@@ -30,7 +30,17 @@ var scene_data;
 var icon_image = './assets/images/icons/camera.png';
 var center = { lat: 25.0894062, lng: 121.8475243 };
 var show_infowindow;
-
+function append_image(data,callback){
+    for (var k in data) {
+      console.log(k);
+      console.log(data[k]);
+      $('#images-live').append(
+        '<a href="path/to/myimage1_original.jpg">' +
+          '<img alt="Title 1" src=' + data[k].path + '>' +
+        '</a>'
+      );
+    } 
+}
 // google mpa plot func
 function plot_marker(map, marker, data, hot){
     var placeid = data.placeid;
@@ -163,34 +173,21 @@ function plot_marker(map, marker, data, hot){
         lastRow : 'nojustify',
         margins : 3
       });
+      
       get_json("location_img/" + name + "/Live/" + live_img_load_num, function(data) {
-        for (var k in data) {
-          console.log(k);
-          console.log(data[k]);
-          $('#images-live').append(
-            '<a href="path/to/myimage1_original.jpg">' +
-              '<img alt="Title 1" src=' + data[k].path + '>' +
-            '</a>'
-          );
-        } 
+          append_image(data, function(){
+              get_json("location_img/" + name + "/Your_Story/" + gallery_img_load_num, function(data) {
+                  append_image(data, function(){
+
+                      marker['infowindow'].open(map, marker);
+                      show_infowindow = marker['infowindow'];
+                  })
+              });
+          })
       });
       // while the page pops up, loads gallery images
-      get_json("location_img/" + name + "/Your_Story/" + gallery_img_load_num, function(data) {
-        for (var k in data) {
-          console.log(k);
-          console.log(data[k]);
-          $('#images-live').append(
-            '<a href="path/to/myimage1_original.jpg">' +
-              '<img alt="Title 1" src=' + data[k].path + '>' +
-            '</a>'
-          );
-        }
-      });
-
-      setTimeout(function(){
-        this['infowindow'].open(map, this);
-        show_infowindow = this['infowindow'];
-      }, 3000)
+        
+    
       
 
 
