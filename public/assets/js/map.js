@@ -39,7 +39,8 @@ function append_image(data,callback){
           '<img alt="Title 1" src=' + data[k].path + '>' +
         '</a>'
       );
-    } 
+    }
+    callback()
 }
 // google mpa plot func
 function plot_marker(map, marker, data, hot){
@@ -167,20 +168,22 @@ function plot_marker(map, marker, data, hot){
             console.log(typeof show_infowindow)
             show_infowindow.close();                 
         }
+        marker['infowindow'].open(map, marker);
+        show_infowindow = marker['infowindow'];
+ 
       // load gallery settings
-      $(".gallery").justifiedGallery({
-        rowHeight : 200,
-        lastRow : 'nojustify',
-        margins : 3
-      });
+     
       
       get_json("location_img/" + name + "/Live/" + live_img_load_num, function(data) {
+          console.log(data)
           append_image(data, function(){
               get_json("location_img/" + name + "/Your_Story/" + gallery_img_load_num, function(data) {
                   append_image(data, function(){
-
-                      marker['infowindow'].open(map, marker);
-                      show_infowindow = marker['infowindow'];
+                       $(".gallery").justifiedGallery({
+                       rowHeight : 200,
+                       lastRow : 'nojustify',
+                       margins : 3
+                       });
                   })
               });
           })
