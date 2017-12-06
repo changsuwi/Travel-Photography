@@ -82,7 +82,7 @@ function plot_marker(map, marker, data, hot){
                             '<p class="popup-parapraph">' + description + '</p>' +
                         '</div>' +
                         '<div class="col-md-6">' +
-                            '<img src="./live.JPG" class="img-responsive" alt="Responsive image">' +
+                            '<img src=' + your_story_path + ' class="img-responsive" alt="Responsive image">' +
                         '</div>' +
                         
                         
@@ -98,7 +98,6 @@ function plot_marker(map, marker, data, hot){
                         '</div>' +
 
 
-                        '<img id="images-live" class="img-responsive" style="width: 200px ; display:block; margin:auto;">' +
                     '</div>' +
                     '<div class="row">' +
                         '<div class="col-md-12">' +
@@ -153,27 +152,12 @@ function plot_marker(map, marker, data, hot){
         }
         this['infowindow'].open(map, this);
         show_infowindow = this['infowindow'];
-    });
-
-    google.maps.event.addListener(marker['infowindow'], 'domready', function() {
-      $('.inline-popup').magnificPopup({
-        type: 'inline',
-        midClick: true
-        //gallery:{
-        //  enabled:true
-        //}
-      });
-
       // load gallery settings
       $(".gallery").justifiedGallery({
         rowHeight : 200,
         lastRow : 'nojustify',
         margins : 3
       });
-
-      // location_img/location/gallery or live/img number
-      
-      // while the page pops up, loads live images
       get_json("location_img/" + name + "/Live/" + live_img_load_num, function(data) {
         for (var k in data) {
           console.log(k);
@@ -197,7 +181,23 @@ function plot_marker(map, marker, data, hot){
           );
         }
       });
-      // when the user clicks the button with id="??", loads live images
+
+
+    });
+
+    google.maps.event.addListener(marker['infowindow'], 'domready', function() {
+      $('.inline-popup').magnificPopup({
+        type: 'inline',
+        midClick: true
+        //gallery:{
+        //  enabled:true
+        //}
+      });
+      // location_img/location/gallery or live/img number
+      
+      // while the page pops up, loads live images
+ 
+     // when the user clicks the button with id="??", loads live images
       /*document.getElementById("??").addEventListener("click", function(){
         get_json("location_img/" + name + "/live/" + live_img_load_num, function(data) {
           for (var k in data) {
