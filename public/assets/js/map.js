@@ -143,17 +143,7 @@ function plot_marker(map, marker, data, hot){
         content: contentString
     });
 
-    // set scene infowindow
-
-    google.maps.event.addListener(marker, 'click', function() {
-        if(typeof show_infowindow != 'undefined'){
-            console.log(typeof show_infowindow)
-            show_infowindow.close();                 
-        }
-        this['infowindow'].open(map, this);
-        show_infowindow = this['infowindow'];
-      // load gallery settings
-      $(".gallery").justifiedGallery({
+    $(".gallery").justifiedGallery({
         rowHeight : 200,
         lastRow : 'nojustify',
         margins : 3
@@ -181,6 +171,19 @@ function plot_marker(map, marker, data, hot){
           );
         }
       });
+
+    // set scene infowindow
+
+    google.maps.event.addListener(marker, 'click', function() {
+        if(typeof show_infowindow != 'undefined'){
+            console.log(typeof show_infowindow)
+            show_infowindow.close();                 
+        }
+      // load gallery settings
+      
+
+      this['infowindow'].open(map, this);
+      show_infowindow = this['infowindow'];
 
 
     });
