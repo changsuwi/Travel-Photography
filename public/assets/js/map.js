@@ -37,17 +37,25 @@ function append_image(data,mod, callback){
         console.log(data[k]);
         if(mod == 0){
             $('#images-live').append(
-              '<a href="path/to/myimage1_original.jpg">' +
+              '<a href="#location-details-photoview" class="inline-popup">' +
                   '<img alt="Title 1" src=' + data[k].path + '>' +
               '</a>'
+            );
+            $('#location-details-photoview').html(
+              '<a href="#location-details" class="inline-popup">click me to back</a>' +
+              '<img alt="Title 1" src=' + data[k].path + ' class="img-responsive">'
             );
         }
         else{
              $('#images-gallery').append(
-                 '<a href="path/to/myimage1_original.jpg">' +
+                '<a href="#location-details-photoview" class="inline-popup">' +
                      '<img alt="Title 1" src=' + data[k].path + '>' +
                  '</a>'
              );
+             $('#location-details-photoview').append(
+              '<img alt="Title 1" src=' + data[k].path + ' class="img-responsive">'
+            );
+
         }
     }
     callback()
@@ -195,6 +203,14 @@ function plot_marker(map, marker, data, hot){
               append_image(data,0, function(){
                   get_json("location_img/" + name + "/Your_Story/" + gallery_img_load_num, function(data) {
                       append_image(data, 1,  function(){
+                        $('.inline-popup').magnificPopup({
+                          type: 'inline',
+                          midClick: true
+                          //gallery:{
+                          //  enabled:true
+                          //}
+                        });
+
                           $(".gallery").justifiedGallery({
                           rowHeight : 200,
                           lastRow : 'nojustify',
@@ -209,14 +225,7 @@ function plot_marker(map, marker, data, hot){
       }   
            // while the page pops up, loads gallery images
         
-      $('.inline-popup').magnificPopup({
-        type: 'inline',
-        midClick: true
-        //gallery:{
-        //  enabled:true
-        //}
-      });
-      
+            
 
 
     });
