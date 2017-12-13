@@ -17,14 +17,6 @@ function get_json(url, callback) {
     xhr.open("GET", url, true);
     xhr.send();
 }
-
-var count = 2;
-function check_open(map, marker){
-    count--;
-    if(count == 0){
-
-    }
-}
 // google map global varable
 var scene_data;
 var icon_image = './assets/images/icons/camera.png';
@@ -33,6 +25,15 @@ var show_infowindow;
 var opened_marker = [];
 function append_image(data,mod, callback){
     for (var k in data) {
+<<<<<<< HEAD
+      console.log(k);$('#images-live').append(
+      console.log(data[k]);
+      
+        '<a href="#location-details-photoview" class="inline-popup">' +
+          '<img alt="Title 1" src=' + data[k].path + '>' +
+        '</a>'
+      );
+=======
         console.log(k);
         console.log(data[k]);
         if(mod == 0){
@@ -49,6 +50,7 @@ function append_image(data,mod, callback){
                  '</a>'
              );
         }
+>>>>>>> 11ac2be71ee267d7bc48dee50441451b5cd9b5da
     }
     callback()
 }

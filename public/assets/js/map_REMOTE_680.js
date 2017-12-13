@@ -17,14 +17,6 @@ function get_json(url, callback) {
     xhr.open("GET", url, true);
     xhr.send();
 }
-
-var count = 2;
-function check_open(map, marker){
-    count--;
-    if(count == 0){
-
-    }
-}
 // google map global varable
 var scene_data;
 var icon_image = './assets/images/icons/camera.png';
@@ -209,6 +201,13 @@ function plot_marker(map, marker, data, hot){
       }   
            // while the page pops up, loads gallery images
         
+    
+      
+
+
+    });
+
+    google.maps.event.addListener(marker['infowindow'], 'domready', function() {
       $('.inline-popup').magnificPopup({
         type: 'inline',
         midClick: true
@@ -216,19 +215,6 @@ function plot_marker(map, marker, data, hot){
         //  enabled:true
         //}
       });
-      
-
-
-    });
-
-    google.maps.event.addListener(marker['infowindow'], 'domready', function() {
-      /*$('.inline-popup').magnificPopup({
-        type: 'inline',
-        midClick: true
-        //gallery:{
-        //  enabled:true
-        //}
-      });*/
       // location_img/location/gallery or live/img number
       
       // while the page pops up, loads live images

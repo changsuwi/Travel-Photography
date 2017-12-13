@@ -30,25 +30,15 @@ var scene_data;
 var icon_image = './assets/images/icons/camera.png';
 var center = { lat: 25.0894062, lng: 121.8475243 };
 var show_infowindow;
-var opened_marker = [];
-function append_image(data,mod, callback){
+function append_image(data,callback){
     for (var k in data) {
-        console.log(k);
-        console.log(data[k]);
-        if(mod == 0){
-            $('#images-live').append(
-              '<a href="path/to/myimage1_original.jpg">' +
-                  '<img alt="Title 1" src=' + data[k].path + '>' +
-              '</a>'
-            );
-        }
-        else{
-             $('#images-gallery').append(
-                 '<a href="path/to/myimage1_original.jpg">' +
-                     '<img alt="Title 1" src=' + data[k].path + '>' +
-                 '</a>'
-             );
-        }
+      console.log(k);
+      console.log(data[k]);
+      $('#images-live').append(
+        '<a href="path/to/myimage1_original.jpg">' +
+          '<img alt="Title 1" src=' + data[k].path + '>' +
+        '</a>'
+      );
     }
     callback()
 }
@@ -182,33 +172,31 @@ function plot_marker(map, marker, data, hot){
         show_infowindow = marker['infowindow'];
  
       // load gallery settings
-      var open = 0;
-      for(i = 0; i<opened_marker.length; i++){
-          if(opened_marker[i] == marker.title){
-              open = 1;
-              break;
-          }
-      }
-      if(open == 0){
-          get_json("location_img/" + name + "/Live/" + live_img_load_num, function(data) {
-              console.log(data)
-              append_image(data,0, function(){
-                  get_json("location_img/" + name + "/Your_Story/" + gallery_img_load_num, function(data) {
-                      append_image(data, 1,  function(){
-                          $(".gallery").justifiedGallery({
-                          rowHeight : 200,
-                          lastRow : 'nojustify',
-                          margins : 3
-                          });
-                      })
-                  });
-              })
-          });
-
-          opened_marker.push(marker.title)
-      }   
-           // while the page pops up, loads gallery images
+     
+      
+      get_json("location_img/" + name + "/Live/" + live_img_load_num, function(data) {
+          console.log(data)
+          append_image(data, function(){
+              get_json("location_img/" + name + "/Your_Story/" + gallery_img_load_num, function(data) {
+                  append_image(data, function(){
+                       $(".gallery").justifiedGallery({
+                       rowHeight : 200,
+                       lastRow : 'nojustify',
+                       margins : 3
+                       });
+                  })
+              });
+          })
+      });
+      // while the page pops up, loads gallery images
         
+    
+      
+
+
+    });
+
+    google.maps.event.addListener(marker['infowindow'], 'domready', function() {
       $('.inline-popup').magnificPopup({
         type: 'inline',
         midClick: true
@@ -216,19 +204,6 @@ function plot_marker(map, marker, data, hot){
         //  enabled:true
         //}
       });
-      
-
-
-    });
-
-    google.maps.event.addListener(marker['infowindow'], 'domready', function() {
-      /*$('.inline-popup').magnificPopup({
-        type: 'inline',
-        midClick: true
-        //gallery:{
-        //  enabled:true
-        //}
-      });*/
       // location_img/location/gallery or live/img number
       
       // while the page pops up, loads live images
