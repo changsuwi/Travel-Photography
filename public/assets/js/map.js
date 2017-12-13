@@ -32,10 +32,10 @@ var center = { lat: 25.0894062, lng: 121.8475243 };
 var show_infowindow;
 function append_image(data,callback){
     for (var k in data) {
-      console.log(k);
+      console.log(k);$('#images-live').append(
       console.log(data[k]);
-      $('#images-live').append(
-        '<a href="path/to/myimage1_original.jpg">' +
+      
+        '<a href="#location-details-photoview" class="inline-popup">' +
           '<img alt="Title 1" src=' + data[k].path + '>' +
         '</a>'
       );
@@ -190,13 +190,6 @@ function plot_marker(map, marker, data, hot){
       });
       // while the page pops up, loads gallery images
         
-    
-      
-
-
-    });
-
-    google.maps.event.addListener(marker['infowindow'], 'domready', function() {
       $('.inline-popup').magnificPopup({
         type: 'inline',
         midClick: true
@@ -204,6 +197,19 @@ function plot_marker(map, marker, data, hot){
         //  enabled:true
         //}
       });
+      
+
+
+    });
+
+    google.maps.event.addListener(marker['infowindow'], 'domready', function() {
+      /*$('.inline-popup').magnificPopup({
+        type: 'inline',
+        midClick: true
+        //gallery:{
+        //  enabled:true
+        //}
+      });*/
       // location_img/location/gallery or live/img number
       
       // while the page pops up, loads live images

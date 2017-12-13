@@ -72,7 +72,7 @@
                         </div>
                         <div class="col-md-12">
                             <div id="mygallery" >
-                                <a href="path/to/myimage1_original.jpg">
+                                <a href="#changed" class="inline-popup" onclick="myFunc()">
                                     <img alt="Title 1" src="./live.JPG"/>
                                 </a>
                                 <a href="path/to/myimage2_original.jpg">
@@ -96,12 +96,21 @@
                 
             </div>
         </div>
+        <div id="changed" class="map-popup mfp-hide">
+            <a href='#location-details' class='inline-popup'>details</a>
+        </div>
+        <script>
+            function myFunc(){
+                $('#changed').append("change success!");
+            }
+        </script>
 
 
 	<section class="head">
 		<nav class="navbar navbar-inverse navbar-fixed-top"><!-- 讓上面的選單條會一直出現在畫面上-->
 		<div class="container-fluid">
 <a href="#location-details" class="inline-popup">details</a>
+
 			<div class="row">
 				<div class="col-md-12">
 					<header class="header">
@@ -113,6 +122,7 @@
 								PHOT<span><img src="assets/images/logo.png"></span>GRAPHY
 							</a>
 						</div>
+
 					</header>
 					
 					<!-- Menu -->
