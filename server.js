@@ -168,7 +168,7 @@ router.get('/index_new', function(req, res){
             if(err) throw err;
             result1 = result;
             console.log(result1);
-            db.collection('Your_Story').find().sort({"hot": -1}).limit(2).toArray( function(err, result){
+            db.collection('Your_Story').find().sort({"hot": -1}).limit(4).toArray( function(err, result){
                 result_final = result1.concat(result)
                 res.json(result_final);
                 db.close;
