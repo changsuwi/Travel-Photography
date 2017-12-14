@@ -1,7 +1,4 @@
 
-var currentImgDataLive;
-var currentImgDataGallery;
-
 // get json from server
 function get_json(url, callback) {
     var xhr = new XMLHttpRequest();
@@ -20,14 +17,6 @@ function get_json(url, callback) {
     xhr.open("GET", url, true);
     xhr.send();
 }
-
-var count = 2;
-function check_open(map, marker){
-    count--;
-    if(count == 0){
-
-    }
-}
 // google map global varable
 var scene_data;
 var icon_image = './assets/images/icons/camera.png';
@@ -36,24 +25,32 @@ var show_infowindow;
 var opened_marker = [];
 function append_image(data,mod, callback){
     for (var k in data) {
+<<<<<<< HEAD
+      console.log(k);$('#images-live').append(
+      console.log(data[k]);
+      
+        '<a href="#location-details-photoview" class="inline-popup">' +
+          '<img alt="Title 1" src=' + data[k].path + '>' +
+        '</a>'
+      );
+=======
         console.log(k);
         console.log(data[k]);
         if(mod == 0){
             $('#images-live').append(
-              '<a href="#location-details-photoview" class="inline-popup">' +
-                  '<img alt="Title 1" src=' + data[k].path + ' onclick="setPhotoviewLive(' + k + ')">' +
+              '<a href="path/to/myimage1_original.jpg">' +
+                  '<img alt="Title 1" src=' + data[k].path + '>' +
               '</a>'
             );
-            
         }
         else{
              $('#images-gallery').append(
-                '<a href="#location-details-photoview" class="inline-popup">' +
-                     '<img alt="Title 1" src=' + data[k].path + ' onclick="setPhotoviewGallery(' + k + ')">' +
+                 '<a href="path/to/myimage1_original.jpg">' +
+                     '<img alt="Title 1" src=' + data[k].path + '>' +
                  '</a>'
              );
-
         }
+>>>>>>> 11ac2be71ee267d7bc48dee50441451b5cd9b5da
     }
     callback()
 }
@@ -197,19 +194,9 @@ function plot_marker(map, marker, data, hot){
       if(open == 0){
           get_json("location_img/" + name + "/Live/" + live_img_load_num, function(data) {
               console.log(data)
-              currentImgDataLive = data;
               append_image(data,0, function(){
                   get_json("location_img/" + name + "/Your_Story/" + gallery_img_load_num, function(data) {
-                      currentImgDataGallery = data;
                       append_image(data, 1,  function(){
-                        $('.inline-popup').magnificPopup({
-                          type: 'inline',
-                          midClick: true
-                          //gallery:{
-                          //  enabled:true
-                          //}
-                        });
-
                           $(".gallery").justifiedGallery({
                           rowHeight : 200,
                           lastRow : 'nojustify',
@@ -224,7 +211,14 @@ function plot_marker(map, marker, data, hot){
       }   
            // while the page pops up, loads gallery images
         
-            
+      $('.inline-popup').magnificPopup({
+        type: 'inline',
+        midClick: true
+        //gallery:{
+        //  enabled:true
+        //}
+      });
+      
 
 
     });
@@ -373,36 +367,3 @@ function refresh_map(){
     }
 }
 
-function setPhotoviewLive(index){
-    $('#location-details-photoview').html(
-        '<a href="#location-details" class="inline-popup">click me to back</a>' +
-        '<img alt="Title 1" src=' + currentImgDataLive[index].path + ' class="img-responsive">'
-    );
-    $('#location-details-photoview').promise().done(function(){
-        $('.inline-popup').magnificPopup({
-            type: 'inline',
-            midClick: true
-            //gallery:{
-            //  enabled:true
-            //}
-        });
-    })
-    
-}
-
-function setPhotoviewGallery(index){
-    $('#location-details-photoview').html(
-        '<a href="#location-details" class="inline-popup">click me to back</a>' +
-        '<img alt="Title 1" src=' + currentImgDataGallery[index].path + ' class="img-responsive">'
-    );
-    $('#location-details-photoview').promise().done(function(){
-        $('.inline-popup').magnificPopup({
-            type: 'inline',
-            midClick: true
-            //gallery:{
-            //  enabled:true
-            //}
-        });
-    })
-    
-}
