@@ -132,8 +132,8 @@
 
 <section class='myphotos'>
 		<div class="container" id="photos">
-			<div class="row">
-				<div class="col-md-4">
+			<div class="row masonry">
+				<div class="col-md-4 item">
 					<a href="#0" class="inline-popup">
 						<div id="img0">
 						</div>
@@ -166,7 +166,7 @@
 								</div>
 					</div>	
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 item">
 					<a href="#1" class="inline-popup">
 						<div id="img1">
 						</div>
@@ -199,7 +199,7 @@
 								</div>
 					</div>					
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 item">
 					<a href="#2" class="inline-popup">
 						<div id="img2">
 						</div>
@@ -234,8 +234,8 @@
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="col-md-4">
+			<div class="row masonry">
+				<div class="col-md-4 item">
 					<a href="#3" class="inline-popup">
 						<div id="img3">
 						</div>
@@ -269,7 +269,7 @@
 								</div>
 					</div>	
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 item">
 					<a href="#4" class="inline-popup">
 						<div id="img4">
 						</div>
@@ -302,7 +302,7 @@
 								</div>
 					</div>					
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 item">
 					<a href="#5" class="inline-popup">
 						<div id="img5">
 						</div>
@@ -337,8 +337,8 @@
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="col-md-4">
+			<div class="row masonry">
+				<div class="col-md-4 item">
 					<a href="#6" class="inline-popup">
 						<div id="img6">
 						</div>
@@ -372,7 +372,7 @@
 								</div>
 					</div>	
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 item">
 					<a href="#7" class="inline-popup">
 						<div id="img7">
 						</div>
@@ -405,7 +405,7 @@
 								</div>
 					</div>					
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 item">
 					<a href="#8" class="inline-popup">
 						<div id="img8">
 						</div>
@@ -471,6 +471,12 @@
   <script src="assets/js/myphotos.js"></script>
   <!--<script src="assets/js/app.js"></script>-->
   <script src='assets/js/exif.js'></script>
-	
+  <script src="http://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script>
+   $(function(){
+   $('.masonry').masonry({
+   itemSelector: '.item'
+   });
+  </script>	
 </body>
 </html>
