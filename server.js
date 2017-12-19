@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(express.static(__dirname + '/public'));
 //const app = express()//我移到前面宣告
-const port = 41781
+const port = 4178
 
 // mongo 
 var MongoClient = require('mongodb').MongoClient;
@@ -41,33 +41,7 @@ router.get("/map_initial", function(req, res) {
 	})
 }) 
 
-//回傳live＆your_story//判斷前端的呼應
-/*app.get("/ajax_data", function(req, res) {
-    MongoClient.connect(url, function(err, db) {
-	    if (err) throw err;
-	    console.log("Database created!");
-	    db.collection("Live").find({}).toArray(function(err, result) {
-	        if (err) throw err;
-	        console.log(result);
-	        res.json(result);
-	        db.close();
-	    })
-	})
-}) 
-app.get("/ajax_data", function(req, res) {
-    MongoClient.connect(url, function(err, db) {
-	    if (err) throw err;
-	    console.log("Database created!");
-	    db.collection("Your_Story").find({}).toArray(function(err, result) {
-	        if (err) throw err;
-	        console.log(result);
-	        res.json(result);
-	        db.close();
-	    })
-	})
-}) 
 
-*/
 router.get("/search_autocomplete", function(req, res) {
     console.log(req.query.query)
     query = req.query.query
@@ -96,6 +70,24 @@ var storage =   multer.diskStorage({
 var upload = multer({ storage : storage}).single('userPhoto');
 router.post('/upload',function (req,res){
    upload(req,res,function(err) {
+
+		var gm = require('gm')//install gm
+	    	, imageMagick = gm.subClass({ imageMagick : true });//install imagemagick
+    var path = req.file.path; 
+    
+   imageMagick(path)
+    .resize( 150,150 ,'^') //加('!') 150*150！ .resize(150, 150, '!') //size
+    .autoOrient()
+    .write('public/assets/uploadcompress/' + 'compress' + req.file.filename , function(err){ //save compress image to uploadcompress
+     if (err) {
+        console.log(err);
+        
+        res.end();
+      } 
+   });
+    var compresspath =/* __dirname + ' public*/'/assets/uploadcomoress/' + 'compress' + req.file.filename; //get compresspath
+    console.log(compresspath);
+       
        console.log(req.body)
        path = req.file.path.slice(6)
        console.log(path)
@@ -114,6 +106,7 @@ router.post('/upload',function (req,res){
            if (err) throw err;
 	         db.collection(db_collect).insertOne({
            "path": path,
+           "compresspath" : compresspath,// new insert compresspath
            "user": user,
            "topic":topic,
            "time":time,

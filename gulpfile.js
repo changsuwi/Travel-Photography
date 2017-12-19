@@ -35,3 +35,11 @@ gulp.task('dev', ['browserSync'], function() {
   gulp.watch('css/*.css', browserSync.reload);
   gulp.watch('*.html', browserSync.reload);
 });
+var gulp = require('gulp'),
+    imagemin = require('gulp-imagemin');
+     
+     gulp.task('testImagemin', function () {
+         gulp.src('public/assets/upload/*.{png,jpg,gif,ico}')
+                 .pipe(imagemin())
+                         .pipe(gulp.dest('public/assets/uploadcompress/'));
+                         });
