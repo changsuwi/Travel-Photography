@@ -76,7 +76,7 @@ var gm = require('gm')//install gm
 var path = req.file.path; 
     
     imageMagick(path)
-    .resize( 150,150 ,'^') //加('!') 150*150！ .resize(150, 150, '!') //size
+    .resize( 400,400 ,'^') //加('!') 150*150！ .resize(150, 150, '!') //size
     .autoOrient()
     .write('public/assets/uploadcompress/' + 'compress' + req.file.filename , function(err){ //save compress image to uploadcompress
      if (err) {
