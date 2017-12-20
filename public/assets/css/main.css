@@ -1092,12 +1092,12 @@ a {
  	margin-right: 0px;
  }
 
-.white-popup {
+/*.white-popup {
   position: relative;
   background: #FFF;
   width: auto;
   max-width: 1150px;
-}
+}*/
 
 .white-popup {
   position: relative;
@@ -1105,6 +1105,8 @@ a {
   padding: 0px;
   width: auto;
   max-width: 1075px;
+  height: auto;
+  max-height: 600px;
   margin: 0px auto;
 }
 
@@ -1125,17 +1127,24 @@ a {
 
 .pop-up-color {
 	background-color: #fff;
+
 }
 
 .pop-up-color img {
 	margin: 0px auto;
+	max-height: 600px;
 }
 
 .pop-up-color .p-r-0 {
 	padding-right: 0px;
+
 }
+
 .pop-up-color .p-l-0 {
 	padding-left: 0px;
+	border-right-style: solid;
+	border-width: 1px;
+	border-color: #ddd;
 }
 
 .pop-up-color section {
