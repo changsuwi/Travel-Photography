@@ -1362,3 +1362,24 @@ section.testimonial_myphoto h2, h3{
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
 }
+
+.inforow {
+	position: relative;
+	top:-10px;
+	padding:0px;
+	background: -webkit-linear-gradient(90deg,gray,black,gray);
+	background: -o-linear-gradient(90deg,gray,black,gray);
+	background: -moz-linear-gradient(90deg,gray,black,gray);
+	background: linear-gradient(90deg,gray,black,gray);
+	background-color:#28004D;
+	border-radius:5px;
+	height:100%;
+	padding-top:5px;
+}
+
+.inforow p {
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 5px;
+	word-spacing: 10px;
+}
