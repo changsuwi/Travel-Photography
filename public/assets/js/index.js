@@ -17,7 +17,7 @@ function get_json(url, callback) {
 }
 
 window.onload = function () {
-    get_json("index_new", function(data) {
+    get_json("index_new", function(data, initGallery()) {
         for(var k in data){
             console.log(k)
             console.log(data[k])
@@ -32,11 +32,29 @@ window.onload = function () {
             console.log(img_src + "     " + img_tag);                              
             //點開後的圖片id為 img0in or img1in or img2in之類的 
             document.getElementById(img_tag).innerHTML = "<img src='" + img_src + "' class='img-responsive'>";
-            document.getElementById(img_tag + 'in').innerHTML = "<img src='" + img_src + "'exif='ture' class='img-responsive'>";
+            //document.getElementById(img_tag + 'in').innerHTML = "<img src='" + img_src + "'exif='ture' class='img-responsive'>";
+            document.getElementById(img_tag + 'in').innerHTML = "<img alt='" + topic + "' src='" + img_src + "'/>";
             document.getElementById(location_tag).innerHTML = location;
             document.getElementById(topic_tag).innerHTML = topic;
-            document.getElementById(topic_tag+ 'in').innerHTML = topic; 
+            //document.getElementById(topic_tag+ 'in').innerHTML = topic; 
             document.getElementById(comments_tag).innerHTML = comments; 
         }
+    });
+
+    
+}
+
+function initGallery() {
+    $("#gallery_live_photo").justifiedGallery({
+        rowHeight : 240,
+        lastRow : 'justify',
+        margins : 2
+    });
+
+    $("#gallery_new_photo_record").justifiedGallery({
+        rowHeight : 300,
+        maxRowHeight : false,
+        lastRow : 'hide',
+        margins : 2
     });
 }
