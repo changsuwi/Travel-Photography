@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="assets/ionicons-2.0.1/css/ionicons.min.css">
 	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	 <link rel="stylesheet" type="text/css" href="assets/css/justifiedGallery.min.css">
 	
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
@@ -64,7 +65,6 @@
 						<ul>
 							<li><a href="index.html">Home</a></li>
 							<li><a href="maps.html">Maps</a></li>
-							<li><a href="news.html">News</a></li>
 							<li><a href="myphotos.html">My Photos</a></li>
 							<li><a href="upload.html">Upload</a></li>
 							<li><a href="login.html">Log in</a></li>
@@ -126,12 +126,104 @@
 	
 
 	<section id="galleryFull" class="galleryFull">
-		<div class="inforow">
-			<p>New Live Photo</p>
-		</div>
+		
 		<div class="container-fluid">
 			<div class="grid">
 				<div class="row">
+					<button type="button" onclick="changePics()">Click Me!</button>
+					<script>
+						function changePics() {
+							document.getElementById("img0").innerHTML = "<img src='" + "./cell.png" + "' class='img-responsive'>";
+            				document.getElementById("img0" + 'in').innerHTML = "<img alt='" + "topic1(cell)" + "' src='" + "./cell.png" + "'/>";
+            				document.getElementById("location0").innerHTML = "location1";
+            				document.getElementById("topic0").innerHTML = "topic1";
+            				document.getElementById("comments0").innerHTML = "comments1"; 
+
+            				document.getElementById("img1").innerHTML = "<img src='" + "./yy.jpg" + "' class='img-responsive'>";
+            				document.getElementById("img1" + 'in').innerHTML = "<img alt='" + "topic2(yy)" + "' src='" + "./yy.jpg" + "'/>";
+            				document.getElementById("location1").innerHTML = "location2";
+            				document.getElementById("topic1").innerHTML = "topic2";
+            				document.getElementById("comments1").innerHTML = "comments2"; 
+
+            				//$("#gallery_live_photo").justifiedGallery({
+        					//	rowHeight : 200,
+        					//	lastRow : 'justify',
+        					//	margins : 3
+    						//});
+						}
+					</script>
+				</div>
+				<div class="row">
+					<div class="inforow">
+						<p>New Live Photo</p>
+					</div>
+					<div id="gallery_live_photo">
+						<a href="#1" id="img0in" class="inline-popup">
+        					<img alt="RESEARCH & SOURCING" src="assets/images/1.jpg"/>
+    					</a>
+    					<a href="#2" id="img1in" class="inline-popup">
+        					<img alt="NCKU" src="assets/images/2.jpg"/>
+    					</a>
+					</div>
+					<div id="1" class="white-popup mfp-hide">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="pop-up-color">
+									<div class=ImageExif>
+										<div class="col-md-7 p-l-0 p-r-0">
+											<div id="img0">
+												<img src="assets/images/123.jpg" exit='ture' class="img-responsive" alt="Responsive image">
+											</div>
+										</div>
+										<div class="col-md-5">
+											<div>
+												<h4 id="topic0" class="popup-head">RESEARCH & SOURCING</h4>
+											</div>
+											<div>
+												<h5 id="location0" class='popup-head'>Taiwan
+													<div class="exif-data"></div>
+												</h5>
+											</div>
+											<div>
+												<p id="comments0" class="popup-parapraph"><a id="user">Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="2" class="white-popup mfp-hide">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="pop-up-color">
+									<div class=ImageExif>
+										<div class="col-md-7 p-l-0 p-r-0">
+											<div id="img1">
+												<img src="assets/images/2.jpg" exif="ture" class="img-responsive" alt="Responsive image">
+											</div>
+										</div>
+										<div class="col-md-5">
+											<div>
+												<h4 id="topic1" class="popup-head">NCKU</h4>
+											</div>
+											<div>
+												<h5 id="location1" class='popup-head'>Taiwan
+													<div class="exif-data"></div>
+												</h5>
+											</div>
+											<div>
+												<p id="comments1" class="popup-parapraph"><a>Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!--<div class="row">
 					<div class="gallery-pad no-gutter">
 						<div class="col-sm-5">
 							<div class="row p0">
@@ -140,7 +232,7 @@
 										<p id="topic0in">RESEARCH & SOURCING</p>
 									</div>
 									<a href="#1" class="inline-popup">
-										<div id="img0in"><!-- 點案後跳出 -->
+										<div id="img0in">
 										<img src='assets/images/1.jpg' class='img-responsive' alt="Responsive image">
 										</div>
 									</a>
@@ -221,12 +313,269 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>-->
+				
 				
 				<div class="row">
 					<div class="inforow">
 						<p>New Photo Record</p>
 					</div>
+					<div id="gallery_new_photo_record">
+						<a href="#3" id="img2in" class="inline-popup">
+        					<img alt="RESEARCH & SOURCING" src="assets/images/3.jpg"/>
+    					</a>
+    					<a href="#4" id="img3in" class="inline-popup">
+        					<img alt="NCKU" src="assets/images/4.jpg"/>
+    					</a>
+    					<a href="#5" id="img4in" class="inline-popup">
+        					<img alt="RESEARCH & SOURCING" src="assets/images/5.jpg"/>
+    					</a>
+    					<a href="#6" id="img5in" class="inline-popup">
+        					<img alt="NCKU" src="assets/images/2.jpg"/>
+    					</a>
+    					<a href="#7" id="img6in" class="inline-popup">
+        					<img alt="RESEARCH & SOURCING" src="assets/images/1.jpg"/>
+    					</a>
+    					<a href="#8" id="img7in" class="inline-popup">
+        					<img alt="NCKU" src="assets/images/2.jpg"/>
+    					</a>
+    					<a href="#9" id="img8in" class="inline-popup">
+        					<img alt="RESEARCH & SOURCING" src="assets/images/1.jpg"/>
+    					</a>
+    					<a href="#10" id="img9in" class="inline-popup">
+        					<img alt="NCKU" src="assets/images/2.jpg"/>
+    					</a>
+
+					</div>
+					<div id="3" class="white-popup mfp-hide">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="pop-up-color">
+									<div class=ImageExif>
+										<div class="col-md-7 p-l-0 p-r-0">
+											<div id="img2">
+												<img src="assets/images/1.jpg" exit='ture' class="img-responsive" alt="Responsive image">
+											</div>
+										</div>
+										<div class="col-md-5">
+											<div>
+												<h4 id="topic2" class="popup-head">RESEARCH & SOURCING</h4>
+											</div>
+											<div>
+												<h5 id="location2" class='popup-head'>Taiwan
+													<div class="exif-data"></div>
+												</h5>
+											</div>
+											<div>
+												<p id="comments2" class="popup-parapraph"><a id="user">Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="4" class="white-popup mfp-hide">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="pop-up-color">
+									<div class=ImageExif>
+										<div class="col-md-7 p-l-0 p-r-0">
+											<div id="img3">
+												<img src="assets/images/1.jpg" exit='ture' class="img-responsive" alt="Responsive image">
+											</div>
+										</div>
+										<div class="col-md-5">
+											<div>
+												<h4 id="topic3" class="popup-head">RESEARCH & SOURCING</h4>
+											</div>
+											<div>
+												<h5 id="location3" class='popup-head'>Taiwan
+													<div class="exif-data"></div>
+												</h5>
+											</div>
+											<div>
+												<p id="comments3" class="popup-parapraph"><a id="user">Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="5" class="white-popup mfp-hide">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="pop-up-color">
+									<div class=ImageExif>
+										<div class="col-md-7 p-l-0 p-r-0">
+											<div id="img4">
+												<img src="assets/images/1.jpg" exit='ture' class="img-responsive" alt="Responsive image">
+											</div>
+										</div>
+										<div class="col-md-5">
+											<div>
+												<h4 id="topic4" class="popup-head">RESEARCH & SOURCING</h4>
+											</div>
+											<div>
+												<h5 id="location4" class='popup-head'>Taiwan
+													<div class="exif-data"></div>
+												</h5>
+											</div>
+											<div>
+												<p id="comments4" class="popup-parapraph"><a id="user">Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="6" class="white-popup mfp-hide">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="pop-up-color">
+									<div class=ImageExif>
+										<div class="col-md-7 p-l-0 p-r-0">
+											<div id="img5">
+												<img src="assets/images/1.jpg" exit='ture' class="img-responsive" alt="Responsive image">
+											</div>
+										</div>
+										<div class="col-md-5">
+											<div>
+												<h4 id="topic5" class="popup-head">RESEARCH & SOURCING</h4>
+											</div>
+											<div>
+												<h5 id="location5" class='popup-head'>Taiwan
+													<div class="exif-data"></div>
+												</h5>
+											</div>
+											<div>
+												<p id="comments5" class="popup-parapraph"><a id="user">Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="7" class="white-popup mfp-hide">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="pop-up-color">
+									<div class=ImageExif>
+										<div class="col-md-7 p-l-0 p-r-0">
+											<div id="img6">
+												<img src="assets/images/1.jpg" exit='ture' class="img-responsive" alt="Responsive image">
+											</div>
+										</div>
+										<div class="col-md-5">
+											<div>
+												<h4 id="topic6" class="popup-head">RESEARCH & SOURCING</h4>
+											</div>
+											<div>
+												<h5 id="location6" class='popup-head'>Taiwan
+													<div class="exif-data"></div>
+												</h5>
+											</div>
+											<div>
+												<p id="comments6" class="popup-parapraph"><a id="user">Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="8" class="white-popup mfp-hide">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="pop-up-color">
+									<div class=ImageExif>
+										<div class="col-md-7 p-l-0 p-r-0">
+											<div id="img7">
+												<img src="assets/images/1.jpg" exit='ture' class="img-responsive" alt="Responsive image">
+											</div>
+										</div>
+										<div class="col-md-5">
+											<div>
+												<h4 id="topic7" class="popup-head">RESEARCH & SOURCING</h4>
+											</div>
+											<div>
+												<h5 id="location7" class='popup-head'>Taiwan
+													<div class="exif-data"></div>
+												</h5>
+											</div>
+											<div>
+												<p id="comments7" class="popup-parapraph"><a id="user">Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="9" class="white-popup mfp-hide">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="pop-up-color">
+									<div class=ImageExif>
+										<div class="col-md-7 p-l-0 p-r-0">
+											<div id="img8">
+												<img src="assets/images/1.jpg" exit='ture' class="img-responsive" alt="Responsive image">
+											</div>
+										</div>
+										<div class="col-md-5">
+											<div>
+												<h4 id="topic8" class="popup-head">RESEARCH & SOURCING</h4>
+											</div>
+											<div>
+												<h5 id="location8" class='popup-head'>Taiwan
+													<div class="exif-data"></div>
+												</h5>
+											</div>
+											<div>
+												<p id="comments8" class="popup-parapraph"><a id="user">Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="10" class="white-popup mfp-hide">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="pop-up-color">
+									<div class=ImageExif>
+										<div class="col-md-7 p-l-0 p-r-0">
+											<div id="img9">
+												<img src="assets/images/1.jpg" exit='ture' class="img-responsive" alt="Responsive image">
+											</div>
+										</div>
+										<div class="col-md-5">
+											<div>
+												<h4 id="topic9" class="popup-head">RESEARCH & SOURCING</h4>
+											</div>
+											<div>
+												<h5 id="location9" class='popup-head'>Taiwan
+													<div class="exif-data"></div>
+												</h5>
+											</div>
+											<div>
+												<p id="comments9" class="popup-parapraph"><a id="user">Mikem atas</a> We hiked up to the mouth of this glacier and went swimming in the freezing lake below.mikematasWe hiked up to the mouth of this glacier and went swimming in the freezing lake below.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+				<!--<div class="row">
+					
 					<div class="gallery-pad no-gutter">
 						<div class="col-sm-7">
 							<div class="row p0">
@@ -407,7 +756,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>-->
 			</div>
 		</div>
 	</section>
@@ -540,6 +889,7 @@
 	<script src="assets/js/owl.carousel.min.js"></script>
 	<script src="assets/js/jquery.magnific-popup.min.js"></script>
 	<script src='assets/js/exif.js'></script>
+	<script src="assets/js/jquery.justifiedGallery.min.js"></script>
 	
 	<script src="assets/js/script.js"></script>
 	<script src="assets/js/index.js"></script>

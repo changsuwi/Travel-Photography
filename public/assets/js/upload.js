@@ -150,10 +150,13 @@ function showError(error) {
 $(document).on('fbload',function() {
   window.FB.getLoginStatus(function(response) {
     if (response.status === 'connected') {
-      window.FB.api('/me',{fields: 'id'}, function(response) {
+      window.FB.api('/me', function(response) {
         var facebookid = response.id;
+        var facebookname = response.name;
         console.log(response.id);
-        document.getElementById("userid").innerHTML = "<input type='hidden' class='form-control' name='user' value='" + facebookid + "'>"  
+        console.log(response.name);
+        document.getElementById("userid").innerHTML = "<input type='hidden' class='form-control' name='user' value='" + facebookid + "'>";
+        document.getElementById("fbname").innerHTML = "<input type='hidden' class='form-control' name='username' value='" + facebookname + "'>";
       });
     }
   });

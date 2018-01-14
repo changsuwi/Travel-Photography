@@ -114,8 +114,8 @@ a.btn.btn-tobais.btn-special:hover {
     color: #333;
 }
 .btn-special { 
-	color: #000;
-	padding: 8px 30px;
+	color: #fff;
+	padding: 8px 10px;
 	border-radius: 20px;
 }
 .btn-big {
