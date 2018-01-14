@@ -99,7 +99,7 @@ function plot_marker(map, marker, data, hot){
          '<img  class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
          '</div>' +
          //'<a href="/description.html">description</a> ' +
-         '<a href="#location-details" class="inline-popup">details</a>' +
+         '<a href="#location-details" class="inline-popup"><img src="assets/images/icons/show-more.png"></a>' +
 
         '<div id="location-details" class="map-popup mfp-hide">' +
             '<div class="container-fluid">' +
@@ -111,7 +111,6 @@ function plot_marker(map, marker, data, hot){
                         '<div class="col-md-6">' +
                             '<h1 class="popup-head">' + name + '</h1>' +
                             '<h4 class="popup-subhead">地址: 台南市大學路一號</h4>' +
-                            '<button class="btn-special" onclick="" style="margin-left: 50px;"><lebel>導航囉</lebel></button>' +
                             '<p class="popup-parapraph">' + description + '</p>' +
                         '</div>' +
                         '<div class="col-md-6">' +
@@ -375,8 +374,8 @@ function refresh_map(){
 
 function setPhotoviewLive(index){
     $('#location-details-photoview').html(
-        '<a href="#location-details" class="inline-popup">click me to back</a>' +
-        '<img alt="Title 1" src=' + currentImgDataLive[index].path + ' class="img-responsive">'
+        '<a href="#location-details" class="inline-popup"><img src="assets/images/icons/arrow-left-b.png"></a>' +
+        '<img alt="Title 1" src=' + currentImgDataLive[index].path + ' class="img-responsive">'//最後的小圖點開的
     );
     $('#location-details-photoview').promise().done(function(){
         $('.inline-popup').magnificPopup({
@@ -392,7 +391,7 @@ function setPhotoviewLive(index){
 
 function setPhotoviewGallery(index){
     $('#location-details-photoview').html(
-        '<a href="#location-details" class="inline-popup">click me to back</a>' +
+        '<a href="#location-details" class="inline-popup"><img src="assets/images/icons/arrow-left-b.png"></a>' +
         '<img alt="Title 1" src=' + currentImgDataGallery[index].path + ' class="img-responsive">'
     );
     $('#location-details-photoview').promise().done(function(){
