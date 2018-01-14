@@ -41,7 +41,7 @@ function append_image(data,mod, callback){
         if(mod == 0){
             $('#images-live').append(
               '<a href="#location-details-photoview" class="inline-popup">' +
-                  '<img alt="Title 1" src=' + data[k].path + ' onclick="setPhotoviewLive(' + k + ')">' +
+                  '<img alt="Title 1" src=' + data[k].compresspath + ' onclick="setPhotoviewLive(' + k + ')">' +
               '</a>'
             );
             
@@ -49,7 +49,7 @@ function append_image(data,mod, callback){
         else{
              $('#images-gallery').append(
                 '<a href="#location-details-photoview" class="inline-popup">' +
-                     '<img alt="Title 1" src=' + data[k].path + ' onclick="setPhotoviewGallery(' + k + ')">' +
+                     '<img alt="Title 1" src=' + data[k].compresspath + ' onclick="setPhotoviewGallery(' + k + ')">' +
                  '</a>'
              );
 

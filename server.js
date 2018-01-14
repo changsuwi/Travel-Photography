@@ -20,7 +20,7 @@ const port = 41781
 
 // mongo 
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://wp2017_groupi:wp2017_groupi@luffy.ee.ncku.edu.tw:27017/wp2017_groupi";
+var url = "mongodb://wp2017_groupi:vic32823@luffy.ee.ncku.edu.tw:27017/wp2017_groupi";
 
 // Express Router
 
@@ -87,7 +87,7 @@ router.post('/upload', function(req, res) {
                     res.end();
                 }
             });
-        var compresspath = /* __dirname + ' public*/ '/assets/uploadcomoress/' + 'compress' + req.file.filename; //get compresspath
+        var compresspath = /* __dirname + ' public*/ '/assets/uploadcompress/' + 'compress' + req.file.filename; //get compresspath
         console.log(compresspath);
         console.log(req.body)
         path = req.file.path.slice(6)
@@ -128,7 +128,12 @@ router.post('/upload', function(req, res) {
                 });
             }
         })
-        res.sendFile(__dirname + path); //填想跳轉的頁面  
+        if(options == "作品集"){
+            res.sendFile(__dirname + '/public/myphotos.html'); //填想跳轉的頁面
+        }
+        else{
+            res.sendFile(__dirname + '/public/maps.html');
+        }
     });
 });
 router.get('/location_img/:name/:collection/:number', function(req, res) {
@@ -158,11 +163,11 @@ router.get('/myphoto/:userid', function(req, res) {
 router.get('/index_new', function(req, res) {
     MongoClient.connect(url, function(err, db) {
         if (err) throw err
-        db.collection('Live').find().sort({ "hot": -1 }).limit(2).toArray(function(err, result) {
+        db.collection('Live').find().sort({"_id": -1}).limit(2).toArray(function(err, result) {
             if (err) throw err;
             result1 = result;
             console.log(result1);
-            db.collection('Your_Story').find().sort({ "hot": -1 }).limit(4).toArray(function(err, result) {
+            db.collection('Your_Story').find().sort({"_id": -1}).limit(4).toArray(function(err, result) {
                 result_final = result1.concat(result)
                 res.json(result_final);
                 db.close;
