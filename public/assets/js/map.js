@@ -375,7 +375,28 @@ function refresh_map(){
 function setPhotoviewLive(index){
     $('#location-details-photoview').html(
         '<a href="#location-details" class="inline-popup"><img src="assets/images/icons/arrow-left-b.png"></a>' +
-        '<img alt="Title 1" src=' + currentImgDataLive[index].path + ' class="img-responsive">'//最後的小圖點開的
+              '<div class="container-fluid">' +
+                '<div class="row">' +
+                  '<div class="pop-up-color">' +
+                      '<div class="col-md-7 p-l-0 p-r-0">' +
+                        '<div>' +
+                          '<img alt="Title 1" src=' + currentImgDataLive[index].path + ' class="img-responsive">' +//最後的小圖點開的
+                        '</div>' +
+                      '</div>' +
+                      '<div class="col-md-5">' +
+                        '<div>' +
+                          '<h4 class="popup-head">' + currentImgDataLive[index].topic + '</h4>' +
+                        '</div>' +
+                        '<div>' +
+                          '<h5 class="popup-head">' + currentImgDataLive[index].placeid + '</h5>' + //這邊我不確定送過來的是不是叫placeid(需要確認)
+                        '</div>' +
+                        '<div>' +
+                          '<p class="popup-parapraph">' + currentImgDataLive[index].comments + '</p>' +
+                        '</div>' +
+                      '</div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>'
     );
     $('#location-details-photoview').promise().done(function(){
         $('.inline-popup').magnificPopup({
@@ -392,7 +413,28 @@ function setPhotoviewLive(index){
 function setPhotoviewGallery(index){
     $('#location-details-photoview').html(
         '<a href="#location-details" class="inline-popup"><img src="assets/images/icons/arrow-left-b.png"></a>' +
-        '<img alt="Title 1" src=' + currentImgDataGallery[index].path + ' class="img-responsive">'
+              '<div class="container-fluid">' +
+                '<div class="row">' +
+                  '<div class="pop-up-color">' +
+                      '<div class="col-md-7 p-l-0 p-r-0">' +
+                        '<div>' +
+                          '<img alt="Title 1" src=' + currentImgDataGallery[index].path + ' class="img-responsive">' +//最後的小圖點開的
+                        '</div>' +
+                      '</div>' +
+                      '<div class="col-md-5">' +
+                        '<div>' +
+                          '<h4 class="popup-head">' + currentImgDataGallery[index].topic + '</h4>' +
+                        '</div>' +
+                        '<div>' +
+                          '<h5 class="popup-head">' + currentImgDataGallery[index].placeid + '</h5>' + //這邊我不確定送過來的是不是叫placeid(需要確認)
+                        '</div>' +
+                        '<div>' +
+                          '<p class="popup-parapraph">' + currentImgDataGallery[index].comments + '</p>' +
+                        '</div>' +
+                      '</div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>'
     );
     $('#location-details-photoview').promise().done(function(){
         $('.inline-popup').magnificPopup({
