@@ -17,8 +17,30 @@ function get_json(url, callback) {
 }
 
 window.onload = function () {
-    get_json("index_new", function(data, initGallery()) {
-        for(var k in data){
+    get_json("index_new", function(data) {
+        newphoto(data, function(){
+            initGallery();
+        })
+    });    
+}
+
+function initGallery() {
+    $("#gallery_live_photo").justifiedGallery({
+        rowHeight : 240,
+        lastRow : 'justify',
+        margins : 2
+    });
+
+    $("#gallery_new_photo_record").justifiedGallery({
+        rowHeight : 300,
+        maxRowHeight : false,
+        lastRow : 'hide',
+        margins : 2
+    });
+}
+
+function newphoto(data, callback){
+   for(var k in data){
             console.log(k)
             console.log(data[k])
             var img_tag = "img" + String(k);
@@ -37,24 +59,7 @@ window.onload = function () {
             document.getElementById(location_tag).innerHTML = location;
             document.getElementById(topic_tag).innerHTML = topic;
             //document.getElementById(topic_tag+ 'in').innerHTML = topic; 
-            document.getElementById(comments_tag).innerHTML = comments; 
-        }
-    });
-
-    
-}
-
-function initGallery() {
-    $("#gallery_live_photo").justifiedGallery({
-        rowHeight : 240,
-        lastRow : 'justify',
-        margins : 2
-    });
-
-    $("#gallery_new_photo_record").justifiedGallery({
-        rowHeight : 300,
-        maxRowHeight : false,
-        lastRow : 'hide',
-        margins : 2
-    });
+            document.getElementById(comments_tag).innerHTML = comments;
+  }
+  callback()
 }
