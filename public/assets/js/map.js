@@ -99,7 +99,7 @@ function plot_marker(map, marker, data, hot){
          '<img  class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
          '</div>' +
          //'<a href="/description.html">description</a> ' +
-         '<a href="#location-details" class="inline-popup"><img src="assets/images/icons/show-more.png"></a>' +
+         '<a href="#location-details" class="inline-popup" style="position:absolute; right:10px;"><img src="assets/images/icons/show-more.png"></a>' +
 
         '<div id="location-details" class="map-popup mfp-hide">' +
             '<div class="container-fluid">' +
@@ -110,7 +110,7 @@ function plot_marker(map, marker, data, hot){
                     '<div class="row">' +
                         '<div class="col-md-6">' +
                             '<h1 class="popup-head">' + name + '</h1>' +
-                            '<h4 class="popup-subhead">地址: 台南市大學路一號</h4>' +
+                            '<h4 class="popup-subhead">' + lat + ',' + lng + '</h4>' + //要加時間之類的
                             '<p class="popup-parapraph">' + description + '</p>' +
                         '</div>' +
                         '<div class="col-md-6">' +
@@ -133,7 +133,7 @@ function plot_marker(map, marker, data, hot){
                     '</div>' +
                     '<div class="row">' +
                         '<div class="col-md-12">' +
-                            '<h3 class="popup-head">漂亮相片</h3>' +
+                            '<h3 class="popup-head">作品選集</h3>' +
                             '<hr class="popup-hr">' +
                         '</div>' +
                         '<div class="col-md-12">' +
@@ -374,7 +374,6 @@ function refresh_map(){
 
 function setPhotoviewLive(index){
     $('#location-details-photoview').html(
-        '<a href="#location-details" class="inline-popup"><img src="assets/images/icons/arrow-left-b.png"></a>' +
               '<div class="container-fluid">' +
                 '<div class="row">' +
                   '<div class="pop-up-color">' +
@@ -384,11 +383,12 @@ function setPhotoviewLive(index){
                         '</div>' +
                       '</div>' +
                       '<div class="col-md-5">' +
+                        '<a href="#location-details" class="inline-popup"><img src="assets/images/icons/arrow-left-b.png"></a>' +
                         '<div>' +
                           '<h4 class="popup-head">' + currentImgDataLive[index].topic + '</h4>' +
                         '</div>' +
                         '<div>' +
-                          '<h5 class="popup-head">' + currentImgDataLive[index].placeid + '</h5>' + //這邊我不確定送過來的是不是叫placeid(需要確認)
+                          '<h5 class="popup-head">' + currentImgDataLive[index].username + '</h5>' + //這邊我不確定送過來的是不是叫placeid(需要確認)
                         '</div>' +
                         '<div>' +
                           '<p class="popup-parapraph">' + currentImgDataLive[index].comments + '</p>' +
@@ -412,7 +412,6 @@ function setPhotoviewLive(index){
 
 function setPhotoviewGallery(index){
     $('#location-details-photoview').html(
-        '<a href="#location-details" class="inline-popup"><img src="assets/images/icons/arrow-left-b.png"></a>' +
               '<div class="container-fluid">' +
                 '<div class="row">' +
                   '<div class="pop-up-color">' +
@@ -422,11 +421,12 @@ function setPhotoviewGallery(index){
                         '</div>' +
                       '</div>' +
                       '<div class="col-md-5">' +
+                        '<a href="#location-details" class="inline-popup"><img src="assets/images/icons/arrow-left-b.png"></a>' +
                         '<div>' +
                           '<h4 class="popup-head">' + currentImgDataGallery[index].topic + '</h4>' +
                         '</div>' +
                         '<div>' +
-                          '<h5 class="popup-head">' + currentImgDataGallery[index].placeid + '</h5>' + //這邊我不確定送過來的是不是叫placeid(需要確認)
+                          '<h5 class="popup-head">' + currentImgDataGallery[index].username + '</h5>' + //這邊我不確定送過來的是不是叫placeid(需要確認)
                         '</div>' +
                         '<div>' +
                           '<p class="popup-parapraph">' + currentImgDataGallery[index].comments + '</p>' +

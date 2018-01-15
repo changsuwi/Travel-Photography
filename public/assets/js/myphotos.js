@@ -75,19 +75,3 @@ window.fbAsyncInit = function() {
   js.src = "https://connect.facebook.net/zh_TW/sdk/debug.js";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-
-// $(document).ready(function() {
-  
-//   $(window).scroll(function () {
-//       //if you hard code, then use console
-//       //.log to determine when you want the 
-//       //nav bar to stick.  
-//       console.log($(window).scrollTop())
-//     if ($(window).scrollTop() > 60) {
-//       $('.navbar').addClass('navbar-fixed-top');
-//     }
-//     if ($(window).scrollTop() < 60) {
-//       $('.navbar').removeClass('navbar-fixed-top');
-//     }
-//   });
-// });

@@ -522,6 +522,8 @@ a.notify-me {
 }
 
 .logo {
+	position:relative;
+	top:5px;
 	font-size: 24px;
 	font-weight: bold;
 	color: #fff;
@@ -1382,4 +1384,8 @@ section.testimonial_myphoto h2, h3{
 	text-align: center;
 	letter-spacing: 5px;
 	word-spacing: 10px;
+}
+
+.nopadding {
+   padding: 0 !important;
 }

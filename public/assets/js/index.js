@@ -47,6 +47,8 @@ function newphoto(data, callback){
             var topic_tag = "topic" + String(k);
             var comments_tag = "comments" + String(k);
             var location_tag = "location" + String(k);
+            var user_tag = "user" + string(k);
+            var user = data[k].username;
             var location = data[k].location;
             var img_src = data[k].path;
             var topic = data[k].topic;
@@ -56,6 +58,7 @@ function newphoto(data, callback){
             document.getElementById(img_tag).innerHTML = "<img src='" + img_src + "' class='img-responsive'>";
             //document.getElementById(img_tag + 'in').innerHTML = "<img src='" + img_src + "'exif='ture' class='img-responsive'>";
             document.getElementById(img_tag + 'in').innerHTML = "<img alt='" + topic + "' src='" + img_src + "'/>";
+            document.getElementById(user_tag).innerHTML = user;
             document.getElementById(location_tag).innerHTML = location;
             document.getElementById(topic_tag).innerHTML = topic;
             //document.getElementById(topic_tag+ 'in').innerHTML = topic; 
