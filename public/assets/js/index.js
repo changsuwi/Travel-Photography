@@ -26,13 +26,13 @@ window.onload = function () {
 
 function initGallery() {
     $("#gallery_live_photo").justifiedGallery({
-        rowHeight : 240,
-        lastRow : 'justify',
+        rowHeight : 320,
+        lastRow : 'hide',
         margins : 2
     });
 
     $("#gallery_new_photo_record").justifiedGallery({
-        rowHeight : 300,
+        rowHeight : 320,
         maxRowHeight : false,
         lastRow : 'hide',
         margins : 2
