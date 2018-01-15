@@ -163,12 +163,12 @@ router.get('/myphoto/:userid', function(req, res) {
 router.get('/index_new', function(req, res) {
     MongoClient.connect(url, function(err, db) {
         if (err) throw err
-        db.collection('Live').find().sort({"_id": -1}).limit(4).toArray(function(err, result) {
+        db.collection('Live').find().sort({"_id": -1}).limit(10).toArray(function(err, result) {
             if (err) throw err;
             result1 = result;
-            console.log(result1);
-            db.collection('Your_Story').find().sort({"_id": -1}).limit(2).toArray(function(err, result) {
+            db.collection('Your_Story').find().sort({"_id": -1}).limit(10).toArray(function(err, result) {
                 result_final = result1.concat(result)
+                console.log(result_final)
                 res.json(result_final);
                 db.close;
             })
