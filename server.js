@@ -131,10 +131,10 @@ router.post('/upload', function(req, res) {
             }
         })
         if(options == "作品集"){
-            res.sendFile(__dirname + '/public/myphotos.html'); //填想跳轉的頁面
+            res.redirect('myphotos.html'); //填想跳轉的頁面
         }
         else{
-            res.sendFile(__dirname + '/public/maps.html');
+            res.redirect('maps.html');
         }
     });
 });
