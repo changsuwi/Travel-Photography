@@ -185,47 +185,40 @@ function plot_marker(map, marker, data, hot){
         marker['infowindow'].open(map, marker);
         show_infowindow = marker['infowindow'];
  
-      // load gallery settings
-      var open = 0;
-      for(i = 0; i<opened_marker.length; i++){
-          if(opened_marker[i] == marker.title){
+        // load gallery settings
+        var open = 0;
+        for(i = 0; i<opened_marker.length; i++){
+            if(opened_marker[i] == marker.title){
               open = 1;
               break;
           }
-      }
-      if(open == 0){
+        }
           get_json("location_img/" + name + "/Live/" + live_img_load_num, function(data) {
               console.log(data)
               currentImgDataLive = data;
-              append_image(data,0, function(){
-                  get_json("location_img/" + name + "/Your_Story/" + gallery_img_load_num, function(data) {
-                      currentImgDataGallery = data;
-                      append_image(data, 1,  function(){
-                        $('.inline-popup').magnificPopup({
-                          type: 'inline',
-                          midClick: true
-                          //gallery:{
-                          //  enabled:true
-                          //}
-                        });
+              if(open == 0){
+                  append_image(data,0, function(){
+                      get_json("location_img/" + name + "/Your_Story/" + gallery_img_load_num, function(data) {
+                          currentImgDataGallery = data;
+                          append_image(data, 1,  function(){
+                              $('.inline-popup').magnificPopup({
+                              type: 'inline',
+                              midClick: true
+                              });
 
-                          $(".gallery").justifiedGallery({
-                          rowHeight : 200,
-                          lastRow : 'nojustify',
-                          margins : 3
-                          });
-                      })
-                  });
-              })
+                              $(".gallery").justifiedGallery({
+                              rowHeight : 200,
+                              lastRow : 'nojustify',
+                              margins : 3
+                              });
+                          })
+                      });
+                  })
+              }
           });
 
-          opened_marker.push(marker.title)
-      }   
+          opened_marker.push(marker.title)   
            // while the page pops up, loads gallery images
-        
-            
-
-
     });
 
     google.maps.event.addListener(marker['infowindow'], 'domready', function() {
@@ -388,7 +381,7 @@ function setPhotoviewLive(index){
                           '<h4 class="popup-head">' + currentImgDataLive[index].topic + '</h4>' +
                         '</div>' +
                         '<div>' +
-                          '<h5 class="popup-head">' + currentImgDataLive[index].username + '</h5>' + //這邊我不確定送過來的是不是叫placeid(需要確認)
+                          '<h5 class="popup-head">' + currentImgDataLive[index].fbname + '</h5>' + //這邊我不確定送過來的是不是叫placeid(需要確認)
                         '</div>' +
                         '<div>' +
                           '<p class="popup-parapraph">' + currentImgDataLive[index].comments + '</p>' +
@@ -426,7 +419,7 @@ function setPhotoviewGallery(index){
                           '<h4 class="popup-head">' + currentImgDataGallery[index].topic + '</h4>' +
                         '</div>' +
                         '<div>' +
-                          '<h5 class="popup-head">' + currentImgDataGallery[index].username + '</h5>' + //這邊我不確定送過來的是不是叫placeid(需要確認)
+                          '<h5 class="popup-head">' + currentImgDataGallery[index].fbname + '</h5>' + //這邊我不確定送過來的是不是叫placeid(需要確認)
                         '</div>' +
                         '<div>' +
                           '<p class="popup-parapraph">' + currentImgDataGallery[index].comments + '</p>' +

@@ -93,7 +93,8 @@ router.post('/upload', function(req, res) {
         path = req.file.path.slice(6)
         console.log(path)
         user = req.body.user
-        console.log(user)
+        fbname = req.body.username
+        console.log(fbname)
         topic = req.body.topic
         time = req.body.time
         comments = req.body.comments
@@ -109,6 +110,7 @@ router.post('/upload', function(req, res) {
                 "path": path,
                 "compresspath": compresspath, // new insert compresspath
                 "user": user,
+                "fbname": fbname,
                 "topic": topic,
                 "time": time,
                 "comments": comments,

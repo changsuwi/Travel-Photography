@@ -47,8 +47,8 @@ function newphoto(data, callback){
             var topic_tag = "topic" + String(k);
             var comments_tag = "comments" + String(k);
             var location_tag = "location" + String(k);
-            var user_tag = "user" + string(k);
-            var user = data[k].username;
+            var user_tag = "user" + String(k);
+            var user = data[k].fbname;
             var location = data[k].location;
             var img_src = data[k].path;
             var topic = data[k].topic;
