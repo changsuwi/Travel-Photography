@@ -99,7 +99,7 @@ function plot_marker(map, marker, data, hot){
          '<img  class="img-responsive" style="width: 200px ; display:block; margin:auto;" src =' + your_story_path + '>' + '</div>' +
          '</div>' +
          //'<a href="/description.html">description</a> ' +
-         '<a href="#location-details" class="inline-popup" style="position:relative; right:10px; bottom:10px;"><img src="assets/images/icons/show-more.png"></a>' +
+         '<a href="#location-details" class="inline-popup" style="position:relative; bottom:10px;"><img src="assets/images/icons/show-more.png"></a>' +
 
         '<div id="location-details" class="map-popup mfp-hide">' +
             '<div class="container-fluid">' +
@@ -376,7 +376,7 @@ function setPhotoviewLive(index){
                         '</div>' +
                       '</div>' +
                       '<div class="col-md-5">' +
-                        '<a href="#location-details" class="inline-popup"><img src="assets/images/icons/arrow-left-b.png" style="position=relative; top:8px;"></a>' +
+                        '<a href="#location-details" class="inline-popup"><img src="assets/images/icons/arrow-left-b.png" style="padding-top:8px;"></a>' +
                         '<div>' +
                           '<h4 class="popup-head">' + currentImgDataLive[index].topic + '</h4>' +
                         '</div>' +
@@ -414,7 +414,7 @@ function setPhotoviewGallery(index){
                         '</div>' +
                       '</div>' +
                       '<div class="col-md-5">' +
-                        '<a href="#location-details" class="inline-popup"><img src="assets/images/icons/arrow-left-b.png" style="position=relative; top:8px;"></a>' +
+                        '<a href="#location-details" class="inline-popup"><img src="assets/images/icons/arrow-left-b.png" style="padding-top:8px;"></a>' +
                         '<div>' +
                           '<h4 class="popup-head">' + currentImgDataGallery[index].topic + '</h4>' +
                         '</div>' +
