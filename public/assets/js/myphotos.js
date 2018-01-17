@@ -36,6 +36,8 @@ window.onload = function () {
                                 var img_tag = "img" + String(k);
                                 var topic_tag = "topic" + String(k);
                                 var comments_tag = "comments" + String(k);
+                                var location_tag = "location" + String(k);
+                                var location = data[k].time;
                                 var live = data[k].option1;
                                 var story = data[k].option2;
                                 var img_src = data[k].path;
@@ -46,7 +48,7 @@ window.onload = function () {
                                 //點開後的圖片id為 img0in or img1in or img2in之類的 
                                 document.getElementById(img_tag).innerHTML = "<img src='" + img_src + "' class='img-responsive'>";
                                 document.getElementById(img_tag + 'in').innerHTML = "<img src='" + img_src + "'exif='ture' class='img-responsive'>";
-                                
+                                document.getElementById(location_tag).innerHTML = lacation;
                                 document.getElementById(topic_tag).innerHTML = topic; 
                                 document.getElementById(comments_tag).innerHTML = comments; 
                             }
